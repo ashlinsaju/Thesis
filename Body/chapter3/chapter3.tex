@@ -11,7 +11,58 @@
 
 \section*{Design and Implementation of Air Pollution Monitoring System}
 
-The advancement in technology has made it easy for researchers to explore more in different areas. One such development is in the area of sensor technology which completey changes the outlook to different application level problems. In this chapter, I share my hands on experience in the development, design, integration and operation of the air pollution system using commdoity sensor. Earlier, the approach for understanding air pollution used complex and stationary equipments which collects data and used these data for analayzing, but things have changed after the low cost, easy to use, portable sensors came in markets \cite{Snyder2013}. 
+The advancement in technology has made it easy for researchers to explore more in different areas. One such development is in the area of sensor technology which completey changed the outlook of different application level problems. In this chapter, I share my hands on experience in the development, design, integration and operation of the air pollution system using commdoity sensor. Earlier, the approach for understanding air pollution used complex and stationary equipments which collects data and used these data for analayzing, but things have changed after the low cost, easy to use, portable sensors came in markets \cite{Snyder2013}. 
+
+\section*{Design Goals}
+
+There are many factors which needs to be considered for the development of a simple yet reliable system. In this section I have mentioned the factors which should be considered for an effective air pollution monitoring system.
+
+\subsection{Sensor Identification}
+
+The very first task is to figure out which all sensors needs to be included for the completeion of the system. There are sensors available in market for all types of gases in the atmosphere. It should be very clear that which all gases needs to be measured and this definately changes from region to region as in certain places the concentration of a particular gas is more. Having said that, there will be certain set of gases which must be included for measurement regardless of the region.
+
+\subsection{Communication Module}
+
+As the system is compltety based on wireless sensors the selection of data transmission is another crucial factor. The communication between the server and the sensors should be taken into consideration.
+The collected data from the sensors should be transferred over a database or to the sever. For that the type of communication module can be either Wi-Fi or bluethooth module.
+
+\subsection{Reliability}
+
+The success of the system depends upon how much accurate the data is. The value which we obtain from the sensor should make sense to the audiance. There will be a lot of noise coming with the  collection of data, the sensor should have the ability to remove the noise data or it should alow the programmer to make changes or apply certain algorithm so that the datasets will be refined.
+
+
+\subsection{Easy Integration}
+
+The integration of sensors with the processor is one important factor that needs to be kept in mind. Some sensors can be easily integrated with any processor but others needs driver codes to be written in order to work with the processor.
+
+\subsection{Printed Circuit Board}
+
+The final system should be build on a printed circuit board as it is more dependable. Circuit build on basic breadboard might even come out as it is not permanently fixed and this will cause frquent breakdown. Its always easy to work on breadboard but that will be useful only for the initial set up. The system should be transformed to PCB.
+
+
+\subsection{Maintenance}
+
+In case of any sensor damage it should be easily replacable which means the complete system should be a plug and play type model. On building up such a  model like that will help in debugging the problems caused by sensors if any. It should also be considered that the sensors selected for the system should be easily available in market so that it can be replaced if needed.
+
+\subsection{Easy Replication}
+The idea behind creating such a system is that it can be replicated by anyone without even knowing the dept knowledge. The system should be designed in such a way that it should use the most available sensors and processors in the market. The programming part of the sensors to processor will be easy if the selection of processor is simple. This could definately bring down a lot of work done at the hardware level.
+
+
+\subsection{Low Cost}
+
+Within the available sensors in the market one could find sensors ranging from a very low price to costliest of all. There was a budget set for the the complete system and finding the right sensors with the affordable cost is one crucial factor.
+
+
+\section*{Targeted Pollutants}
+
+Our sorrounding is filled with various gases, these gases will become harmful if the concentration of it increases to an undesired level. On the development of a air pollution system measurement of all the gases in the atmosphere is not necessary as the collected data from all the sensor will make no sense to the public. Our main idea here is to make the general people aware about the dominant gases and the extend of health hazard caused by these gases. This can be identified through different indexes know as Air Quality Health Index(AQHI) whcih is a scale from one to ten developed by health and environmental professionals \cite{Questions} and Air Quality index (AQI)which gives the level of air quality status in an area \cite{Asha2017}.
+
+\par 
+
+
+The development of such indexes by the scientists will give the general public more idea of the pollution. The main gases to be included for the measurement for the indexes are  $PM_{2.5}, O_3, NO_2$, and $CO$ along with temperature and humidity sensor for awareness. These gases are mainly caused due to industrialization, urbanization and motorization \cite{Saha1952}. Industrial and vehicles release greenhouse emissions which are largely responsible for air pollution \cite{ internet}. The sensors thus can be limited to five which will also make the system compact.
+
+
 
 \bibliographystyle{plain}
 \bibliography{chapter3}
