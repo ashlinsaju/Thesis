@@ -6,6 +6,11 @@
 \textheight 9in
 \textwidth 6.5in
 \usepackage{url}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsfonts}
+\newtheorem{theorem}{Theorem}
+\usepackage{float}
+\usepackage{mathtools}
 
 
 \begin{document}
@@ -67,32 +72,28 @@ Our surrounding is filled with various gases, these gases will become harmful if
 The development of such indexes by the scientists will give the general public more idea of the pollution. The main gases to be included for the measurement for the indexes are  $PM_{2.5}, O_3, NO_2$, and $CO$ along with temperature and humidity sensor for awareness. These gases are mainly caused due to industrialization, urbanization and motorization \cite{Saha1952}. Industrial and vehicles release greenhouse emissions which are largely responsible for air pollution \cite{ internet}. The sensors thus can be limited to five which will also make the system compact.
 
 
-\section*{Methodology}
-The proposed architecture contains three major components i.e, the hardware architecture which is the sensor system and the processor, the communication middle ware for transferring of the collected data and the software architecture which does the analysis and display.
-
-\begin{enumerate}
-
-\item {Hardware Architecture}
-
-The idea is to come up with a low cost commodity hardware with most accurate values of measurement. As the choices for the hardware is enormous and is keep changing as the technologies advance, suggesting one specific is hard and also not helpful if it is not available globally at low cost. Therefore, I decided to experiment with a few options of using most commonly available hardware components which are low cost. 
-
-The Hardware system can be further divided into three main components as:
-\begin{enumerate}
-\item  Sensors
-\item  Microcontroller board
-\item  Communication module
-\end{enumerate}
-
-
-\begin{enumerate}
-   \item Sensors
+   \section*{Sensor Selection} 
     
-    Sensor networks are new instruments useful to detect the conditions in remote places in the physical world in environmental monitoring applications such as pollution monitoring, transportation management, intrusion detection and many more \cite{Jung2011}. With the help of sensors, it is possible to collect data remotely and collected data can be transferred to the required platform.
+    Sensor networks are new instruments useful to detect the conditions in remote places in the physical world in environmental monitoring applications such as pollution monitoring, transportation management, intrusion detection and many more \cite{Jung2011}. With the constant development in electronics industry, it is possible to collect data remotely and collected data can be transferred to the required platform at a short period of time.
     There are different sensors available in market which can measure the pollutants and display the value, but the idea here is to select the one which is of low cost and also gives the most accurate values.
+    \par
+    Having said that there is a variety of options available for sensors based on the way it measures the pollutants. One such category is Metal Oxide Semiconductor (MOS) gas sensor also known as semiconductor gas sensor, which is used to detect the concentration of any hazardous gases in the atmosphere by changing its resistance. The most popular series available in market for this category is MQ-XX sensors which is popular for its wide detecting scope, long life, stability, high sensitivity, fast response and also simple drive circuit \cite{Data2012}.The sensing material is made up from Aluminum Oxide ($ Al_{2}O_{3}$) based ceramic which increases the heat efficiency and has a coating of Tin Oxide $ SnO_{2} $ that acts as the sensing material for the desired gas. The sensing element is heated through Platinum wires which is connected to leads made up of Nickel-Chromium, well known conductive alloy. The gas to be detected has a specific temperature at which it gets ionized and the duty of the sensor is to work at that temperature. Once the gas gets ionized it gets absorbed by the sensing material which changes the resistance and inturn changes the voltage across the sensor and can be read by the microcontroller \cite{gassensor}. The voltage value is used to find the resistance of sensor by knowing the reference voltage and other resistor's resistance. The MQ-2 sensor detects more than one gases such as LPG, Propane, Hydrogen, and carbon monoxide. The sensitivity curve for the sensor is shown for different types of gases.
 
-    Having said that there is a huge classification of sensors based on the way it measures the pollutants. One such category is electro-chemical gas sensor, which is used to detect the concentration of any hazardous gases in the atmosphere by changing its resistance. The most popular series available in market for this category is MQ-XX sensors which is popular for its wide detecting scope, long life, stability, high sensitivity, fast response and also simple drive circuit \cite{Data2012}. The sensing material is made up from Aluminum Oxide ($ Al_{2}O_{3}$) based ceramic which increases the heat efficiency and has a coating of Tin Oxide $ SnO_{2} $ that acts as the sensing material for the desired gas. The sensing element is heated through Platinum wires which is connected to leads made up of Nickel-Chromium, well known conductive alloy. The gas to be detected has a specific temperature at which it gets ionized and the duty of the sensor is to work at that temperature. Once the gas gets ionized it gets absorbed by the sensing material which changes the resistance and inturn changes the current flow and gives the output \cite{gassensor}.
+    \begin{figure}
+      \begin{center}
+      \includegraphics[scale=0.40]{images/figure1.png}
+      \end{center}
+      \caption{Sensitivity characteristics curve \cite{Data2012}}
+      \label{mesh}
+  
+      where $R_{o}$ is the sensor resistance in clean air and $R_{s}$ is the sensor resistance when exposed to gas.
+    \end{figure}
+   
+
+
+
     
- \item {Microcontroller Board}
+ \section* {Microcontroller Board}
 
 
  
@@ -100,17 +101,17 @@ The Hardware system can be further divided into three main components as:
 
 
 
- \item {Communication Module}
+ \section*{Communication Module}
 
     For the sensor device to communicate with the IoT software platform  or the software for data analytic and visualization services, I have used ESP8266 WiFi module that has a networkable microcontroller. This module is very compact and has high durability and power saving features. This module transfers the collected data from the microcontroller to the data repository in the software environment where the further visualization and data management will be done.
-      \end{enumerate}
+    
 
       
- \item {Software Architecture}
+ \section*{Software Architecture}
  
  This component is to provide statistical data analysis and visualization through intuitive graphics services to help users to make decisions. Particularly, analytic component is needed to performs statistical functionality and animation component is to display the necessary data to users. I am aiming at a Customizable Layered Visualization (CLV) which will concentrate the delivering of data for different stakeholders based on their interest. There will be a hierarchical visualization option in which the user themselves can drive through the data and keep on expanding the information as needed.
 
-    \end{enumerate}
+
     
 \bibliographystyle{plain}
 \bibliography{chapter3}
