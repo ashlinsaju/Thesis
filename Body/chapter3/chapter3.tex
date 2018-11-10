@@ -5,6 +5,7 @@
 \oddsidemargin 0in
 \textheight 9in
 \textwidth 6.5in
+\usepackage{url}
 
 
 \begin{document}
@@ -25,12 +26,12 @@ The very first task is to figure out which all sensors need to be included for t
 
 \item{Communication Module}
 
-As the system is compltety based on wireless sensors the selection of data transmission is another crucial factor. The communication between the server and the sensors should be taken into consideration.
-The collected data from the sensors should be transferred over a database or to the sever. For that the type of communication module can be either Wi-Fi or bluethooth module.
+As the system is completely based on wireless sensors the selection of data transmission is another crucial factor. The communication between the server and the sensors should be taken into consideration.
+The collected data from the sensors should be transferred over a database or to the sever. For that the type of communication module can be either Wi-Fi or bluetooth module.
  
 \item {Reliability}
 
-The success of the system depends upon how much accurate the data is. The value which we obtain from the sensor should make sense to the audiance. There will be a lot of noise coming with the  collection of data, the sensor should have the ability to remove the noise data or it should alow the programmer to make changes or apply certain algorithm so that the datasets will be refined.
+The success of the system depends upon how much accurate the data is. The value which we obtain from the sensor should make sense to the audience. There will be a lot of noise coming with the  collection of data, the sensor should have the ability to remove the noise data or it should allow the programmer to make changes or apply certain algorithm so that the data sets will be refined.
 
 
 \item {Easy Integration}
@@ -39,15 +40,15 @@ The integration of sensors with the processor is one important factor that needs
 
 \item {Printed Circuit Board}
 
-The final system should be build on a printed circuit board as it is more dependable. Circuit build on basic breadboard might even come out as it is not permanently fixed and this will cause frquent breakdown. Its always easy to work on breadboard but that will be useful only for the initial set up. The system should be transformed to PCB.
+The final system should be build on a printed circuit board as it is more dependable. Circuit build on basic breadboard might even come out as it is not permanently fixed and this will cause frequent breakdown. Its always easy to work on breadboard but that will be useful only for the initial set up. The system should be transformed to PCB.
 
 
 \item {Maintenance}
 
-In case of any sensor damage it should be easily replacable which means the complete system should be a plug and play type model. On building up such a  model like that will help in debugging the problems caused by sensors if any. It should also be considered that the sensors selected for the system should be easily available in market so that it can be replaced if needed.
+In case of any sensor damage it should be easily replaceable which means the complete system should be a plug and play type model. On building up such a  model like that will help in debugging the problems caused by sensors if any. It should also be considered that the sensors selected for the system should be easily available in market so that it can be replaced if needed.
 
 \item {Easy Replication}
-The idea behind creating such a system is that it can be replicated by anyone without even knowing the dept knowledge. The system should be designed in such a way that it should use the most available sensors and processors in the market. The programming part of the sensors to processor will be easy if the selection of processor is simple. This could definately bring down a lot of work done at the hardware level.
+The idea behind creating such a system is that it can be replicated by anyone without even knowing the dept knowledge. The system should be designed in such a way that it should use the most available sensors and processors in the market. The programming part of the sensors to processor will be easy if the selection of processor is simple. This could definitely bring down a lot of work done at the hardware level.
 
 
 \item {Low Cost}
@@ -59,7 +60,7 @@ Within the available sensors in the market one could find sensors ranging from a
 
 \section*{Targeted Pollutants}
 
-Our sorrounding is filled with various gases, these gases will become harmful if the concentration of it increases to an undesired level. On the development of a air pollution system measurement of all the gases in the atmosphere is not necessary as the collected data from all the sensor will make no sense to the public. Our main idea here is to make the general people aware about the dominant gases and the extend of health hazard caused by these gases. This can be identified through different indexes know as Air Quality Health Index(AQHI) whcih is a scale from one to ten developed by health and environmental professionals \cite{Questions} and Air Quality index (AQI)which gives the level of air quality status in an area \cite{Asha2017}.
+Our surrounding is filled with various gases, these gases will become harmful if the concentration of it increases to an undesired level. On the development of a air pollution system measurement of all the gases in the atmosphere is not necessary as the collected data from all the sensor will make no sense to the public. Our main idea here is to make the general people aware about the dominant gases and the extend of health hazard caused by these gases. This can be identified through different indexes know as Air Quality Health Index(AQHI) which is a scale from one to ten developed by health and environmental professionals \cite{faq} and Air Quality index (AQI)which gives the level of air quality status in an area \cite{Asha2017}.
 
 \par 
 
@@ -73,9 +74,9 @@ The proposed architecture contains three major components i.e, the hardware arch
 
 \item {Hardware Architecture}
 
-The idea is to come up with a low cost commodity hardware and  open source software. As the choices for these hardware and software components are enormous and is keep changing as the technologies advance, suggesting one specific combination is hard and also not helpful if the hardware is not available globally at low cost. Therefore, I decided to experiment with a few options of using most commonly available hardware components which are low cost. 
+The idea is to come up with a low cost commodity hardware with most accurate values of measurement. As the choices for the hardware is enormous and is keep changing as the technologies advance, suggesting one specific is hard and also not helpful if it is not available globally at low cost. Therefore, I decided to experiment with a few options of using most commonly available hardware components which are low cost. 
 
-The Hardware system can be further divided into three main components as in the figure 1:
+The Hardware system can be further divided into three main components as:
 \begin{enumerate}
 \item  Sensors
 \item  Microcontroller board
@@ -87,11 +88,9 @@ The Hardware system can be further divided into three main components as in the 
    \item Sensors
     
     Sensor networks are new instruments useful to detect the conditions in remote places in the physical world in environmental monitoring applications such as pollution monitoring, transportation management, intrusion detection and many more \cite{Jung2011}. With the help of sensors, it is possible to collect data remotely and collected data can be transferred to the required platform.
-    
     There are different sensors available in market which can measure the pollutants and display the value, but the idea here is to select the one which is of low cost and also gives the most accurate values.
-    
-     
-    Sensors will collect data from the environment as per their schedule. Communication module essentially sends the sensor data to mining repository.
+
+    Having said that there is a huge classification of sensors based on the way it measures the pollutants. One such category is electro-chemical gas sensor, which is used to detect the concentration of any hazardous gases in the atmosphere by changing its resistance. The most popular series available in market for this category is MQ-XX sensors which is popular for its wide detecting scope, long life, stability, high sensitivity, fast response and also simple drive circuit \cite{Data2012}. The sensing material is made up from Aluminum Oxide ($ Al_{2}O_{3}$) based ceramic which increases the heat efficiency and has a coating of Tin Oxide $ SnO_{2} $ that acts as the sensing material for the desired gas. The sensing element is heated through Platinum wires which is connected to leads made up of Nickel-Chromium, well known conductive alloy. The gas to be detected has a specific temperature at which it gets ionized and the duty of the sensor is to work at that temperature. Once the gas gets ionized it gets absorbed by the sensing material which changes the resistance and inturn changes the current flow and gives the output \cite{gassensor}.
     
  \item {Microcontroller Board}
 
@@ -103,13 +102,13 @@ The Hardware system can be further divided into three main components as in the 
 
  \item {Communication Module}
 
-    For the sensor device to communicate with the IoT software platform  or the software for data analytic and visualization services, I am planning to use ESP8266 WiFi module that has a networkable microcontroller. This module is very compact and has high durability and power saving features. This module transfers the collected data from the microntroller to the data repository in the software environment where the further visualization and data management will be done.
+    For the sensor device to communicate with the IoT software platform  or the software for data analytic and visualization services, I have used ESP8266 WiFi module that has a networkable microcontroller. This module is very compact and has high durability and power saving features. This module transfers the collected data from the microcontroller to the data repository in the software environment where the further visualization and data management will be done.
       \end{enumerate}
 
       
  \item {Software Architecture}
  
- This component is to provide statistical data analysis and visualization through intuitive graphics services to help users to make decisions. Particularly, analytic component is needed to performs statistical functionality and animation component is to display the necessary data to users. I am aiming at a Customizabel Layered Visualization (CLV) which will concentrate the delivering of data for different stakeholders based on their interest. There will be a hierarchical visualization option in which the user themselves can drive through the data and keep on expanding the information as needed.
+ This component is to provide statistical data analysis and visualization through intuitive graphics services to help users to make decisions. Particularly, analytic component is needed to performs statistical functionality and animation component is to display the necessary data to users. I am aiming at a Customizable Layered Visualization (CLV) which will concentrate the delivering of data for different stakeholders based on their interest. There will be a hierarchical visualization option in which the user themselves can drive through the data and keep on expanding the information as needed.
 
     \end{enumerate}
     
