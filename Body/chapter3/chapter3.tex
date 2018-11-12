@@ -77,7 +77,9 @@ The development of such indexes by the scientists will give the general public m
     Sensor networks are new instruments useful to detect the conditions in remote places in the physical world in environmental monitoring applications such as pollution monitoring, transportation management, intrusion detection and many more \cite{Jung2011}. With the constant development in electronics industry, it is possible to collect data remotely and collected data can be transferred to the required platform at a short period of time.
     There are different sensors available in market which can measure the pollutants and display the value, but the idea here is to select the one which is of low cost and also gives the most accurate values.
     \par
-    Having said that there is a variety of options available for sensors based on the way it measures the pollutants. One such category is Metal Oxide Semiconductor (MOS) gas sensor also known as semiconductor gas sensor, which is used to detect the concentration of any hazardous gases in the atmosphere by changing its resistance. The most popular series available in market for this category is MQ-XX sensors which is popular for its wide detecting scope, long life, stability, high sensitivity, fast response and also simple drive circuit \cite{Data2012}.The sensing material is made up from Aluminum Oxide ($ Al_{2}O_{3}$) or Tungsten trioxide ($WO3$)based ceramic and has a coating of Tin Oxide $ SnO_{2} $ that acts as the sensing material for the desired gas. The sensing element is heated through Platinum wires which is connected to leads made up of Nickel-Chromium, well known conductive alloy. The gas to be detected has a specific temperature at which it gets ionized and the duty of the sensor is to work at that temperature. Once the gas gets ionized it gets absorbed by the sensing material which changes the resistance and inturn changes the voltage across the sensor and can be read by the microcontroller \cite{gassensor}. The voltage value is used to find the resistance of sensor by knowing the reference voltage and other resistor's resistance. The MQ-2 sensor detects more than one gases such as LPG, Propane, Hydrogen, and carbon monoxide. The sensitivity curve for the sensor is shown for different types of gases.
+    Having said that there is a variety of options available for sensors based on the way it measures the pollutants. One such category is Metal Oxide Semiconductor (MOS) gas sensor also known as semiconductor gas sensor, which is used to detect the concentration of any hazardous gases in the atmosphere by changing its resistance. The most popular series available in market for this category is MQ-XX sensors which is popular for its wide detecting scope, long life, stability, high sensitivity, fast response and also simple drive circuit \cite{Data2012}.The sensing material is made up either from Aluminum Oxide ($ Al_{2}O_{3}$) or Tungsten trioxide ($WO3$)based ceramic and has a coating of Tin Oxide $ SnO_{2} $ that acts as the sensing material for the desired gas. The sensing element is heated through Platinum wires which is connected to leads made up of Nickel-Chromium, well known conductive alloy. The gas to be detected has a specific temperature at which it gets ionized and the task of the sensor is to work at that temperature. Once the gas gets ionized it gets absorbed by the sensing material which changes the resistance and inturn changes the voltage across the sensor and can be read by the microcontroller \cite{gassensor}. The voltage value along with reference voltage and other resistor's resistance is used to find the resistance of sensor. Once the resistance of the sensor is known then by using the sensitivity curve the concentration could be found out.The sensor used here to detect carbon monoxide is MQ-2 sensor which detects more than one gases such as LPG, Propane, and Hydrogen. The sensitivity curve for the sensor is shown for different types of gases.
+
+
 
     \begin{figure}
       \begin{center}
@@ -88,30 +90,13 @@ The development of such indexes by the scientists will give the general public m
   
       where $R_{o}$ is the sensor resistance in clean air and $R_{s}$ is the sensor resistance when exposed to gas.
     \end{figure}
+
    \par
-    Another MOS sensor which we explored was MICS which are MEMS based whose mode of operation is similar to the above said sensor as both of them are metal oxide. Here, oxidizing gases add to the insulative oxygen species causing the resistance to increase \cite{SGXSensortech}.
-
+   From the curve above the voltage across the sensor is found out depending on which gas one wants to detect and there after using this voltage value the sensor resistance is calculated. Once the resistance value is found then concentration of the gas can be easily found and integrated with the processor.
+    Another popularly used  MOS sensor which we explored was MICS which are MEMS based whose mode of operation is similar to the above said sensor as both of them are metal oxide. Here, oxidizing gases add to the insulative oxygen species causing the resistance to increase \cite{SGXSensortech}. Other than MOS sensors, we also took a look at optical sensor which uses light scattering principle to find the concentration of pollutants. It consists of led, lens and photo diode inside the sensor. As soon as there is a change in concentration the photo diode detects which causes change in the current from the diode and this is how the pollutant concentration is detected \cite{Allen2002}. This sensor is known for its detecting capability of particulate matter of different sizes and is one of the recent development in the field of air quality monitoring. Highly responsive, reliable and long life are the main highlights of this sensor.
 
 
     
- \section* {Microcontroller Board}
-
-
- 
- For simplicity and ease of programming when compared , Arduino Uno can be used which has ATmega328 microcontroller board. Since it is open-source based platform with rich software support, it is a widely used platform for various applications. Arduino supports both digital and analog inputs. As edge computing is preferred in this context, most of the calculation such as measuring gas concentration and computing air quality and air quality health indices are done in Arduino.
-
-
-
- \section*{Communication Module}
-
-    For the sensor device to communicate with the IoT software platform  or the software for data analytic and visualization services, I have used ESP8266 WiFi module that has a networkable microcontroller. This module is very compact and has high durability and power saving features. This module transfers the collected data from the microcontroller to the data repository in the software environment where the further visualization and data management will be done.
-    
-
-      
- \section*{Software Architecture}
- 
- This component is to provide statistical data analysis and visualization through intuitive graphics services to help users to make decisions. Particularly, analytic component is needed to performs statistical functionality and animation component is to display the necessary data to users. I am aiming at a Customizable Layered Visualization (CLV) which will concentrate the delivering of data for different stakeholders based on their interest. There will be a hierarchical visualization option in which the user themselves can drive through the data and keep on expanding the information as needed.
-
 
     
 \bibliographystyle{plain}
