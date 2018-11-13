@@ -21,7 +21,7 @@ The progress in technology has made it easy for researchers to explore more in d
 
 \section*{Design Goals}
 
-There are many factors which need to be considered for the development of a simple yet reliable system. In this section, I have mentioned the factors which should be considered for an effective air pollution monitoring system.
+There are many factors which need to be considered for the development of a simple yet reliable system. In this section, we have mentioned the factors which should be considered for an effective air pollution monitoring system.
 
 \begin {enumerate}
 
@@ -97,7 +97,28 @@ The development of such indexes by the scientists will give the general public m
     Another popularly used  MOS sensor which we explored was MICS which are MEMS based whose mode of operation is similar to the above said sensor as both of them are metal oxide. Here, oxidizing gas or the pollutant gas add to the insulative oxygen species causing the resistance to increase \cite{SGXSensortech}.
      Other than MOS sensors, we also took a look at optical sensor which are spectroscopic devices which uses light scattering principle to find the concentration of pollutants. It consists of led, lens and photo diode inside the sensor. As soon as there is a change in concentration the photo diode detects which causes change in the current from the diode and this is how the pollutant concentration is detected \cite{Allen2002}. This sensor is known for its detecting capability of particulate matter of different sizes and is one of the recent development in the field of air quality monitoring. Highly responsive, reliable and long life are the main highlights of this sensor.
 
-     \section*{Sensor Node design}
+     \section*{System Architecture}
+    
+     In this section we describe the architecture for air pollution monitoring system which include a hardware side and a software side.The system is designed in such a way that it collects the data through the sensors, performs certain mathematical equation on the collected data and calculate the indexes then transfer these data to an IoT platform where it is visualized. The hardware section includes multiple sensors, processor and also on the wireless communication module for transmitting and receiving signals. Second, we will discuss the software side which includes the visualization part. The complete overview of the system is as shown in the figure and each part along with the sensor specification, implementation, design will be discussed further in the section. 
+
+
+     \begin{figure}
+      \begin{center}
+      \includegraphics[scale=0.80]{images/figure2.png}
+      \end{center}
+      \caption{System Architecture}
+      \label{mesh}
+  
+    \end{figure}
+
+
+     \subsection*{Hardware Architecture}
+\subsubsection*{Sensor Control and Data Processing Unit}
+     
+
+
+     
+     
 
 
     
