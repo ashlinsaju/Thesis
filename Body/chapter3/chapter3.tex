@@ -11,6 +11,8 @@
 \newtheorem{theorem}{Theorem}
 \usepackage{float}
 \usepackage{mathtools}
+\usepackage{tabularx}
+
 
 
 \begin{document}
@@ -115,15 +117,61 @@ The development of such indexes by the scientists will give the general public m
      \subsection*{Hardware Architecture}
 \subsubsection*{Sensor Control and Data Processing Unit}
 This unit is the core for the pollution monitoring as it is where all the other modules are connected including the communication middleware. This module does the following function:
+
 \begin{enumerate}
-\item It filters and processes the collected data and forward to the software.
+
 \item Control the sensors in collecting data.
+\item It filters and processes the collected data and forward to the software.
 \item Provide the necessary voltage for all the hardware connected to it.
+
+\end{enumerate}
+For simplicity and ease of programming we have selected one of the most popular processor which is Arduino Ethernet board which has ATmega328 microcontroller. It is an open source physical computing platform based on simple input/output (IO) board and a development environment that implements the processing language\cite{Banzi2008}. It is fairly easy and simple to use with any external devices such as sensors or actuators and is widely used by researchers. There are different features which make arduino popular and can be listed as \cite{Banzi2008}:
+
+
+\begin{enumerate}
+
+
+  \item Arduino is multi-platform and can be used with windows,mac and linux.
+
+  \item The programming is done via USB cable and not serial port and is useful as modern computers don't have serial port.
+
+  \item As it is open source hardware and software all the necessity for an external hardware to be worked on like circuit diagram, the code can be easily downloaded.
+  
+  \item There is an Integrated Development Environment (IDE) which can be used as an interface for talking with the hardware and is very simple.
+  
+  \item There is an active arduino forum in which many researchers or developers who are working on projects contribute their ideas and will help in trouble shooting.
+  
+  \item The cost of the hardware is very cheap and will come under 60 CAD and is easily affordable.
+  
 \end{enumerate}
 
 
-     
-     
+ 
+\begin{table}[h]
+  \caption{Technical specification}
+  \begin{tabularx}{\columnwidth}{X|X}
+      \hline
+      Description                 & specification    \\
+      \hline
+      Microcontroller & ATmega328P \\
+      Operating Voltage & 5V\\
+      Input Voltage Plug (recommended) & 7-12V\\
+      Input Voltage Plug (limits)       & 6-20V\\
+      Input Voltage PoE (limits)        & 36-57V \\
+      Digital I/O Pins    & 14 (of which 4 provide PWM output)     \\
+      Analog Input Pins & 6\\
+      Flash Memory & 32 KB (ATmega328P) of which 0.5 KB used by bootloader\\
+      SRAM     & 2 KB (ATmega328P)\\
+      EEPROM   & 1 KB (ATmega328P) \\
+      Clock Speed  & 16 MHz\\
+      \hline
+  \end{tabularx}
+  \label{table:Technical specification}
+\end{table}
+
+
+
+
 
 
     
