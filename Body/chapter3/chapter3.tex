@@ -83,7 +83,7 @@ The development of such indexes by the scientists will give the general public m
 
 
 
-    \begin{figure}
+    \begin{figure}[h]
       \begin{center}
       \includegraphics[scale=0.40]{images/figure1.png}
       \end{center}
@@ -104,7 +104,7 @@ The development of such indexes by the scientists will give the general public m
      In this section we describe the architecture for air pollution monitoring system which include a hardware side and a software side.The system is designed in such a way that it collects the data through the sensors, performs certain mathematical equation on the collected data and calculate the indexes then transfer these data to an IoT platform where it is visualized. The hardware section includes multiple sensors, processor and also on the wireless communication module for transmitting and receiving signals. Second, we will discuss the software side which includes the visualization part. The complete overview of the system is as shown in the figure and each part along with the sensor specification, implementation, design will be discussed further in the section. 
 
 
-     \begin{figure}
+     \begin{figure}[h]
       \begin{center}
       \includegraphics[scale=0.80]{images/figure2.png}
       \end{center}
@@ -125,7 +125,8 @@ This unit is the core for the pollution monitoring as it is where all the other 
 \item Provide the necessary voltage for all the hardware connected to it.
 
 \end{enumerate}
-For simplicity and ease of programming we have selected one of the most popular processor which is Arduino Ethernet board which has ATmega328 microcontroller. It is an open source physical computing platform based on simple input/output (IO) board and a development environment that implements the processing language\cite{Banzi2008}. It is fairly easy and simple to use with any external devices such as sensors or actuators and is widely used by researchers. There are different features which make arduino popular and can be listed as \cite{Banzi2008}:
+
+For simplicity and ease of programming we have selected one of the most popular processor in market, Arduino Ethernet board which has ATmega328 microcontroller. Arduino is an open source physical computing platform that is divided into two parts, one is the hardware which is the board itself in which the external components are added to and other is the software which is the development environment for the  processing language. It is very easy and simple to use the board with any external devices such as sensors or actuators and is widely used by researchers. There are different features which makes arduino popular and can be listed as \cite{Banzi2008}:
 
 
 \begin{enumerate}
@@ -144,6 +145,7 @@ For simplicity and ease of programming we have selected one of the most popular 
   \item The cost of the hardware is very cheap and will come under 60 CAD and is easily affordable.
   
 \end{enumerate}
+The board can be powered either by using a FTDI cable/USB serial connector, external power supply or using an optical Power Over ethernet module (PoE). The ATmega328 has 2 KB of SRAM and 1 KB of EEPROM. The detailed specification \cite{bworld} of the board is given below in the table.
 
 
  
@@ -168,7 +170,8 @@ For simplicity and ease of programming we have selected one of the most popular 
   \end{tabularx}
   \label{table:Technical specification}
 \end{table}
-
+ 
+Having all these specification gives the freedom for researchers to explore with different electronic devices easily. 
 
 
 
