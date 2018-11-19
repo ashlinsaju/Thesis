@@ -1,4 +1,5 @@
-\documentclass[11pt]{article}
+
+\documentclass[12pt,a4paper,oneside]{report}
 
 \topmargin -.5in
 \evensidemargin 0in
@@ -73,33 +74,7 @@ Our surrounding is filled with various gases, these gases will become harmful if
 
 The development of such indexes by the scientists will give the general public more idea of the pollution. The main gases to be included for the measurement for the indexes are  $PM_{2.5}, O_3, NO_2$, and $CO$ along with temperature and humidity sensor for awareness. These gases are mainly caused due to industrialization, urbanization and motorization \cite{Saha1952}. Industrial and vehicles release greenhouse emissions which are largely responsible for air pollution \cite{ internet}. The sensors thus can be limited to five which will also make the system compact.
 
-
-   \section*{Sensor Selection} 
-    
-    Sensor networks are new instruments useful to detect the conditions in remote places in the physical world in environmental monitoring applications such as pollution monitoring, transportation management, intrusion detection and many more \cite{Jung2011}. With the constant development in electronics industry, it is possible to collect data remotely and collected data can be transferred to the required platform at a short period of time.
-    There are different sensors available in market which can measure the pollutants and display the value, but the idea here is to select the one which is of low cost and also gives the most accurate values.
-    \par
-    Having said that there is a variety of options available for sensors based on the way it measures the pollutants. One such category is Metal Oxide Semiconductor (MOS) gas sensor also known as semiconductor gas sensor, which is used to detect the concentration of any hazardous gases in the atmosphere by changing its resistance. The most popular series available in market for this category is MQ-XX sensors which is popular for its wide detecting scope, long life, stability, high sensitivity, fast response and also simple drive circuit \cite{Data2012}.The sensing material is made up either from Aluminum Oxide ($ Al_{2}O_{3}$) or Tungsten trioxide ($WO3$)based ceramic and has a coating of Tin Oxide $ SnO_{2} $ that acts as the sensing material for the desired gas. The sensing element is heated through Platinum wires which is connected to leads made up of Nickel-Chromium, well known conductive alloy. The gas to be detected has a specific temperature at which it gets ionized and the task of the sensor is to work at that temperature. Once the gas gets ionized it gets absorbed by the sensing material which changes the resistance and inturn changes the voltage across the sensor and can be read by the microcontroller \cite{gassensor}. The voltage value along with reference voltage and other resistor's resistance is used to find the resistance of sensor. Once the resistance of the sensor is known then by using the sensitivity curve the concentration could be found out. One such sensor used here to detect carbon monoxide is MQ-2 sensor which detects more than one gases such as LPG, Propane, and Hydrogen. The sensitivity curve for the sensor is shown for different types of gases.
-
-
-
-    \begin{figure}[h]
-      \begin{center}
-      \includegraphics[scale=0.40]{images/figure1.png}
-      \end{center}
-      \caption{Sensitivity characteristics curve \cite{Data2012}}
-      \label{mesh}
-  
-      where $R_{o}$ is the sensor resistance in clean air and $R_{s}$ is the sensor resistance when exposed to gas.
-    \end{figure}
-
-   \par
-   From the curve above the voltage across the sensor is found out depending on which gas one wants to detect and there after using this voltage value the concentration of pollutant is calculated.
-
-    Another popularly used  MOS sensor which we explored was MICS which are MEMS based whose mode of operation is similar to the above said sensor as both of them are metal oxide. Here, oxidizing gas or the pollutant gas add to the insulative oxygen species causing the resistance to increase \cite{SGXSensortech}.
-     Other than MOS sensors, we also took a look at optical sensor which are spectroscopic devices which uses light scattering principle to find the concentration of pollutants. It consists of led, lens and photo diode inside the sensor. As soon as there is a change in concentration the photo diode detects which causes change in the current from the diode and this is how the pollutant concentration is detected \cite{Allen2002}. This sensor is known for its detecting capability of particulate matter of different sizes and is one of the recent development in the field of air quality monitoring. Highly responsive, reliable and long life are the main highlights of this sensor.
-
-     \section*{System Architecture}
+\section*{System Architecture}
     
      In this section we describe the architecture for air pollution monitoring system which include a hardware side and a software side.The system is designed in such a way that it collects the data through the sensors, performs certain mathematical equation on the collected data and calculate the indexes then transfer these data to an IoT platform where it is visualized. The hardware section includes multiple sensors, processor and also on the wireless communication module for transmitting and receiving signals. Second, we will discuss the software side which includes the visualization part. The complete overview of the system is as shown in the figure and each part along with the sensor specification, implementation, design will be discussed further in the section. 
 
@@ -118,6 +93,7 @@ The development of such indexes by the scientists will give the general public m
 \subsubsection*{Sensor Control and Data Processing Unit}
 This unit is the core for the pollution monitoring as it is where all the other modules are connected including the communication middleware. This module does the following function:
 
+
 \begin{enumerate}
 
 \item Control the sensors in collecting data.
@@ -125,8 +101,17 @@ This unit is the core for the pollution monitoring as it is where all the other 
 \item Provide the necessary voltage for all the hardware connected to it.
 
 \end{enumerate}
+For simplicity and ease of programming we have selected one of the most popular processor in market, Arduino Ethernet board which has ATmega328 microcontroller as shown in Fig.\ref{Arduino}. 
 
-For simplicity and ease of programming we have selected one of the most popular processor in market, Arduino Ethernet board which has ATmega328 microcontroller. Arduino is an open source physical computing platform that is divided into two parts, one is the hardware which is the board itself in which the external components are added to and other is the software which is the development environment for the  processing language. It is very easy and simple to use the board with any external devices such as sensors or actuators and is widely used by researchers. There are different features which makes arduino popular and can be listed as \cite{Banzi2008}:
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[scale=0.80]{images/figure3.png}
+  \end{center}
+  \caption{Arduino Ethernet Board}
+  \label{Arduino}
+\end{figure}
+
+Arduino is an open source physical computing platform that is divided into two parts, one is the hardware which is the board itself in which the external components are added to and other is the software which is the development environment for the  processing language. It is very easy and simple to use the board with any external devices such as sensors or actuators and is widely used by researchers. There are different features which makes arduino popular and can be listed as \cite{Banzi2008}:
 
 
 \begin{enumerate}
@@ -145,9 +130,8 @@ For simplicity and ease of programming we have selected one of the most popular 
   \item The cost of the hardware is very cheap and will come under 60 CAD and is easily affordable.
   
 \end{enumerate}
-The board can be powered either by using a FTDI cable/USB serial connector, external power supply or using an optical Power Over ethernet module (PoE). The ATmega328 has 2 KB of SRAM and 1 KB of EEPROM. The detailed specification \cite{bworld} of the board is given below in the table.
 
-
+The board can be powered either by using a FTDI cable/USB serial connector, external power supply or using an optical Power Over ethernet module (PoE). The ATmega328 has 2 KB of SRAM and 1 KB of EEPROM. The detailed specification\cite{Guti2017} of the board is given below in the table.
  
 \begin{table}[h]
   \caption{Technical specification}
@@ -171,14 +155,50 @@ The board can be powered either by using a FTDI cable/USB serial connector, exte
   \label{table:Technical specification}
 \end{table}
  
-Having all these specification gives the freedom for researchers to explore with different electronic devices easily. 
+Having all these specification gives the freedom for researchers to explore with different electronic devices easily. The board is programmed with the help of arduino programming language which is very close to embedded C language and it is done on Arduino development environment. 
+
+\subsection*{Sensor}
+
+Sensor networks are new instruments useful to detect the conditions in remote places in the physical world in environmental monitoring applications such as pollution monitoring, transportation management, intrusion detection and many more \cite{Jung2011}. With the constant development in electronics industry, it is possible to collect data remotely and collected data can be transferred to the required platform at a short period of time.
+There are different sensors available in market which can measure the pollutants and display the value, but the idea here is to select the one which is of low cost and also gives the most accurate values.
+\par
+Having said that there is a variety of options available for sensors based on the way it measures the pollutants. One such category is Metal Oxide Semiconductor (MOS) gas sensor also known as semiconductor gas sensor, which is used to detect the concentration of any hazardous gases in the atmosphere by changing its resistance. The most popular series available in market for this category is MQ-XX sensors which is popular for its wide detecting scope, long life, stability, high sensitivity, fast response and also simple drive circuit \cite{Data2012}.The sensing material is made up either from Aluminum Oxide ($ Al_{2}O_{3}$) or Tungsten trioxide ($WO3$)based ceramic and has a coating of Tin Oxide $ SnO_{2} $ that acts as the sensing material for the desired gas. The sensing element is heated through Platinum wires which is connected to leads made up of Nickel-Chromium, well known conductive alloy. The gas to be detected has a specific temperature at which it gets ionized and the task of the sensor is to work at that temperature. Once the gas gets ionized it gets absorbed by the sensing material which changes the resistance and inturn changes the voltage across the sensor and can be read by the microcontroller \cite{gassensor}. The voltage value along with reference voltage and other resistor's resistance is used to find the resistance of sensor. Once the resistance of the sensor is known then by using the sensitivity curve the concentration could be found out. 
+
+Another popularly used  MOS sensor which we explored was MICS which are MEMS based whose mode of operation is similar to the above said sensor as both of them are metal oxide. Here, oxidizing gas or the pollutant gas add to the insulative oxygen species causing the resistance to increase \cite{SGXSensortech}.
+ Other than MOS sensors, we also took a look at optical sensor which are spectroscopic devices which uses light scattering principle to find the concentration of pollutants. These sensors are known for its detecting capability of particulate matter of different sizes and is one of the recent development in the field of air quality monitoring. Highly responsive, reliable and long life are the main highlights of this sensor.
+ \subsubsection*{Selected Sensor}
+
+ After understanding the wide range of sensor options in the market the sensors were selected based on their performance, availability, ease of integration, and cost. The selected sensors were:
+ \begin{enumerate}
+\item MQ-2 Sensor: This is a a semiconductor gas sensor which has an electrochemical sensor which detects multiple gases such as Carbon monoxide, LPG, methane, and other combustible steam. The sensor is connected in series with a variable resistor to form a voltage divider circuit and the variable resistor is used to change the sensitivity. The sensitivity curve for the sensor is shown for different types of gases.
+\par
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[scale=0.40]{images/figure1.png}
+  \end{center}
+  \caption{Sensitivity characteristics curve \cite{Data2012}}
+  \label{curve}
+
+  where $R_{o}$ is the sensor resistance in clean air and $R_{s}$ is the sensor resistance when exposed to gas.
+\end{figure}
+From the curve in Fig.\ref{curve}, the voltage across the sensor is found out depending on which gas one wants to detect and there after using this voltage value the concentration of pollutant is calculated. The range of detection of gas is from 100ppm to 10,000 ppm and has a high sensitivity and fast response time. The sensor is small and portable and provides integration in famous MCU platforms like arduino, raspberry pi etc. 
+
+\item MQ 131: Another MQ-XX series sensor that we used for the system is for ozone. The working of the sensor is similar to MQ-2 sensor. It decreases the resistance when exposed to ozone and becomes more conductive when exposed to large concentration of the gas. This can be used to measure the concentration of ozone in air. The detecting concentration scope is from 10ppb to 2 ppm of ozone and also has a fast response time and long life.
+
+\item MICS-2714: This is a robust MEMS sensor used for the detection of Nitrogen dioxide ($NO_2$). The detection range is from 0.05 to 10 ppm and has a response time of 10 seconds. The sensor is comparatively small and of low cost.
+
+\item  PPD42NS Particulate sensor: The sensor detects the particulate matter through light scattering mechanism and consists of infrared LED positioned in forward angle to a photo diode. As soon as there is a variation in light density, the photo diode detects this and changes the current from the diode \cite{Allen2002}. The circuit generates a measurable signal known as Low Pulse Occupancy (LPO) which is proportional to PM concentration \cite{Kuula2017}. This sensor can measure both PM2.5 and PM10 concentration.
+
+\item DHT11: This a very low cost sensor available in market for temperature and humidity measurement and has a calibrated digital output. The measurement range for temperature is from 0 degree to 50 degree Celsius. The device can be integrated to almost all platforms of Microcontroller and is considered to be the best choice for many applications.
+
+ \end{enumerate}
 
 
 
 
 
-    
 
+  
     
 \bibliographystyle{plain}
 \bibliography{chapter3}
