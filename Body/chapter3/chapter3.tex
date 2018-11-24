@@ -193,7 +193,10 @@ From the curve in Fig.\ref{curve}, the voltage across the sensor is found out de
 
  \end{enumerate}
 
-
+ \subsection*{Communication Middleware}
+ 
+ The collected data needs to be transferred to a platform so that user can understand its effects. We have used a WiFi module for this purpose, which will collect the data from the processor and transfers it to a IOT platform said to. The WiFi module used here is ESP8266, which is a highly integrated SOC that meets the requirement of user demand of efficient power usage, compact design and reliable performance\cite{Systems2018}. The ESP module can be connected to a processor or it can also be programmed on its own as the module itself is a MCU unit. Unlike the other sensor modules connected to the processor which needs a 5V power supply for its working, this module needs a 3.3V for its power up. The ESP module comes along with installed firmware from AI-thinker and it can be communicated with AT commands.On typing the AT command in the serial monitor the output would come as 'OK' if there is a successful connection. This firmware can be replaced with user's own code which gives the power of flexibility of connecting with any IOT platform. The arduino platform supports the programming of ESP module which makes the integration much easier. The code can be written in the Arduino IDE and can be flashed into the ESP board by connecting it separately.
+ The circuit for the ESP flashing is as shown which is a voltage divider circuit.[FIGURE NEEDS TO BE INSERTED] When the TX and RX pin of arduino is connected to TX and RX pin of the WiFi module it becomes in the programming mode and flashing occurs. 
 
 
 
