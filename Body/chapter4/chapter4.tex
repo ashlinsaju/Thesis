@@ -31,9 +31,33 @@ Even though these 'Straw-Man Approach' was defined well it was still hard to imp
 
 \section*{Calibration Procedure}
 
-The Air Sensor Toolbox provide guidelines for researchers, citizen scientists and developers with working of low cost sensor and its calibration.
+The Air Sensor Toolbox provide guidelines for researchers, citizen scientists and developers with working of low cost sensor and its calibration to give more insight about air quality \cite{airsensortoolbox}. The Air Sensor guidebook\cite{airsensorguidebook} provides a three step procedure for calibrating a sensor:
+\begin{enumerate}
+    \item Comparing the data from the low cost sensor with a reference instrument.
+    
+This means the data collected from the sensor system should be compared with the data from an already calibrated system which is placed by the local authority. This type of comparison is called as 'collocation' and in order to collocate, first find out where the reference system is placed and get access to the data from these system. After getting access to these system place the sensor system at the same level as the standard reference. Once this is done the data collected from both the system can be downloaded in the desired format.
 
+    \item Creating a calibration curve with the help of Macro Analysis Tool (MAT).
+
+The relationship between the response of an analytical instrument to the concentration or amount of an analyte introduced into a known instrument is referred to as the “calibration curve” \cite{Epa2010}. The MAT tool by EPA is used for drawing the calibration curve and will give an error function as output. This error function is an equation which can be used for calibrating the sensor.
+    \item Repeating the calibration periodically.
+
+    This procedure of calibration should be done periodically as the performance of instruments changes often. There will be changes in the equation and graph each time and this should be noted so as to get accurate value.
+\end{enumerate} 
+
+\section*{Macro Analysis Tool -MAT}
+The development of MAT tool gives a huge reliefs for the researchers in calibrating sensor data. This is an Excel based user-friendly macro tool that compares sensor data with reference data \cite{National2017}. The user needs to insert the data from the sensor into the sensor page of the tool and the values from the reference station is inserted into the reference page of the tool. After these values are inserted the details of pollutant, time interval, measurement units and data completeness (amount of usable data obtained) needs to be added in the set up page of the MAT. After all the required fields are filled the output page as shown in the figure \ref{MAT} shows the two sets of data being compared as per the control panel setting made in the tool \cite{National2017}. 
+
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics[scale=0.35]{images/figure6.png}
+    \end{center}
+    \caption{MAT Output}
+    \label{MAT}
+  \end{figure}
 
 \bibliographystyle{plain}
 \bibliography{chapter4}
 \end{document}
+
+This output page basically gives the statistical comparison of two different data sets.
