@@ -46,7 +46,8 @@ The relationship between the response of an analytical instrument to the concent
 \end{enumerate} 
 
 \section*{Macro Analysis Tool -MAT}
-The development of MAT tool gives a huge reliefs for the researchers in calibrating sensor data. This is an Excel based user-friendly macro tool that compares sensor data with reference data \cite{National2017}. The user needs to insert the data from the sensor into the sensor page of the tool and the values from the reference station is inserted into the reference page of the tool. After these values are inserted the details of pollutant, time interval, measurement units and data completeness (amount of usable data obtained) needs to be added in the set up page of the MAT. After all the required fields are filled the output page as shown in the figure \ref{MAT} shows the two sets of data being compared as per the control panel setting made in the tool \cite{National2017}. 
+The development of MAT tool gives a huge reliefs for the researchers in calibrating sensor data. This is an Excel based user-friendly macro tool that compares sensor data with reference data \cite{National2017} even if measurements weren’t recorded at precisely the same time, or were collected at different time intervals, such as 1-minute versus 5-minute intervals \cite{mattool}. The user needs to insert the data from the sensor into the sensor page of the tool and the values from the reference station is inserted into the reference page of the tool. After these values are inserted the details of pollutant, time interval, measurement units and data completeness (amount of usable data obtained) needs to be added in the set up page of the MAT. After all the required fields are filled the output page as shown in the figure \ref{MAT} shows the two sets of data being compared as per the control panel setting made in the tool \cite{National2017}.
+This output page basically gives the statistical comparison of two different data sets. From this page it could be seen that the date and time stamps are averaged to a single value for both the system. There is another column in the sheet which is the invalid data points that gives the total number of non validated data points during the observed time. This non validated data points occurs due to either the fault by instrument or it could be the fault in reading by MAT or it could be even due to unacceptable range specified by the user.
 
 \begin{figure}[h]
     \begin{center}
@@ -56,8 +57,40 @@ The development of MAT tool gives a huge reliefs for the researchers in calibrat
     \label{MAT}
   \end{figure}
 
+ 
+\par
+Another output page provided by the tool is correlation graph which plots a graph between the reference monitor and the sensor data as in the figure \ref{cor}.
+The graph drawn will be a scatter plot and a line called as 'slope-intercept' will be drawn through the data points and is represented simply by the equation $ y = mx + c $. This equation represents the average behavior of the sensor data (vertical axis, represented by y) compared with the reference data (horizontal axis, represented by x) \cite{National2017}. The slope of the graph shows the similarity or difference in sensor measurements when compared with the reference instrument, on average. 
+
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics[scale=0.35]{images/figure7.png}
+    \end{center}
+    \caption{Correlation Graph}
+    \label{cor}
+  \end{figure}
+
+The tool also generates a coefficient of determination (also known as correlation coefficient in statistics) or R-Squared ($R^2 $) shows how close the value is to the slope-intercept line. The value ranges from 0 to 1 and the closer $R^2$ is to 1, the stronger the agreement between the sensor and the reference data \cite{Williams2018}. Along with these output the tool also generates a time series output graph which will show the concentration of pollutant for both the system as in the figure \ref{time}
+
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics[scale=0.40]{images/figure8.png}
+    \end{center}
+    \caption{Time-Series Graph}
+    \label{time}
+  \end{figure}
+
+From the Time-Series graph it could be seen how the closely value from two different system is related to.
+Having included all these functionality in the tool gives a strong solution for the calibration. The development of the tool was a year-long project of EPA with other community group(Clean Air
+Carolina) and  one tribal nation(Eastern Band of Cherokee Indians). The next section will expand in detail about the background concept about the working of tool which is linear regression.
+
+\section*{Linear Regression}
+Calibration can be done through different statistical methods and the most popular approach is Linear Regression method. In statistics, the term regression is used to describe a group of methods that summarize the degree of association between one variable (or set of variables) and another variable (or set of variables) \cite{Burke}. Linear Regression establishes relationship between two variables one is the independent variable which will be on the $x$ axis and the dependent variable in the $y$ axis by drawing a straight line.
+
+
+
+
 \bibliographystyle{plain}
 \bibliography{chapter4}
 \end{document}
 
-This output page basically gives the statistical comparison of two different data sets.
