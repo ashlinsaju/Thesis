@@ -16,9 +16,10 @@
 
 \begin{document}
 
+
 \section*{Calibration Of Low Cost Sensor}
 
-With the development of sensor technology for air pollution it has attracted a majority of researchers as well as common people to explore and understand more about the pollutants and its effects. This has given freedom for one to set up their own monitoring system at residences, office or even at schools. The problem with this is to identify how accurate the data collected from these commodity sensors to the reference monitoring system. If the system is giving values which is way too different from the reference value then it brings down the advantages of this technology. This issue can be dealt through calibration which will reduce the uncertainty in data and makes the output more accurate. 
+With the development of sensor technology for air pollution it has attracted a majority of researchers as well as common people to explore and understand more about the pollutants and its effects. This has given freedom for one to set up their own monitoring system at residences, office or even at schools. The problem with this is to identify how accurate the data collected from these commodity sensors to the reference monitoring system. The reference system are the pollution monitoring devices that are developed to a clearly defined standard for a specific criteria pollutant [s] and has completed a rigorous testing and analysis protocol \cite{Hall2014}. If the system is giving values which is way too different from the reference value then it brings down the advantages of this technology. This issue can be dealt through calibration which will reduce the uncertainty in data and makes the output more accurate. 
 \par 
 Calibration can be defined as the act of evaluating and adjusting the precision and accuracy of measurement equipment \cite{Kejuruteraan2018}. If the measured output from the sensor is not equals to the actual output then it shows that there is a need for calibration. Usually all the electronic instruments are calibrated according to a particular conditions in the laboratory and acquires a certification of calibration before its sold out in the markets. Even then the measured value does not reach accuracy as the condition or the environment where it was calibrated changes that leaves the user with some raw values that gives no information. This issue was taken up and explored by a few researchers in the US Environmental Protection Agency(EPA) and came up with three so called 'Straw-Man Approach' to improve the usability of such data and presented in the Air sensor Workshop \cite{Williams2013}. 
 
@@ -103,7 +104,7 @@ If there are many observations and is plotted as a scatter plot then a line call
 \begin{center}
 
     
-             {\LARGE  $ m = \frac{\sum_{i}[(x_i-\bar{x})(y_i-\bar{y})]}{[ \sum_{i}(x_i-\bar{x})^2 ]}$} \cite{Stone2001} \cite{Arsova2009} \cite{Burke}
+             {\large  $ m = \frac{\sum_{i}[(x_i-\bar{x})(y_i-\bar{y})]}{[ \sum_{i}(x_i-\bar{x})^2 ]}$} \cite{Stone2001} \cite{Arsova2009} \cite{Burke}
 
 
 \end{center}
@@ -112,7 +113,7 @@ The intercept equation $c$ is
 
 \begin{center}
  
-    {\LARGE $ C = \bar{y}-m\bar{x}$} \cite{Stone2001} \cite{Harvey2016}
+    { $ C = \bar{y}-m\bar{x}$} \cite{Stone2001} \cite{Harvey2016}
 
 \end{center}
 
@@ -120,11 +121,12 @@ On getting the slope and intercept value the equation of line can be found. Once
 
 \begin{center}
 
-    {\LARGE $R^2 = \frac{\sum_i[(x_i-\bar x)(y_i-\bar y)]}{\sqrt{[\sum_i(x_i-\bar x)^2[\sum_i(y_i-\bar y)^2]]}}$ } \cite{Stone2001}
+    {\large $R^2 = \frac{\sum_i[(x_i-\bar x)(y_i-\bar y)]}{\sqrt{[\sum_i(x_i-\bar x)^2[\sum_i(y_i-\bar y)^2]]}}$ } \cite{Stone2001}
 
 \end{center}
 The range of value for $R^2$ is between 0 to 1 and closer the value is to 1, the stronger the correlation between the two data.
 All these equation can be easily calculated with the help of Excel and thus all these equations are integrated to the MAT tool.
+
 
 \bibliographystyle{plain}
 \bibliography{chapter4}
