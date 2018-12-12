@@ -13,13 +13,13 @@
 \usepackage{float}
 \usepackage{mathtools}
 \usepackage{tabularx}
-
+\linespread{1.5}
 
 \begin{document}
 
 \section*{Design and Implementation of the Air Pollution Monitoring System}
 
-The progress in technology has made it easy for researchers to explore more in different areas. One such development is in the area of sensor technology which completely changed the outlook of different application level problems. In this chapter, I share my hands-on experience in the development, design, integration, and operation of the air pollution system using commodity sensor. Earlier, the approach for understanding air pollution used complex and stationary equipment which collects data and used these data for analyzing, but things have changed after the low cost, easy to use, portable sensors came in markets \cite{Snyder2013}. 
+The progress in technology has made it easy for researchers to explore more in different areas. One such development was is in the area of sensor technology which completely changed the outlook of different application level problems. In this chapter, I share my hands-on experience in the development, design, integration, and operation of the air pollution system using commodity sensor. Earlier, the approach for understanding air pollution used complex and stationary equipment which collects data and used these data for analyzing, but things have changed after the low cost, easy to use, portable sensors came in markets \cite{Snyder2013}. 
 
 \section*{Design Goals}
 
@@ -75,12 +75,12 @@ The development of such indexes by the scientists will give the general public m
 
 \section*{System Architecture}
     
-     In this section we describe the architecture for air pollution monitoring system which include a hardware side and a software side.The system is designed in such a way that it collects the data through the sensors, performs certain mathematical equation on the collected data and calculate the indexes then transfer these data to an IoT platform where it is visualized. The hardware section includes multiple sensors, processor and also on the wireless communication module for transmitting and receiving signals. Second, we will discuss the software side which includes the visualization part. The complete overview of the system is as shown in the figure and each part along with the sensor specification, implementation, design will be discussed further in the section. 
+     In this section we describe the architecture for air pollution monitoring system which include a hardware side and a software side.The system is designed in such a way that it collects the data through the sensors, performs certain mathematical equation on the collected data and calculate the indexes then transfer these data to an IoT platform where it is visualized. The hardware section includes multiple sensors, processor and also on the wireless communication module for transmitting and receiving signals. Second, we will discuss the IoT side which includes the visualization part. The complete idea of the system is as shown in the figure and each part along with the sensor specification, implementation, design will be discussed further in the section. 
 
 
      \begin{figure}[h]
       \begin{center}
-      \includegraphics[scale=0.80]{images/figure2.png}
+      \includegraphics[scale=0.70]{images/figure2.png}
       \end{center}
       \caption{System Architecture}
       \label{mesh}
@@ -169,7 +169,8 @@ Another popularly used  MOS sensor which we explored was MICS which are MEMS bas
 
  After understanding the wide range of sensor options in the market the sensors were selected based on their performance, availability, ease of integration, and cost. The selected sensors were:
  \begin{enumerate}
-\item MQ-2 Sensor: This is a a semiconductor gas sensor which has an electrochemical sensor which detects multiple gases such as Carbon monoxide, LPG, methane, and other combustible steam. The sensor is connected in series with a variable resistor to form a voltage divider circuit and the variable resistor is used to change the sensitivity. The sensitivity curve for the sensor is shown for different types of gases.
+
+  \item MQ-2 Sensor: This is a a semiconductor gas sensor which has an electrochemical sensor which detects multiple gases such as Carbon monoxide, LPG, methane, and other combustible steam. The sensor is connected in series with a variable resistor to form a voltage divider circuit and the variable resistor is used to change the sensitivity. The sensitivity curve for the sensor is shown for different types of gases.
 \par
 \begin{figure}[h]
   \begin{center}
@@ -198,9 +199,33 @@ From the curve in Fig.\ref{curve}, the voltage across the sensor is found out de
 
  This firmware can be replaced with user's own code which gives the power of flexibility of connecting with any IOT platform. The arduino platform supports the programming of ESP module which makes the integration much easier. The code can be written in the Arduino IDE and can be flashed into the ESP board by connecting it separately.
  The circuit for the ESP flashing is as shown which is a voltage divider circuit.[FIGURE NEEDS TO BE INSERTED] When the TX and RX pin of arduino is connected to TX and RX pin of the WiFi module it becomes in the programming mode and flashing occurs. 
+ 
+ \section*{System Overview}
+The complete circuit diagram of how the components are integrated to the Microcontroller is as shown is the figure \ref{system}. Each of these sensors were carefully arranged so that it reduces the spatial interferences. As majority of the sensors are heat sensors and discharges heat it affects the working of the sensor placed near to it. The initial arrangement of the sensors were done in the breadboard with wires. Building the circuit in breadboard gave the flexibility of working with different arrangements.
 
-  
-    
+ \begin{figure}[h]
+  \begin{center}
+  \includegraphics[scale=0.95]{images/figure5.png}
+  \end{center}
+  \caption{System Overview}
+  \label{system}
+\end{figure}
+
+After building the circuit in breadboard, it was migrated to a Printed Circuit Board (PCB) developed by Flemings Solution Ltd, India. The design of the board is as shown in the figure \ref{pcb}. The PCB was designed in such a way that each sensors and the microcontroller itself was plug-in model to board. This was done so that in case of any malfunctioning of any of the sensors or processor, it could be replaced easily. The main advantage of using a PCB design is that all the components are fixed and there is no wiring at all. This produces a zero error circuit and there wont be any short circuiting.
+
+
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[scale=0.50]{images/figure10.png}
+  \end{center}
+  \caption{Printed Circuit Board}
+  \label{pcb}
+\end{figure}
+
+\section*{IoT Architecture}
+
+The hardware is the one responsible for the data collection but making these data available to user is done by the visualizing tool. The main objective which was kept when developing the system was the data collected should be accessed from anywhere and thats why IoT platforms were selected.
 
  \bibliographystyle{plain}
  \bibliography{chapter3}
