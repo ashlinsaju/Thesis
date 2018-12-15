@@ -1,24 +1,4 @@
-\documentclass[12pt,a4paper,oneside]{report}
-
-\topmargin -.5in
-\evensidemargin 0in
-\oddsidemargin 0in
-\textheight 9in
-\textwidth 6.5in
-\usepackage{url}
-\usepackage{graphicx}
-\usepackage{amsmath,amssymb,amsfonts}
-\newtheorem{theorem}{Theorem}
-\usepackage{float}
-\usepackage{mathtools}
-\usepackage{tabularx}
-\linespread{1.5}
-
-
-\begin{document}
-
-
-\section*{Calibration Of Low Cost Sensor}
+\chapter{Calibration Of Low Cost Sensor}
 
 With the development of sensor technology for air pollution it has attracted a majority of researchers as well as common people to explore and understand more about the pollutants and its effects. This has given freedom for one to set up their own monitoring system at residences, office or even at schools. The problem with this is to identify how accurate the data collected from these commodity sensors to the reference monitoring system. The reference system are the pollution monitoring devices that are developed to a clearly defined standard for a specific criteria pollutant [s] and has completed a rigorous testing and analysis protocol \cite{Hall2014}. If the system is giving values which is way too different from the reference value then it brings down the advantages of this technology. This issue can be dealt through calibration which will reduce the uncertainty in data and makes the output more accurate. 
 \par 
@@ -32,7 +12,7 @@ The last option is by secondary data normalization in which the concentration va
 
 Even though these 'Straw-Man Approach' was defined well it was still hard to implement it practically. This eventually led to the development of the 'Air Sensor Toolbox' by the Environmental Protection Agency (EPA) \cite{Williams2014} which introduced a tool called 'Macro Analysis Tool' (MAT) for performing comparisons of air sensor data with reference data and interpreting the results \cite{airsensorguidebook}.
 
-\section*{Calibration Procedure}
+\section{Calibration Procedure}
 
 The Air Sensor Toolbox provide guidelines for researchers, citizen scientists and developers with working of low cost sensor and its calibration to give more insight about air quality \cite{airsensortoolbox}. The Air Sensor guidebook\cite{airsensorguidebook} provides a three step procedure for calibrating a sensor:
 \begin{enumerate}
@@ -48,13 +28,13 @@ The relationship between the response of an analytical instrument to the concent
     This procedure of calibration should be done periodically as the performance of instruments changes often. There will be changes in the equation and graph each time and this should be noted so as to get accurate value.
 \end{enumerate} 
 
-\section*{Macro Analysis Tool -MAT}
+\section{Macro Analysis Tool -MAT}
 The development of MAT tool gives a huge reliefs for the researchers in calibrating sensor data. This is an Excel based user-friendly macro tool that compares sensor data with reference data \cite{National2017} even if measurements weren’t recorded at precisely the same time, or were collected at different time intervals, such as 1-minute versus 5-minute intervals \cite{mattool}. The user needs to insert the data from the sensor into the sensor page of the tool and the values from the reference station is inserted into the reference page of the tool. After these values are inserted the details of pollutant, time interval, measurement units and data completeness (amount of usable data obtained) needs to be added in the set up page of the MAT. After all the required fields are filled the output page as shown in the figure \ref{MAT} shows the two sets of data being compared as per the control panel setting made in the tool \cite{National2017}.
 This output page basically gives the statistical comparison of two different data sets. From this page it could be seen that the date and time stamps are averaged to a single value for both the system. There is another column in the sheet which is the invalid data points that gives the total number of non validated data points during the observed time. This non validated data points occurs due to either the fault by instrument or it could be the fault in reading by MAT or it could be even due to unacceptable range specified by the user.
 
 \begin{figure}[h]
     \begin{center}
-    \includegraphics[scale=0.35]{images/figure6.png}
+    \includegraphics[scale=0.35]{./images/figure6.png}
     \end{center}
     \caption{MAT Output}
     \label{MAT}
@@ -67,7 +47,7 @@ The graph drawn will be a scatter plot and a line called as 'slope-intercept' wi
 
 \begin{figure}[h]
     \begin{center}
-    \includegraphics[scale=0.35]{images/figure7.png}
+    \includegraphics[scale=0.35]{./images/figure7.png}
     \end{center}
     \caption{Correlation Graph}
     \label{cor}
@@ -77,7 +57,7 @@ The tool also generates a coefficient of determination (also known as correlatio
 
 \begin{figure}[h]
     \begin{center}
-    \includegraphics[scale=0.40]{images/figure8.png}
+    \includegraphics[scale=0.40]{./images/figure8.png}
     \end{center}
     \caption{Time-Series Graph}
     \label{time}
@@ -87,7 +67,7 @@ From the Time-Series graph it could be seen how the closely value from two diffe
 Having included all these functionality in the tool gives a strong solution for the calibration. The development of the tool was a year-long project of EPA with other community group(Clean Air
 Carolina) and  one tribal nation(Eastern Band of Cherokee Indians). The next section will expand in detail about the background concept about the working of tool which is linear regression.
 
-\section*{Linear Regression}
+\section{Linear Regression}
 
 Calibration can be done through different statistical methods and the most popular approach is Linear Regression method. In statistics, the term regression is used to describe a group of methods that summarize the degree of association between one variable (or set of variables) and another variable (or set of variables) \cite{Burke}. Linear Regression establishes relationship between two variables one is the independent variable which will be on the $x$ axis and the dependent variable in the $y$ axis by drawing a straight line.
 If there are many observations and is plotted as a scatter plot then a line called as regression line as in the figure \ref{LRM} could be drawn through it by Least Square method. 
@@ -95,7 +75,7 @@ If there are many observations and is plotted as a scatter plot then a line call
 
 \begin{figure}[h]
     \begin{center}
-    \includegraphics[scale=0.25]{images/figure9.png} 
+    \includegraphics[scale=0.25]{./images/figure9.png} 
     \end{center}
     \caption{Linear Regression Model \cite{regression}}
     \label{LRM}
@@ -128,8 +108,4 @@ On getting the slope and intercept value the equation of line can be found. Once
 The range of value for $R^2$ is between 0 to 1 and closer the value is to 1, the stronger the correlation between the two data.
 All these equation can be easily calculated with the help of Excel and thus all these equations are integrated to the MAT tool.
 
-
-\bibliographystyle{plain}
-\bibliography{chapter4}
-\end{document}
 

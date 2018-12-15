@@ -1,27 +1,10 @@
+\chapter{Design and Implementation of Air pollution Monitoring System}
 
-\documentclass[12pt,a4paper,oneside]{report}
 
-\topmargin -.5in
-\evensidemargin 0in
-\oddsidemargin 0in
-\textheight 9in
-\textwidth 6.5in
-\usepackage{url}
-\usepackage{graphicx}
-\usepackage{amsmath,amssymb,amsfonts}
-\newtheorem{theorem}{Theorem}
-\usepackage{float}
-\usepackage{mathtools}
-\usepackage{tabularx}
-\linespread{1.5}
-
-\begin{document}
-
-\section*{Design and Implementation of the Air Pollution Monitoring System}
 
 The progress in technology has made it easy for researchers to explore more in different areas. One such development was is in the area of sensor technology which completely changed the outlook of different application level problems. In this chapter, I share my hands-on experience in the development, design, integration, and operation of the air pollution system using commodity sensor. Earlier, the approach for understanding air pollution used complex and stationary equipment which collects data and used these data for analyzing, but things have changed after the low cost, easy to use, portable sensors came in markets \cite{Snyder2013}. 
 
-\section*{Design Goals}
+\section{Design Goals}
 
 There are many factors which need to be considered for the development of a simple yet reliable system. In this section, we have mentioned the factors which should be considered for an effective air pollution monitoring system.
 
@@ -65,7 +48,7 @@ Within the available sensors in the market one could find sensors ranging from a
 \end{enumerate}
 
 
-\section*{Targeted Pollutants}
+\section{Targeted Pollutants}
 
 Our surrounding is filled with various gases, these gases will become harmful if the concentration of it increases to an undesired level. On the development of a air pollution system measurement of all the gases in the atmosphere is not necessary as the collected data from all the sensor will make no sense to the public. Our main idea here is to make the general people aware about the dominant gases and the extend of health hazard caused by these gases. This can be identified through different indexes know as Air Quality Health Index(AQHI) which is a scale from one to ten developed by health and environmental professionals \cite{faq} and Air Quality index (AQI)which gives the level of air quality status in an area \cite{Asha2017}.
 
@@ -73,7 +56,7 @@ Our surrounding is filled with various gases, these gases will become harmful if
 
 The development of such indexes by the scientists will give the general public more idea of the pollution. The main gases to be included for the measurement for the indexes are  $PM_{2.5}, O_3, NO_2$, and $CO$ along with temperature and humidity sensor for awareness. These gases are mainly caused due to industrialization, urbanization and motorization \cite{Saha1952}. Industrial and vehicles release greenhouse emissions which are largely responsible for air pollution \cite{ internet}. The sensors thus can be limited to five which will also make the system compact.
 
-\section*{System Architecture}
+\section{System Architecture}
     
      In this section we describe the architecture for air pollution monitoring system which include a hardware side and a software side.The system is designed in such a way that it collects the data through the sensors, performs certain mathematical equation on the collected data and calculate the indexes then transfer these data to an IoT platform where it is visualized. The hardware section includes multiple sensors, processor and also on the wireless communication module for transmitting and receiving signals. Second, we will discuss the IoT side which includes the visualization part. The complete idea of the system is as shown in the figure and each part along with the sensor specification, implementation, design will be discussed further in the section. 
 
@@ -88,8 +71,8 @@ The development of such indexes by the scientists will give the general public m
     \end{figure}
 
 
-     \subsection*{Hardware Architecture}
-\subsubsection*{Sensor Control and Data Processing Unit}
+     \subsection{Hardware Architecture}
+\subsubsection{Sensor Control and Data Processing Unit}
 This unit is the core for the pollution monitoring as it is where all the other modules are connected including the communication middleware. This module does the following function:
 
 
@@ -104,7 +87,7 @@ For simplicity and ease of programming we have selected one of the most popular 
 
 \begin{figure}[h]
   \begin{center}
-  \includegraphics[scale=0.80]{images/figure3.png}
+  \includegraphics[scale=0.80]{./images/figure3.png}
   \end{center}
   \caption{Arduino Ethernet Board}
   \label{Arduino}
@@ -156,7 +139,7 @@ The board can be powered either by using a FTDI cable/USB serial connector, exte
  
 Having all these specification gives the freedom for researchers to explore with different electronic devices easily. The board is programmed with the help of arduino programming language which is very close to embedded C language and it is done on Arduino development environment. 
 
-\subsection*{Sensor}
+\subsection{Sensor}
 
 Sensor networks are new instruments useful to detect the conditions in remote places in the physical world in environmental monitoring applications such as pollution monitoring, transportation management, intrusion detection and many more \cite{Jung2011}. With the constant development in electronics industry, it is possible to collect data remotely and collected data can be transferred to the required platform at a short period of time.
 There are different sensors available in market which can measure the pollutants and display the value, but the idea here is to select the one which is of low cost and also gives the most accurate values.
@@ -165,7 +148,7 @@ Having said that there is a variety of options available for sensors based on th
 
 Another popularly used  MOS sensor which we explored was MICS which are MEMS based whose mode of operation is similar to the above said sensor as both of them are metal oxide. Here, oxidizing gas or the pollutant gas add to the insulative oxygen species causing the resistance to increase \cite{SGXSensortech}.
  Other than MOS sensors, we also took a look at optical sensor which are spectroscopic devices which uses light scattering principle to find the concentration of pollutants. These sensors are known for its detecting capability of particulate matter of different sizes and is one of the recent development in the field of air quality monitoring. Highly responsive, reliable and long life are the main highlights of this sensor.
- \subsubsection*{Selected Sensor}
+ \subsubsection{Selected Sensor}
 
  After understanding the wide range of sensor options in the market the sensors were selected based on their performance, availability, ease of integration, and cost. The selected sensors were:
  \begin{enumerate}
@@ -174,7 +157,7 @@ Another popularly used  MOS sensor which we explored was MICS which are MEMS bas
 \par
 \begin{figure}[h]
   \begin{center}
-  \includegraphics[scale=0.40]{images/figure1.png}
+  \includegraphics[scale=0.40]{./images/figure1.png}
   \end{center}
   \caption{Sensitivity characteristics curve \cite{Data2012}}
   \label{curve}
@@ -193,19 +176,19 @@ From the curve in Fig.\ref{curve}, the voltage across the sensor is found out de
 
  \end{enumerate}
 
- \subsection*{Communication Middleware}
+ \subsection{Communication Middleware}
  
  The collected data needs to be transferred to a platform so that user can understand and interpret the data from the sensor. We have used a WiFi module for this purpose, which will collect the data from the processor and transfers it to a IOT platform said to. The WiFi module used here is ESP8266, which is a highly integrated SOC that meets the requirement of user demand of efficient power usage, compact design and reliable performance\cite{Systems2018}. The ESP module can be connected to a processor or it can also be programmed on its own as the module itself is a MCU unit. Unlike the other sensor modules connected to the processor which needs a 5V power supply for its working, this module needs a 3.3V for its power up. The ESP module comes along with installed firmware from AI-thinker and it can be communicated with AT commands.On typing the AT command in the serial monitor the output would come as 'OK' if there is a successful connection. 
 
  This firmware can be replaced with user's own code which gives the power of flexibility of connecting with any IOT platform. The arduino platform supports the programming of ESP module which makes the integration much easier. The code can be written in the Arduino IDE and can be flashed into the ESP board by connecting it separately.
  The circuit for the ESP flashing is as shown which is a voltage divider circuit.[FIGURE NEEDS TO BE INSERTED] When the TX and RX pin of arduino is connected to TX and RX pin of the WiFi module it becomes in the programming mode and flashing occurs. 
  
- \section*{System Overview}
+ \section{System Overview}
 The complete circuit diagram of how the components are integrated to the Microcontroller is as shown is the figure \ref{system}. Each of these sensors were carefully arranged so that it reduces the spatial interferences. As majority of the sensors are heat sensors and discharges heat it affects the working of the sensor placed near to it. The initial arrangement of the sensors were done in the breadboard with wires. Building the circuit in breadboard gave the flexibility of working with different arrangements.
 
  \begin{figure}[h]
   \begin{center}
-  \includegraphics[scale=0.95]{images/figure5.png}
+  \includegraphics[scale=0.95]{./images/figure5.png}
   \end{center}
   \caption{System Overview}
   \label{system}
@@ -217,17 +200,13 @@ After building the circuit in breadboard, it was migrated to a Printed Circuit B
 
 \begin{figure}[h]
   \begin{center}
-  \includegraphics[scale=0.50]{images/figure10.png}
+  \includegraphics[scale=0.50]{./images/figure10.png}
   \end{center}
   \caption{Printed Circuit Board}
   \label{pcb}
 \end{figure}
 
-\section*{IoT Architecture}
+\section{IoT Architecture}
 
 The hardware is the one responsible for the data collection but making these data available to user is done by the visualizing tool. The main objective which was kept when developing the system was the data collected should be accessed from anywhere and thats why IoT platforms were selected.
 
- \bibliographystyle{plain}
- \bibliography{chapter3}
- \end{document}
- 

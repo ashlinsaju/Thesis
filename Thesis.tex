@@ -1,0 +1,315 @@
+\documentclass[a4paper,12pt,titlepage,oneside]{report}
+
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={160mm,235mm},
+	top=30mm,}
+\usepackage{tabulary}
+\usepackage[newcommands]{ragged2e}
+\bibliographystyle{unsrt}
+\renewcommand{\baselinestretch}{1.2}
+\usepackage{fancyhdr}
+\usepackage{algorithm2e}
+\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
+\usepackage{pslatex}
+\usepackage{color}
+\usepackage{cite}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{setspace}
+\usepackage{lscape}
+\usepackage{floatflt}
+\usepackage{upgreek}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{wrapfig}
+\usepackage{pbsi}
+\usepackage{pdfpages}
+\usepackage{bm}
+\usepackage{chapterbib}
+\usepackage{appendix}
+\usepackage[version=3]{mhchem}
+\usepackage{titlesec}
+\usepackage{lipsum}
+\usepackage[english]{babel}
+\usepackage[autostyle]{csquotes}
+\usepackage{url}
+\usepackage{tabularx}
+\newtheorem{theorem}{Theorem}
+\addtolength{\belowcaptionskip}{-0.5cm}
+
+%\usepackage{tablefootnote}
+%\usepackage{footnotebackref}
+%\stepcounter{secnumdepth}
+%\stepcounter{tocdepth}
+
+%%%%%%%%% Vertical Side Settings  %%%%%%%%%%%%
+\setlength{\voffset}{0pt}
+\setlength{\topmargin}{-0pt}
+\setlength{\headheight}{12pt}
+\setlength{\headsep}{25pt}
+\setlength{\textheight}{660pt}
+\setlength{\footskip}{30pt}
+
+%%%%%%% Horizental Side Settings %%%%%%%%%%%%%% 
+    \setlength{\hoffset}{0pt}
+    \setlength{\oddsidemargin}{1.0cm}%%% Margin 
+    \setlength{\textwidth}{440pt}
+    \setlength{\marginparsep}{0pt}
+    \setlength{\marginparwidth}{0pt}
+    \setlength{\marginparpush}{0pt}
+    \setlength{\headwidth}{\textwidth}
+    %\setlength{\evensidemargin}{\paperwidth}
+    %\addtolength{\evensidemargin}{-\textwidth}
+    %\addtolength{\evensidemargin}{-4.5cm}
+    %\addtolength{\evensidemargin}{-\oddsidemargin}
+    
+ \makeatletter
+   \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else%
+   \hbox{}%
+   \thispagestyle{empty}
+   \newpage%
+   \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+ \makeatother
+ \renewcommand{\topfraction}{0.95}
+ \renewcommand{\textfraction}{0.05}
+ \renewcommand{\floatpagefraction}{0.85}  
+ 
+ \makeatletter
+  \renewcommand{\paragraph}{\@startsection{paragraph}{4}{0ex}
+   {-3.25ex plus -1ex minus -0.2ex}
+   {1.5ex plus 0.2ex}
+   {\normalfont\normalsize\bfseries}}
+ \makeatother
+
+%\titleformat{\chapter}[display]{\normalfont\rmfamily\huge\bfseries}
+% {\chaptertitlename\ \thechapter}{20pt}{\Large}
+%\titleformat{\section}
+%  {\normalfont\sffamily\Large\bfseries\color{cyan}}
+%  {\thesection}{1em}{}
+
+%\def\paragraph{\@startsection
+%     {paragraph}{4}{\z@}{3.25ex plus 1ex minus .2ex}{-1em}{\normalsize\bf}}
+%\def\subparagraph{\@startsection
+%     {subparagraph}{4}{\parindent}{3.25ex plus 1ex minus
+%    .2ex}{-1em}{\normalsize\bf}}
+%\renewcommand{\rmdefault}{phv} % Arial
+%\renewcommand{\sfdefault}{phv} % Arial
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%Title Page %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{roman}
+\thispagestyle{empty}          %%to skip numbering on page(s)
+\begin{document}
+\begin{center}
+	\textbf{{\textsf{\\ SENSOR NETWORK FOR AIR POLLUTION MONITORING}}}
+	\\~
+	\\~
+	\textsf{by}
+	\\~
+	\\~
+	\textbf{\textsf{Ashlin Saju}}
+	\\~
+	\textsf{B.Tech, Mahatma Gandhi University, Kerala, India, 2016}
+	\\~
+	\\~
+	\\~
+	\\~
+	\\~
+	\\~
+	\\~
+	\\~
+	\\~
+	\\~
+	\\~
+	\textsf{THESIS SUBMITTED IN PARTIAL FULFILLMENT OF}\\
+	\textsf{THE REQUIREMENTS OF THE DEGREE OF}\\
+	\textsf{MASTER OF SCIENCE}\\
+	\textsf{IN}\\
+	\textsf{COMPUTER SCIENCE}
+	\\~
+	\\~
+	\\~
+	\\~
+	\\~
+	\\~
+	\\~
+	\\~
+	\\~
+	\\~
+	\\
+	\textsf{UNIVERSITY OF NORTHERN BRITISH COLUMBIA}
+	\\~
+	\textsf{September 2019}
+	\\~
+	\\~
+	\textcopyright \textsf{ Ashlin Saju, 2019}
+
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract  %%%%%%%%%%%%%%%%%%%%%%%%%
+\doublespacing
+\normalsize
+
+\newpage
+\addcontentsline{toc}{section}{Abstract}
+
+\subsection*{Abstract}
+
+Needs to be filled later
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Table of Content %%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newpage
+\addcontentsline{toc}{section}{Table of Contents} % Add to the content
+\tableofcontents
+%%%%%%%%%%%%%%%%%%%%%%%%%%% List of Tables %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\addcontentsline{toc}{section}{List of Tables}   % Add to the content
+\listoftables
+%%%%%%%%%%%%%%%%%%%%%%%%%%% List of Figurest %%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\addcontentsline{toc}{section}{List of Figures}   % Add to the content
+\listoffigures
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Acknowledgement %%%%%%%%%%%%%%%%%%%%%%%%
+\onehalfspacing
+\newpage
+\addcontentsline{toc}{section}{Acknowledgement}  % Add to the content
+\section*{Acknowledgement}
+%\bsifamily
+{\large
+\emph{I would like to express my deep sense of gratitude to my worthy supervisor Dr. Alex Aravind for allowing me to carry out my work under his invaluable guidance. His interest in scientific problems and moral inspiration have made current work possible. I am extremely indebted to the Chairperson, Department of Computer Science, Northern University of British Columbia, Prince George, for providing all the necessary facilities to complete this work. Also, a special thanks is extended to Dr. Stephen Rader and Dr. George Jones for offering their valuable assistance as my committee members.}
+
+\emph{I am also indebted to my labmates Apratim, Ashlin, Conan, Brae, Davis, Suresh, Shanthini, Darshik, Rahim, Ketan, Arthi, Raja and Rodrigo for their support, discussion, encouragement, and pleasant company. Special thanks to the teaching and nonteaching staff members, UNBC, for their help in all possible ways.}
+\par
+\emph{It is a pleasure to acknowledge the good company of fellow researchers and my friends Hardev, Gurjeet, Ashish, Ramneesh, Johny, Priyanka, Amit, Navjot, Bashet, Dorob, Bryan and many others.}
+
+\emph{Finally, I want to express my deepest gratitude to my family for their love, support and encouragement, without which this work would not have taken this shape.}
+
+\vspace{1.0cm}
+%\begin{tabular}{p{4.5in}r}
+\emph{Prince George, BC}
+
+\emph{September~~~~, 2019\hfill\textbf(Ashlin Saju)}
+%\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Dedication Page %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\setstretch{0.7}
+\newpage
+\thispagestyle{empty}
+%\addcontentsline{toc}{section}{Dedication}
+\begin{tabular}{p{4in}cr}
+	 &  &                                                                          \\&&\\&&\\&&\\&&\\&&\\&&\\&&\\&&\\&&\\&&\\&&\\&&\\&&\\
+	\emph{\textbf{\large{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Dedicated}}}  \\&&\\ \emph{\textbf{\large{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~to}}}\\&&\\
+	\emph{\textbf{\large{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~My Parents}}} \\
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\doublespacing
+\normalsize
+
+\newpage
+
+\fancyhead{} % clear all header fields
+\fancyfoot{} % clear all footer fields
+\pagestyle{fancy}
+\fancyhfoffset[L]{0 cm}
+\rhead{\text{\thepage }{}}
+\lhead{\textbf{\chaptername\hspace{0.1cm} \thechapter{}}}
+
+\titleformat{\subsection}
+{\normalfont\large\bfseries}   % The style of the section title
+{}                             % a prefix
+{0pt}                          % How much space exists between the prefix and the title
+{\thesubsection\quad}
+
+\titleformat{\section}
+{\normalfont\Large\bfseries}   % The style of the section title
+{}                             % a prefix
+{0 pt}                         % How much space exists between the prefix and the title
+{\thesection\quad}
+\doublespacing
+
+\input{chapter1.tex}    %%%% Input file with Chapter1.tex
+\input{chapter2.tex}     %%%% Input file with Chapter2.tex
+\input{chapter3.tex}
+\input{chapter4.tex}
+%\input{chapter5}
+%\input{Summary}     %%%% Input file with Summary.tex
+%\input{Chapter7}
+%\input{Chapter8}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% BIBLOGRAPHY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\addcontentsline{toc}{section}{Bibliography}  % Add to the content
+\fancyhead{} % clear all header fields
+\fancyfoot{} % clear all footer fields
+\pagestyle{fancy}
+\fancyhfoffset[L]{0 cm}
+\rhead{\text{\thepage }{}}
+\lhead{\textbf{Bibliography}}
+\begingroup
+%\setlength{\bibsep}{10pt}
+\linespread{1}\selectfont
+\bibliography{Thesis}     %%%% Input file with Thesis.bib
+\endgroup
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\clearpage
+%\fancyhead{} % clear all header fields
+%\fancyfoot{} % clear all footer fields
+%\pagestyle{fancy}
+%\fancyhfoffset[L]{0 cm}
+%\rhead{\text{\thepage }{}}
+%\lhead{\textbf{\appendixname\hspace{0.1cm} \thechapter{}}}
+%\appendix
+%\input{AppendixA}     %%%% Input file with AppendixA.tex
+%\input{AppendixB}
+%\input{AppendixC}
+%\input{AppendixD
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\fancyhf{} % clear all header and footer fields
+%\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter}{}}
+%\renewcommand{\sectionmark}[1]{\markright{\thesection\ }}
+%\fancyhf{}
+%\fancyhead[RO]{\thepage}
+%\fancyhead[LO]{\slshape\foottmark}
+%\fancyhead[RE]{\slshape\leftmark}
+%\addtocontents{toc}{\protect\contentsline{chapter} {Appendix}{}}
+%\pagestyle{fancy} \fancyhfoffset[LE]{0 cm}
+%\clearpage{\pagestyle{empty}\clearpage} \pagestyle{fancy}
+%\renewcommand{\chaptermark}[1]{\markboth{\appendixname \ \thechapter}{}}
+%\renewcommand{\sectionmark}[2]{\markright{\thesection\ #1}}
+%\fancyhf{}
+%\fancyhead[LE,RO]{\thepage} \fancyhead[LO]{\slshape\rightmark}
+%\fancyhead[RE]{\slshape\leftmark}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+
+
