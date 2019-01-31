@@ -16,6 +16,7 @@ Based on the severity of health impact, different countries measure different se
 Particulate matters are measured at two levels; 2.5 micron size particles ($PM_{2.5}$) and 10 micron size ($PM_{10}$), and they are measured in micro-grams per cubic meters ($\mu g/m^3$). $CO$ is measured in parts per million ($ppm$) and other gases are measured in parts per billion ($ppb$). These individual measurements make less sense to the common public and therefore are not very helpful in understanding the cumulative 
 impact of the air quality. Therefore,two other combined metrics namely air quality index (AQI) and air quality health index (AQHI) are proposed and used by different countries \cite{Chen2013}. India, USA, UK, and many other countries use AQI and Canada introduced and uses AQHI. These metrics are designed  by carefully examining those pollutants which are harmful to human health.
 AQI is a piecewise linear function of the pollutant concentration and is measured using the following formula.
+
 \begin{equation}
 AQI = Max \{I_i|i = 1, ..., 8\}
 \end{equation}
@@ -24,15 +25,38 @@ where $I_i$ is an air quality subindex corresponding each pollutant and it is co
 I_i = \lceil(\frac{I_{high} - I_{low}}{C_{high} - C_{low}})\rceil \times (C - C_{low}) + I_{low}
 \end{equation}
 where $C$ is concentration of the $i^{th}$ pollutant. $C_{low}$ and $C_{high}$, respectively, are lower and upper concentration breakpoints of $C$.
-$I_{low}$ and $I_{high}$, respectively, are index breakpoints corresponds to $C_{low}$ and $C_{high}$.  The value of AQI varies from 0 to 500, which groups them into six main categories: 0-50 (good); 51-100 (satisfactory); 101-200 (moderate); 201-300 (poor); 301-400 (very poor); and 401-500 (severe).  
+$I_{low}$ and $I_{high}$, respectively, are index breakpoints corresponds to $C_{low}$ and $C_{high}$.  The value of AQI varies from 0 to 400+ as shown in the figure \ref{aqi}.
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics[scale=0.58]{./images/figure13.png}
+    \end{center}
+   
+    \caption{Air Quality Index (AQI) \cite{AirQualityIndex}}
+    
+    \label{aqi}
+\end{figure}
 
 Health Canada and Environment Canada developed AQHI based five major pollutants 
 $PM_{2.5}, O_3, NO_2, SO_2,$ and $CO$. Later the last two pollutants were dropped from the calculation as they were identified to  contribute very less in predicting health effects in Canada. AQHI computed using the following formula.
+
+
 \begin{equation}
 AQHI = \lceil (\frac{1000}{10.4}) \times [e^A-1]+[e^B-1]+[e^C-1] \rceil
 \end{equation}
+
 where $ A = 0.000537 \times$ concentration of  $O_3$, $B = 0.000871 \times$ concentration  of $NO_2$ and  $C = 0.000487 \times$ concentration of $PM_{2.5}$.
-The value of AQHI varies from 1 to 10+, which again groups into four categories: 1-3 (low risk); 4-6 (moderate risk); 7-10 (high risk); and above 10 (very high risk). 
+The value of AQHI varies from 1 to 10+ as shown in figure \ref{aqhi}
+
+
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics[scale=0.58]{./images/figure12.png}
+    \end{center}
+   
+    \caption{Air Quality Health Index (AQHI) \cite{healthcanada}}
+    
+    \label{aqhi}
+\end{figure}
 
 Now the question is which is a better measure, AQI or AQHI? Since AQI is based on a single pollutant, it is hard to see its direct relationship with human health compared to AQHI \cite{Chen2013}. On the other hand AQHI is based on the relationship between the major air pollutant mix and mortality risk in 12 
 Canadian cities, it is not clear it can be directly generalized to rural
