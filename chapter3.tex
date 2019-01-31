@@ -227,5 +227,8 @@ After building the circuit in breadboard, it was migrated to a Printed Circuit B
 
 \section{IoT Architecture}
 
-The hardware is the one responsible for the data collection but making these data available to user is done by the visualizing tool. The main objective which was kept when developing the system was the data collected should be accessed from anywhere and thats why IoT platforms were selected.
+The hardware is the one responsible for the data collection but making these data available to user is done by the visualizing tool. The main objective which was kept when developing the system was the data collected should be accessed from anywhere and thats why IoT platforms were selected. We use an open source IoT platform called Thingspeak \cite{thingspeak}. It is integrated with the system to aggregate, analyze, visualize, and store the sensor
+data that we collect \cite{thingspeak}. Thinkspeak can allow many users to integrate their system with other systems for collective and cooperative analysis of sensor data and promote citizen science in solving important global problems. It also offer a ‘hub’ model for data repository and a set of APIs for accessing and using the sensor data for their analysis and interpretations.
+Thinkspeak provides an intuitive user interface that is easy to understand. It also provides a mobile application called Thingview which can be installed on our phone and the same data from the system can be visualized simultaneously.
+For our purpose, we use Thinkspeak to display the results. As soon as the value is transferred to Thingspeak, it can immediately draw graph showing online visualization. We have used eight channels of Thingspeak for the graph representation of all the pollutants measured by the sensors and the AQI and AQHI metrics.
 
