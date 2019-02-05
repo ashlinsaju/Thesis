@@ -5,9 +5,8 @@
 
 
 
-
-Air pollution is stated as a complex mixture of gases and particles whose sources and composition vary over
-space and time \cite{HealthEffectsInstitute2017}. The boom in the development of industries and technology have created an alarming situation - degrading the quality of air. It is a matter of serious concern and society is less aware of the impact that it causes to human health as well as to the surrounding. The World Health Organization (WHO) reported that 9 out of 10 people breathes polluted air which estimates a death rate of around 7 million every year \cite{who} \cite{WHO2010}. This has made many motivated individuals like researchers and communities to work towards in creating awareness among the people.
+Earth, Our home planet, is the only place in the known universe affirmed to host life. The life on earth is characterized by three components, Air, Land, and Water. Each element has its own special properties and required in its proper proportions to maintain the healthy life of all living beings \cite{environment}. The quality of life is relying upon the quality of environment. The Ecosystem with its creatures and vegetation ought to be sound with clean assets, clean water and air.  However, because of the improper ways of industrial development it create a disturbance in natural environment. This process of making land, water, air or other parts of the environment unsuitable and unsafe or not appropriate to utilize is called pollution. Pollution is a universal phenomenon that degrade the land, air, water bodies, and structures by the introduction of contaminant into the natural environment. This changes the quality of atmosphere and are trans boundary, as they travel thousands of miles. Organic pollutants are non-biodegradable and resist degradation by microorganisms; therefore they remain in the ecosystems for quite a while. 
+The environmental scientists these days mainly facing problems related to the global warming. Out of different types of pollutions, air pollution play a major for global warming. Air contamination alludes to the release of pollutants into the air that is unfavorable to human wellbeing and the planet in general. Air pollution is stated as a complex mixture of gases and particles whose sources and composition vary over space and time \cite{HealthEffectsInstitute2017}. The boom in the development of industries and technology have created an alarming situation - degrading the quality of air. It is a matter of serious concern and society is less aware of the impact that it causes to human health as well as to the surrounding. The World Health Organization (WHO) reported that 9 out of 10 people breathes polluted air which estimates a death rate of around 7 million every year \cite{who} \cite{WHO2010}. This has made many motivated individuals like researchers and communities to work towards in creating awareness among the people. There are different ways of detecting air pollution, however, for my masters thesis we have chosen to work with commodity sensors. However, to work on sensors and define my research problem, I considered the different necessary factors for my research and are described as below:  
 
 
 \section{Air Pollutants and Measurement Metrics}
@@ -117,5 +116,97 @@ hardware and open source software and analyze the quality of data obtained throu
 
 
 \section{Thesis Contribution}
+
+
+\section{Research Question}
+ 
+ Some important research questions to be addressed related to the issue of air quality are: 
+
+ \begin{enumerate}
+  \item What kind pollutants affect the human health most? How to measure them?
+   
+  \item  As the pollution is in the atmosphere, should it not be measured everywhere all the time? If so, what kind of infrastructure is needed to facilitate such a ubiquitous measurement?
+  
+ \item What all factors should be considered while selecting sensors for measurement of pollutants?
+ 
+ \begin{enumerate}
+ \item Accuracy of the data collected from the sensors.
+ \item The cost of the sensors.
+ \item The size of the sensors.
+ \item Integration with the processor.
+ \end{enumerate}
+
+ \item Which processor to be used for processing the data collected from sensors?
+ 
+ \begin{enumerate}
+ \item The ability to process analog signals collected from the sensor.
+ \item Opens source platform.
+ \item Ability to use in real time application.
+ \item Able to connect with the Wi-Fi module easily.
+ \end{enumerate}
+
+ \item How should the hardware component i.e the sensors and the processor, should be packaged?
+ 
+ \begin{enumerate}
+\item As compact as possible.
+\item The value of the sensors should not be affected.  
+ \end{enumerate}
+ 
+ 
+   \item What is the difference between different metrics which is used to show       	the effect of pollution?
+   \begin{enumerate}
+   \item Understanding why different indexes are used for pollution monitoring.
+   \item To identify which all indexes should be displayed in the software.
+   \item Out of all the indexes which one is the most relevant to public and why?
+  
+   \end{enumerate}
+  
+ \item How can the seriousness of pollution be made aware?
+ \begin{enumerate}
+ \item What all graphs or charts to be used?
+ \item How to make a impressive software tool for demonstration?
+ \end{enumerate}
+ 
+ \item How can the representation of Air quality metrics be done?
+\begin{enumerate}
+\item Should there be any categorization within the society for data visualization?
+\item If so, what all data should be shown for each section?
+\item How to demonstrate a simple view of complex effectively?
+\end{enumerate}
+ 
+ 
+
+ 
+ \end{enumerate}
+ 
+\section{Research Challenges}
+
+
+The major challenges expected on creating a complete system are:
+
+\begin{enumerate}
+
+
+\item The integration of different sensors with the processor.
+\par
+As each sensors are having its own properties, there can be a issue when connecting all of them together in a single platform. Most of the sensors used for measurement are heat sensor and needs to be powered atleast 12 hours before operating. There is a particular operating temperature range for each sensors connected. As each of the sensor needs different environment for working, all the factors should be incorporated for a complete working environment.
+
+\item Integration of communication module which is  WiFi with processor as this module alone requires a different voltage level to drive.
+\par
+The data transferring module used here is a WiFi module which needs a separate voltage level of 3.3 Volt when compared to the sensors which are driven with a voltage of 5 Volt each. On giving any voltage more than 3, will burn the entire module and hence it needs a separate voltage line to be given. 
+
+\item Calibration of each sensors based on the data sheet.
+\par
+As I am selecting commodity sensors which says that it is already calibrated but usually it should be done for each environment. The data collected changes for each environment and this should be taken care of. This can be a tough task as for each of the sensors it changes based on the slope of internal resistance and the internal voltage values given in data sheet. 
+\item Packaging of hardware component.
+\par
+To make the whole system portable it should be packed carefully. For certain sensor like dust sensor, it should be exposed to the environment so as to get the value of particulate matter. This packing should be done in such a way that the it does not hinder with the observed value.
+
+\item Transferring the data to a platform or a database using the WiFi module.
+
+\item Checking whether the collected data is accurate.
+
+
+\end{enumerate}
 
 \section{Structure of the Thesis}
