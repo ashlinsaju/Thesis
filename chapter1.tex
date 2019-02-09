@@ -17,8 +17,10 @@ The environmental scientists these days mainly face the problems related to the 
 
 
 There are various pollutants that contribute to the contamination of the environment. These pollutants differs from region to region depending on the activities. In the industrial area which manufactures products from raw material such as production of iron from its ore or production of gasoline from crude oil releases inorganic carbon compounds into the atmosphere \cite{Vallero2014}.
-Based on the severity of health impact, different countries measure different set of pollutants. For example, India measures 8 major pollutants such as particulate matters ($PM$), ozone ($O_3$),  nitrogen dioxide ($NO_2$), carbon monoxide ($CO$), sulphurdioxide ($SO_2$), ammonia ($NH_3$), and benzene ($C_6H_6$) (in some places lead ($Pb$) instead). Most other countries measure a subset of these pollutants and, for example, Canada measures $PM, O_3, NO_2, SO_2$ and $CO$ \cite{Chen2013}. Particulate matters are measured at two levels; 2.5 micron size particles ($PM_{2.5}$) and 10 micron size ($PM_{10}$), and they are measured in micro-grams per cubic meters ($\mu g/m^3$). $CO$ is measured in parts per million ($ppm$) and other gases are measured in parts per billion ($ppb$). These individual measurements make less sense to the common public and therefore are not very helpful in understanding the cumulative 
-impact of the air quality. Therefore,two other combined metrics namely air quality index (AQI) and air quality health index (AQHI) are proposed and used by different countries \cite{Chen2013}. India, USA, UK, and many other countries use AQI and Canada introduced and uses AQHI. These metrics are designed  by carefully examining those pollutants which are harmful to human health.
+Based on the severity of health impact and the kind of activities, different countries measures different set of pollutants. For example, India measures 8 major pollutants such as particulate matters ($PM$), ozone ($O_3$),  nitrogen dioxide ($NO_2$), carbon monoxide ($CO$), sulphurdioxide ($SO_2$), ammonia ($NH_3$), and benzene ($C_6H_6$) (in some places lead ($Pb$) instead). Most other countries measures a subset of these pollutant for example, Canada measures $PM, O_3, NO_2, SO_2$ and $CO$ \cite{Chen2013}. Particulate matters are measured at two levels; 2.5 micron size particles ($PM_{2.5}$) and 10 micron size ($PM_{10}$), and they are measured in micro-grams per cubic meters ($\mu g/m^3$). $CO$ is measured in parts per million ($ppm$) and other gases are measured in parts per billion ($ppb$). These individual measurements make less sense to the common public and therefore are not very helpful in understanding the cumulative impact of the air quality. Taking this into account the government agencies of each country developed their own indices corresponding to the National Ambient Air Quality Standards (NAAQS)  for representing the quality of air. The NAAQS was established by the United States Environmental Protection Agency (EPA) under the Clean Air Act which specifies the pollutants that are harmful for the public health and environment \cite{USEPA} \cite{NAAQS}. The different indices are Air Quality Health Index, Air Quality Index, Air Pollution Index, Pollution Standard Index, Comprehensive Air Quality Index, Daily Air Quality Index, Common Air Quality index are few used in different countries.
+Out of all these indexes the most common are AQI and AQHI which are proposed and used by different countries \cite{Chen2013}.
+
+India, USA, UK, and many other countries use AQI and Canada, Hong kong uses AQHI. These metrics are designed  by carefully examining those pollutants which are harmful to human health and environment.
 AQI is a piecewise linear function of the pollutant concentration \cite{Soni2016} and is measured using the following formula.
 
 \begin{equation}
@@ -28,8 +30,10 @@ where $I_i$ is an air quality subindex corresponding each pollutant and it is co
 \begin{equation}
 I_i = \lceil(\frac{I_{high} - I_{low}}{C_{high} - C_{low}})\rceil \times (C - C_{low}) + I_{low}
 \end{equation}
-where $C$ is concentration of the $i^{th}$ pollutant. $C_{low}$ and $C_{high}$, respectively, are lower and upper concentration breakpoints of $C$.
-$I_{low}$ and $I_{high}$, respectively, are index breakpoints corresponds to $C_{low}$ and $C_{high}$.  The value of AQI varies from 0 to 400+ as shown in the figure \ref{aqi}.
+where $C$ is concentration of the $i^{th}$ pollutant. $C_{low}$ and $C_{high}$ are lower and upper concentration breakpoints of $C$ respectively.
+$I_{low}$ and $I_{high}$, respectively, are index breakpoints corresponds to $C_{low}$ and $C_{high}$.  The value of AQI varies from 0 to 400+ as shown in the figure \ref{aqi} and each colour code shows the quality of air in the atmosphere.
+
+
 \begin{figure}[h]
     \begin{center}
     \includegraphics[scale=0.58]{./images/figure13.png}
@@ -40,8 +44,8 @@ $I_{low}$ and $I_{high}$, respectively, are index breakpoints corresponds to $C_
     \label{aqi}
 \end{figure}
 
-Health Canada and Environment Canada developed AQHI based five major pollutants 
-$PM_{2.5}, O_3, NO_2, SO_2,$ and $CO$. Later the last two pollutants were dropped from the calculation as they were identified to  contribute very less in predicting health effects in Canada. AQHI computed using the following formula.
+
+In Canada, the Environmental agency developed AQHI to make the common public aware about the air that surrounds them.It was based on five major pollutants $PM_{2.5}$, $O_3$, $NO_2$, $SO_2,$ and $CO$ initially and later the last two pollutants were dropped from the calculation as they were identified to  contribute very less in predicting health effects. AQHI computed using the following formula.
 
 
 \begin{equation}
