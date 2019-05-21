@@ -58,7 +58,7 @@ The development of such indexes by the scientists will give the general public m
 
 \section{System Architecture}
     
-     In this section we describe the architecture for air pollution monitoring system which include a hardware side and a software side.The system is designed in such a way that it collects the data through the sensors, performs certain mathematical equation on the collected data and calculate the indexes then transfer these data to an IoT platform where it is visualized. The hardware section includes multiple sensors, processor and also on the wireless communication module for transmitting and receiving signals. Second, we will discuss the IoT side which includes the visualization part. The complete idea of the system is as shown in the figure and each part along with the sensor specification, implementation, design will be discussed further in the section. 
+     In this section we describe the design for air pollution monitoring system which can be categorized into system hardware architecture and system software architecture. The system is designed in such a way that it collects the data through the sensors, performs specific mathematical equation on the collected data and calculate the indexes which then transfers these data to the software where it is visualized. The hardware section includes multiple sensors, processor and also on the wireless communication module for transmitting and receiving signals. Second, we will discuss the air pollution software which mainly focuses on the visualization part. The overview of the system is as shown in the figure \ref{overview} and each part along with the sensor specification, implementation, design will be discussed further in the section. 
 
 
      \begin{figure}[h]
@@ -66,7 +66,7 @@ The development of such indexes by the scientists will give the general public m
       \includegraphics[scale=0.70]{images/figure2.png}
       \end{center}
       \caption{System Architecture}
-      \label{mesh}
+      \label{overview}
   
     \end{figure}
 
@@ -145,7 +145,7 @@ Having all these specification gives the freedom for researchers to explore with
 
 \subsection{Sensor}
 
-Sensor networks are new instruments useful to detect the conditions in remote places in the physical world in environmental monitoring applications such as pollution monitoring, transportation management, intrusion detection and many more \cite{Jung2011}. With the constant development in electronics industry, it is possible to collect data remotely and collected data can be transferred to the required platform at a short period of time.
+Sensor networks are instruments useful to detect the conditions in remote places in the physical world in environmental monitoring applications such as pollution monitoring, transportation management, intrusion detection and many more \cite{Jung2011}. With constant development in electronics industry, it is possible to collect data remotely and collected data can be transferred to the required platform at a short period of time.
 There are different sensors available in market which can measure the pollutants and display the value, but the idea here is to select the one which is of low cost and also gives the most accurate values.
 \par
 Having said that there is a variety of options available for sensors based on the way it measures the pollutants. One such category is Metal Oxide Semiconductor (MOS) gas sensor also known as semiconductor gas sensor, which is used to detect the concentration of any hazardous gases in the atmosphere by changing its resistance. The most popular series available in market for this category is MQ-XX sensors which is popular for its wide detecting scope, long life, stability, high sensitivity, fast response and also simple drive circuit \cite{Data2012}.The sensing material is made up either from Aluminum Oxide ($ Al_{2}O_{3}$) or Tungsten trioxide ($WO3$)based ceramic and has a coating of Tin Oxide $ SnO_{2} $ that acts as the sensing material for the desired gas. The sensing element is heated through Platinum wires which is connected to leads made up of Nickel-Chromium, well known conductive alloy. The gas to be detected has a specific temperature at which it gets ionized and the task of the sensor is to work at that temperature. Once the gas gets ionized it gets absorbed by the sensing material which changes the resistance and inturn changes the voltage across the sensor and can be read by the microcontroller \cite{gassensor}. The voltage value along with reference voltage and other resistor's resistance is used to find the resistance of sensor. Once the resistance of the sensor is known then by using the sensitivity curve the concentration could be found out. 
@@ -183,9 +183,11 @@ From the curve in Fig.\ref{curve}, the voltage across the sensor is found out de
 
  \subsection{Communication Middleware}
  
- The collected data needs to be transferred to a platform so that user can understand and interpret the data from the sensor. We have used a WiFi module for this purpose, which will collect the data from the processor and transfers it to a IOT platform said to. The WiFi module used here is ESP8266, which is a highly integrated SOC that meets the requirement of user demand of efficient power usage, compact design and reliable performance\cite{Systems2018}. The ESP module can be connected to a processor or it can also be programmed on its own as the module itself is a MCU unit. Unlike the other sensor modules connected to the processor which needs a 5V power supply for its working, this module needs a 3.3V for its power up. The ESP module comes along with installed firmware from AI-thinker and it can be communicated with AT commands.On typing the AT command in the serial monitor the output would come as 'OK' if there is a successful connection. 
+ The collected data needs to be transferred to the software so that user can understand and interpret the data from the sensor. Choosing the communication middleware was a tough task as we need a stable system that will constantly send data over the network. In the beginning we used an ESP module for this purpose. The WiFi module, ESP8266, which is a highly integrated SOC that meets the requirement of user demand of efficient power usage, compact design and reliable performance\cite{Systems2018}. The ESP module can be connected to a processor or it can also be flashed on its own as the module itself is a MCU unit. Unlike the other sensor modules connected to the processor which needs a 5V power supply for its working, this module needs a 3.3V for its power up. The ESP module comes along with installed firmware from AI-thinker and it can be communicated with AT commands. On typing the AT command in the serial monitor the output would come as 'OK' if there is a successful connection. 
 
- This firmware can be replaced with user's own code which gives the power of flexibility of connecting with any IOT platform. The arduino platform supports the programming of ESP module which makes the integration much easier. The code can be written in the Arduino IDE and can be flashed into the ESP board by connecting it separately.
+ This firmware can be replaced with user's own code which gives the power of flexibility of connecting with any IOT platform. The arduino platform supports the programming of ESP module which makes the integration much easier. The code can be written in the Arduino IDE and can be flashed into the ESP board by connecting it separately.  However this module did not provide a reliable connection to the network and after few tests we had to replace it to another module. We choose a WEMOS[INSERT ABOUT WEMOS]
+ 
+ \iffalse
  The circuit for the ESP flashing is as shown in figure \ref{cir} which is a voltage divider circuit.
 
  \begin{figure}[h]
@@ -197,12 +199,11 @@ From the curve in Fig.\ref{curve}, the voltage across the sensor is found out de
 \end{figure}
 
 
-
-
-
  When the TX and RX pin of arduino is connected to TX and RX pin of the WiFi module it becomes in the programming mode and flashing occurs. 
- 
+ \fi
  \section{System Overview}
+ 
+ We will be discussing here about the integration of the above mentioned sensors with the processor.
 The complete circuit diagram of how the components are integrated to the Microcontroller is as shown is the figure \ref{system}. Each of these sensors were carefully arranged so that it reduces the spatial interferences. As majority of the sensors are heat sensors and discharges heat it affects the working of the sensor placed near to it. The initial arrangement of the sensors were done in the breadboard with wires. Building the circuit in breadboard gave the flexibility of working with different arrangements.
 
  \begin{figure}[h]
