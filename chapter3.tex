@@ -251,7 +251,7 @@ The hardware is the one responsible for the data collection but making these dat
 
 \subsection{Framework}
 
-"Seeing is believing because seeing is seduction".\cite{Hepworth}
+"Seeing is believing because seeing is seduction"\cite{Hepworth}.
 
 The pollution monitoring stations collect huge amount of data of pollutants and there are various ways to make people aware about these data. There can be different groups of users who will have access to these data which can be categorized as common people, educationist or the researchers who will be analyzing on the data, and the policy or law makers who will take necessary actions.
 
@@ -276,10 +276,30 @@ According to the classification of stakeholders, each groups are looking for dif
   \label{view1}
 \end{figure}
 
-This kind of representation is very easy to understand the data and it shows the concentration that each pollutant adds to atmosphere. By using such a visualization, the user in the first category that is the common lay men, simply needs to read the data which will give a constant value for display.
+The implemented representation is very easy to understand the data and it shows the concentration that each pollutant adds to atmosphere. The idea of this kind of visualization is that the user in the first category that is the common lay men, simply needs to read the data from display.
+The next implentation is done for the  datascientist or researchers in figure \ref{view2} who need to get a detailed view of the collected data and time. The ideal way to represent detailed information is through a line graphs as it shows the value obtained for a given time. 
 
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[scale=0.40]{./images/figure15.png}
+  \end{center}
+  \caption{Data Scientist view}
+  \label{view2}
+\end{figure}
 
+The value of pollutant could be seen when the pointer is hovered over the graph. These graphs gets updated everytime when the data gets collected at the system as it is important for researchers to go through every collected data. The last categorization of the user is the policy makers who implements action against change in the concentration of pollutant. They are the once who enforce laws by looking at the pollutant data and hence they are the ones who need to see a combined view of all the pollutant as shown in figure \ref{view3} to understand the trend.
 
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[scale=0.45]{./images/figure16.png}
+  \end{center}
+  \caption{Officials view}
+  \label{view3}
+\end{figure}
+
+This can be viewed through a pie-chart which shows the percentage of each pollutant that contributes to the indexes.  There is also a combined line graph that shows the concentration of different pollutant data. By looking at the pie-charts and the combined graphs it would be easy to understand the trends and also could find the pollutant which contributes more to the developed indexes. 
+
+The idea of such a hierarchial level of visualization is that it changes according to the people who are focusing on these data. Albert Cairo, a renowned information designer claims that the fundamental goal of data visualization should be to make people better informed \cite{Hepworth} \cite{Cairo2014},  similarly we also believe that a well communicated data is important for visualization.
 
 
 
