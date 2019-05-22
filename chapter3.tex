@@ -202,34 +202,93 @@ From the curve in Fig.\ref{curve}, the voltage across the sensor is found out de
  When the TX and RX pin of arduino is connected to TX and RX pin of the WiFi module it becomes in the programming mode and flashing occurs. 
  \fi
  \section{System Overview}
- 
- We will be discussing here about the integration of the above mentioned sensors with the processor.
-The complete circuit diagram of how the components are integrated to the Microcontroller is as shown is the figure \ref{system}. Each of these sensors were carefully arranged so that it reduces the spatial interferences. As majority of the sensors are heat sensors and discharges heat it affects the working of the sensor placed near to it. The initial arrangement of the sensors were done in the breadboard with wires. Building the circuit in breadboard gave the flexibility of working with different arrangements.
+
+ This section will show about the integration of the above mentioned sensors with the processor. After selecting the sensors and processor for the air pollution data measurement the next task was to put together so as to make it as a working system. This step was done one at a time so that troubleshooting will be easy. The complete circuit diagram of how the components are integrated to the Microcontroller is as shown is the figure\ref{circuit}.
+ \begin{figure}[h]
+  \begin{center}
+  \includegraphics[scale=0.80]{./images/figure5.png}
+  \end{center}
+  \caption{Circuit daigram of air pollution system}
+  \label{circuit}
+\end{figure}
+ Each of the sensors were carefully arranged so that it reduces the spatial interferences. As majority of the sensors are heat sensors and discharges heat it affects the working of the sensor placed near to each other. The figure \ref{prototype} shows the initial circuit implementation that was done in the breadboard with wires. Building the circuit in breadboard gave the flexibility of working with different arrangements.
 
  \begin{figure}[h]
   \begin{center}
-  \includegraphics[scale=0.95]{./images/figure5.png}
+  \includegraphics[scale=0.1]{./images/figure14.jpg}
   \end{center}
-  \caption{Schematic diagram of Air pollution monitoring system}
-  \label{system}
+  \caption{Prototype Implementation}
+  \label{prototype}
 \end{figure}
 
-After building the circuit in breadboard, it was migrated to a Printed Circuit Board (PCB) developed by Flemings Solution Ltd, India. The design of the board is as shown in the figure \ref{pcb}. The PCB was designed in such a way that each sensors and the microcontroller itself was plug-in model to board. This was done so that in case of any malfunctioning of any of the sensors or processor, it could be replaced easily. The main advantage of using a PCB design is that all the components are fixed and there is no wiring at all. This produces a zero error circuit and there wont be any short circuiting.
-
-
+After building the circuit in breadboard, it was migrated to a Printed Circuit Board (PCB) developed by Flemings Solution Ltd, India. The design of the board is as shown in the figure \ref{pcb}. The PCB was designed in such a way that each sensors and the microcontroller itself was plug-in model to board. 
 
 \begin{figure}[h]
   \begin{center}
-  \includegraphics[scale=0.50]{./images/figure10.png}
+  \includegraphics[scale=0.60]{./images/figure10.png}
   \end{center}
   \caption{Printed Circuit Board}
   \label{pcb}
 \end{figure}
 
-\section{Software Architecture}
+ This was done so that in case of any malfunctioning of any of the sensors or processor, it could be replaced easily. The main advantage of using a PCB design is that all the components are fixed and there is no wiring at all. This produces a zero error circuit and there wont be any short circuiting.
 
-The hardware is the one responsible for the data collection but making these data available to user is done by the visualizing tool. The main objective which was kept when developing the system was the data collected should be accessed from anywhere and thats why IoT platforms were selected. We use an open source IoT platform called Thingspeak \cite{thingspeak}. It is integrated with the system to aggregate, analyze, visualize, and store the sensor
+\section{Software Architecture : Customizable Layered Visualization (CLV)}
+
+The hardware is the one responsible for the data collection but making these data available to user is done by an effective visualizing software. The main objective kept when developing the system was the data collected should be accessed from anywhere and thats why IoT platforms were selected. We developed a customizable layered visualization of data that potentially involve different stakeholders. We believe an effective visualization of concerned data is critically important for effectively combating major issues such as mentioned above. The software is driven by the following four key elements:
+
+\begin{itemize}
+
+\item Stakeholder specific  visualization.
+
+\item Author-guided and user-driven interactiveness.
+
+\item Hierarchical approach to visualization.
+
+\item Providing alternate options.
+
+\end{itemize}
+
+\subsection{Framework}
+
+"Seeing is believing because seeing is seduction".\cite{Hepworth}
+
+The pollution monitoring stations collect huge amount of data of pollutants and there are various ways to make people aware about these data. There can be different groups of users who will have access to these data which can be categorized as common people, educationist or the researchers who will be analyzing on the data, and the policy or law makers who will take necessary actions.
+
+Accurately identifying all the stakeholders of air pollution is challenging. In \cite{English2000}, stakeholders in environmental risk decisions are identified into four categories of stakeholders as risk losers, risk gainers, risk perpetrators, risk managers. 
+Risk losers in \cite{English2000} are those who may be adversely affected by environmental risk decision, in terms of health or economic values and risk gainers are those who may be favorably affected by an environmental risk decision, typically through economic gains. The people who create the risk are the perpetrators and those who takes the action against the risk are the risk managers. In a similar way, here we have put forward an approach of visualization based on the different stakeholders, in which we have classified into three categories: risk losers, risk analyzers and risk managers. 
+
+Risk losers are those who are prone to pollution which include the common people or the society as a whole. Risk analyzers are those who identify the cause and increase in pollution and suggests pollution control methods. The next category is the one who implements laws and regulation by looking at the trends of pollution for a certain period of time, which are categorized as risk managers. 
+We believe this categorization applies to air pollution too, and therefore based on this categorization we offer our data visualization strategy.
+
+The visualization at first go should be very simple and be able to drive the user to which details they have to go through. It should not be representing all the data in a single screen which will be annoying to user and will end up loosing the interest of different stake holders. There should be options given to users so that the detailed data will be displayed. The user should be able to choose what data they need to view. If this approach is included in visualization, the data that different stakeholders are looking for will be passed onto them in a very efficient manner.
+
+\subsection{Implementation of CLV of Air Pollution Data}
+
+The complete software implementation of visualization was done with the combination of node js, html and css. The collected data from the system is stored in the server of Thingspeak \cite{thingspeak} which is a visualization paid service that was used for initial testing. 
+According to the classification of stakeholders, each groups are looking for different kind of data. The data can be represented in the form of huge spreadsheets or documents. There are different methods for visualization like heat-maps, bubble plots, box plots, bar graphs or a plane graphs. The most common method of displaying the data is graphical method, which can show the data corresponding to a certain time or day. We believe that instead of visualizing the entire data through graphs or plots, it would be much easier for the public to interpret the data if it is a single instantaneous value. The  representation implemented for the first stakeholder which is the layman is as in figure \ref{view1}, which shows a single value of the pollutant which is all the data that as a citizen will be looking for.
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[scale=0.55]{./images/figure14.png}
+  \end{center}
+  \caption{Lay man view}
+  \label{view1}
+\end{figure}
+
+This kind of representation is very easy to understand the data and it shows the concentration that each pollutant adds to atmosphere. By using such a visualization, the user in the first category that is the common lay men, simply needs to read the data which will give a constant value for display.
+
+
+
+
+
+
+
+\iffalse
+
+We use an open source IoT platform called Thingspeak \cite{thingspeak}. It is integrated with the system to aggregate, analyze, visualize, and store the sensor
 data that we collect \cite{thingspeak}. Thinkspeak can allow many users to integrate their system with other systems for collective and cooperative analysis of sensor data and promote citizen science in solving important global problems. It also offer a ‘hub’ model for data repository and a set of APIs for accessing and using the sensor data for their analysis and interpretations.
 Thinkspeak provides an intuitive user interface that is easy to understand. It also provides a mobile application called Thingview which can be installed on our phone and the same data from the system can be visualized simultaneously.
 For our purpose, we use Thinkspeak to display the results. As soon as the value is transferred to Thingspeak, it can immediately draw graph showing online visualization. We have used eight channels of Thingspeak for the graph representation of all the pollutants measured by the sensors and the AQI and AQHI metrics.
 
+\fi
