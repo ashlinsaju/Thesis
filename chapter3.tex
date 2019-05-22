@@ -71,8 +71,10 @@ The development of such indexes by the scientists will give the general public m
     \end{figure}
 
 
-     \subsection{Hardware Architecture}
-\subsubsection{Sensor Control and Data Processing Unit}
+
+ \section{Hardware Architecture}
+  
+ \subsection{Sensor Control and Data Processing Unit}
 This unit is the core for the pollution monitoring as it is where all the other modules are connected including the communication middleware. This module does the following function:
 
 
@@ -201,7 +203,7 @@ From the curve in Fig.\ref{curve}, the voltage across the sensor is found out de
 
  When the TX and RX pin of arduino is connected to TX and RX pin of the WiFi module it becomes in the programming mode and flashing occurs. 
  \fi
- \section{System Overview}
+ \subsection{System Overview}
 
  This section will show about the integration of the above mentioned sensors with the processor. After selecting the sensors and processor for the air pollution data measurement the next task was to put together so as to make it as a working system. This step was done one at a time so that troubleshooting will be easy. The complete circuit diagram of how the components are integrated to the Microcontroller is as shown is the figure\ref{circuit}.
  \begin{figure}[h]
@@ -265,7 +267,7 @@ The visualization at first go should be very simple and be able to drive the use
 
 \subsection{Implementation of CLV of Air Pollution Data}
 
-The complete software implementation of visualization was done with the combination of node js, html and css. The collected data from the system is stored in the server of Thingspeak \cite{thingspeak} which is a visualization paid service that was used for initial testing. 
+The complete software implementation of visualization was done with the combination of Node.js and python. The collected data from the system is stored in the server of Thingspeak \cite{thingspeak} which is a visualization paid service that was used for initial testing. 
 According to the classification of stakeholders, each groups are looking for different kind of data. The data can be represented in the form of huge spreadsheets or documents. There are different methods for visualization like heat-maps, bubble plots, box plots, bar graphs or a plane graphs. The most common method of displaying the data is graphical method, which can show the data corresponding to a certain time or day. We believe that instead of visualizing the entire data through graphs or plots, it would be much easier for the public to interpret the data if it is a single instantaneous value. The  representation implemented for the first stakeholder which is the layman is as in figure \ref{view1}, which shows a single value of the pollutant which is all the data that as a citizen will be looking for.
 
 \begin{figure}[h]
