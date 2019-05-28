@@ -9,7 +9,7 @@ The progress in technology has made it easy for researchers to explore more in d
 There are many factors which need to be considered for the development of a simple yet reliable system. In this section, we have mentioned the factors which should be considered for an effective air pollution monitoring system.
 
 \begin {enumerate}
-\item{Pollution monitoring for EPA criteria pollutant}
+%\item{Pollution monitoring for EPA criteria pollutant}
 \item{Sensor Identification}
 
 The very first task is to figure out which all sensors need to be included for the completion of the system. There are sensors available in the market for the measurement of almost all types of gases in the atmosphere. It should be very clear that which all gases need to be measured and this definitely changes from region to region as in certain places the concentration of a particular gas is more. Having said that, there will be a certain set of gases which must be included for measurement regardless of the region.
@@ -58,8 +58,7 @@ The development of such indexes by the scientists will give the general public m
 
 \section{System Architecture}
     
-     In this section we describe the design for air pollution monitoring system which can be categorized into system hardware architecture and system software architecture. The system is designed in such a way that it collects the data through the sensors, performs specific mathematical equation on the collected data and calculate the indexes which then transfers these data to the software where it is visualized. The hardware section includes multiple sensors, processor and also on the wireless communication module for transmitting and receiving signals. Second, we will discuss the air pollution software which mainly focuses on the visualization part. The overview of the system is as shown in the figure \ref{overview} and each part along with the sensor specification, implementation, design will be discussed further in the section. 
-
+     In this section we describe the design for air pollution monitoring system which can be categorized into system hardware architecture and system software architecture. The system is designed in such a way that it collects the data through the sensors, performs specific mathematical equation on the collected data and calculate the indexes which then transfers these data to the software where it is visualized. 
 
      \begin{figure}[h]
       \begin{center}
@@ -70,6 +69,7 @@ The development of such indexes by the scientists will give the general public m
   
     \end{figure}
 
+    The hardware section includes multiple sensors, processor and also on the wireless communication module for transmitting and receiving signals. Second, we will discuss the air pollution software which mainly focuses on the visualization part. The overview of the system is as shown in the figure \ref{overview} and each part along with the sensor specification, implementation, design will be discussed further in the section. 
 
 
  \section{Hardware Architecture}
@@ -217,7 +217,7 @@ From the curve in Fig.\ref{curve}, the voltage across the sensor is found out de
 
  \begin{figure}[h]
   \begin{center}
-  \includegraphics[scale=0.1]{./images/figure14.jpg}
+  \includegraphics[scale=0.09]{./images/figure14.jpg}
   \end{center}
   \caption{Prototype Implementation}
   \label{prototype}
@@ -267,7 +267,7 @@ The visualization at first go should be very simple and be able to drive the use
 
 \subsection{Implementation of CLV of Air Pollution Data}
 
-The complete software implementation of visualization was done with the combination of Node.js and python. The collected data from the system is stored in the server of Thingspeak \cite{thingspeak} which is a visualization paid service that was used for initial testing. 
+The complete software implementation of visualization was done with the combination of Node.js and python.The server used for storing the data from the system is Thingspeak \cite{thingspeak}. The collected data from the system is stored in the server of Thingspeak server \cite{thingspeak} which is a visualization paid service that was used for initial testing. 
 According to the classification of stakeholders, each groups are looking for different kind of data. The data can be represented in the form of huge spreadsheets or documents. There are different methods for visualization like heat-maps, bubble plots, box plots, bar graphs or a plane graphs. The most common method of displaying the data is graphical method, which can show the data corresponding to a certain time or day. We believe that instead of visualizing the entire data through graphs or plots, it would be much easier for the public to interpret the data if it is a single instantaneous value. The  representation implemented for the first stakeholder which is the layman is as in figure \ref{view1}, which shows a single value of the pollutant which is all the data that as a citizen will be looking for.
 
 \begin{figure}[h]
