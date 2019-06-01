@@ -216,16 +216,19 @@ The major challenges experienced on creating a complete system are:
 \par
 As each sensor has its own property, there can be issues when connecting all of them together in a single platform. Most of the sensors used for measurement are heat sensor and needs to be powered atleast 12 hours before operating. There is a particular operating temperature range for each sensor  connected. As each of the sensor needs different environment for working, all the factors should be incorporated for a complete working environment.
 
-\item Integration of communication module which is  WiFi with processor as it requires a different voltage level to drive.
-\par
-The data transferring module used here is a WiFi module which needs a separate voltage level of 3.3 Volt when compared to the sensors which are driven with a voltage of 5 Volt each. A voltage more than 3, will result in burning the entire module and hence the WiFi module it needs a separate voltage line. 
+
 
 \item Calibration of each sensors based on the data sheet.
 \par
-As I am selecting commodity sensors which says that it is already calibrated but usually it should be done for each environment. The data collected changes for each environment and this should be taken care of. This can be a tough task as for each of the sensors it changes based on the slope of internal resistance and the internal voltage values given in data sheet. 
+As I am selecting low cost sensors which comes with calibration with respect to the environment it was developed. The collected data changes for each environment and this should be taken care of. This can be a tough task as for each of the sensors it changes based on the slope of internal resistance and the internal voltage values given in data sheet. 
+
+
 \item Packaging of hardware component.
 \par
 To make the whole system portable it should be packed carefully. For certain sensor like dust sensor, it should be exposed to the environment so as to estimate the particulate matter. This packing should be done in such a way that the it does not hinder with the observed value.
+
+\item Development of the visualization software.
+\par The development of user specific visualization tool from the scratch was most challenging as this was my first hands on experience in creating a tool which involved different methods of data display. Another task was to make the tool connect to the backend python code which does the data clensing and calibration which took a lot of preparation work.
 
 \item Transferring the data to a platform or a database using the WiFi module.
 
@@ -235,3 +238,5 @@ To make the whole system portable it should be packed carefully. For certain sen
 \end{enumerate}
 
 \section{Structure of the Thesis}
+
+Rest of the thesis is organized as follows. Chapter 2 focuses on related work for different methods of understanding and detecting pollution. This is divided into four main categories and  work done in each category is explained further. Next, in Chapeter 3 the design and implementation of pollution monitoring system and the visualization tool is explained. To test the accuracy of collected data to the orginal data we have implemented calibration tool by linear regression which is described in Chpater 4. In Chapter 5, analysis of the results obtained from the system is demonstrated. Finally, in Chapter 6 the conclusion and direction for future work are provided.
