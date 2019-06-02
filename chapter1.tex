@@ -27,7 +27,7 @@ Earth, our home planet, is the only place in the known universe affirmed to host
 There are various pollutants that contribute to the contamination of the environment. These pollutants differ from region to region depending on the human activities. For example, an industrial area which manufactures products from raw material, such as production of iron from its ore or production of gasoline from crude oil, releases inorganic carbon compounds into the atmosphere \cite{Vallero2014}. Urban areas are the major sources of particulate matter and carbon compounds produced from the burning of fuels in the vehicle.
 Based on the severity of health impact and the kind of human activities, the National Ambient Air Quality Standards (NAAQS) has set six common criteria pollutants that harm human health, environment or even property damage. The NAAQS was established by the United States Environmental Protection Agency (EPA) under the Clean Air Act which specifies the pollutants that are harmful for the public health and environment \cite{USEPA} \cite{NAAQS}. The pollutants specified by NAAQS are Particulate Matters ($PM$), Ozone ($O_3$),  Nitrogen Dioxide ($NO_2$), Carbon Monoxide ($CO$), Sulphur Dioxide ($SO_2$), and Lead ($Pb$).
 
-Different countries measure different set of pollutants, for example, India measures 8 major pollutants such as ($PM$), ($O_3$), ($NO_2$), ($CO$), ($SO_2$), Ammonia ($NH_3$), and Benzene ($C_6H_6$) (in some places ($Pb$) instead) \cite{Chen2013}. Most other countries measures a subset of these criteria pollutant for example, Canada measures $PM, O_3, NO_2, SO_2$ and $CO$ \cite{Chen2013}. Particulate matters are measured at two levels; 2.5 microns size particles ($PM_{2.5}$) and 10 microns size ($PM_{10}$), and they are measured in micro-grams per cubic meters ($\mu g/m^3$). $CO$ is measured in parts per million ($ppm$) and other gases are measured in parts per billion ($ppb$). These individual measurements are not provided in layman terms and therefore are not helpful in understanding the cumulative impact of the air quality. Taking this into account the government agencies of each country around the globe developed their own indices corresponding to the NAAQS for representing the quality of air. The different indices are Air Quality Health Index (AQHI), Air Quality Index (AQI), Air Pollution Index (API), Pollution Standard Index (PSI), Comprehensive Air Quality Index (CAI), Daily Air Quality Index, Common Air Quality index (CAQI) are few used in different countries.
+Different countries measure different set of pollutants, for example, India measures 8 major pollutants such as ($PM$), ($O_3$), ($NO_2$), ($CO$), ($SO_2$), Ammonia ($NH_3$), and Benzene ($C_6H_6$) (in some places ($Pb$) instead) \cite{Chen2013}. Most other countries measures a subset of these criteria pollutant for example, Canada measures $PM$, $O_3$, $NO_2$, $SO_2$ and $CO$ \cite{Chen2013}. Particulate matters are measured at two levels; 2.5 microns size particles ($PM_{2.5}$) and 10 microns size ($PM_{10}$), and they are measured in micro-grams per cubic meters ($\mu g/m^3$). $CO$ is measured in parts per million ($ppm$) and other gases are measured in parts per billion ($ppb$). These individual measurements are not provided in layman terms and therefore are not helpful in understanding the cumulative impact of the air quality. Taking this into account the government agencies of each country around the globe developed their own indices corresponding to the NAAQS for representing the quality of air. The different indices are Air Quality Health Index (AQHI), Air Quality Index (AQI), Air Pollution Index (API), Pollution Standard Index (PSI), Comprehensive Air Quality Index (CAI), Daily Air Quality Index, Common Air Quality index (CAQI) are few used in different countries.
 Out of all these indexes the most common are AQI and AQHI which are proposed and used by different countries \cite{Chen2013}.
 
 India, USA, UK, and many other countries use AQI and Canada, Hong Kong uses AQHI. These metrics are designed  by carefully examining those pollutants which are harmful to human health and environment.
@@ -86,7 +86,7 @@ Air pollution has significantly increased after industrialization and urbanizati
 
 \par
 
-Particles with a diameter of less than 10 microns ($PM_{10}$), and less than 2.5 microns ($PM_{2.5}$) causes the greatest threat to health, as they are capable of penetrating the lungs which leads to cardiovascular and Chronic Obstructive Pulmonary Diseases (COPD) \cite{who} \cite{Tian2016}. Exposure to Carbon Monoxide ($CO$) which is a colorless and odorless gas, results in absorption of the gas into bloodstream and reduces the ability of lungs to transfer oxygen which inturn affects the functionality of vital organs such as brain and the heart \cite{Sierra-vargas2012} \cite{Golbabaei2012}. Respiratory issues such as decrease in responsiveness of airways, inflammation in airways and lung infectivity occurs due to exposure of high concentration of ozone ($O3$) \cite{Lippmann1989}. Another pollutant is nitrogen dioxide ($NO2$) which causes illness such as wheezing, coughing, bronchitis and increases severity of flu symptoms.
+Particles with a diameter of less than 10 microns ($PM_{10}$), and less than 2.5 microns ($PM_{2.5}$) causes the greatest threat to health, as they are capable of penetrating the lungs which leads to cardiovascular and Chronic Obstructive Pulmonary Diseases (COPD) \cite{who} \cite{Tian2016}. Exposure to Carbon Monoxide ($CO$) which is a colorless and odorless gas, results in absorption of the gas into bloodstream and reduces the ability of lungs to transfer oxygen which inturn affects the functionality of vital organs such as brain and the heart \cite{Sierra-vargas2012} \cite{Golbabaei2012}. Respiratory issues such as decrease in responsiveness of airways, inflammation in airways and lung infectivity occurs due to exposure of high concentration of ozone ($O_3$) \cite{Lippmann1989}. Another pollutant is nitrogen dioxide ($NO_2$) which causes illness such as wheezing, coughing, bronchitis and increases severity of flu symptoms.
 \par
 
  The exposure of mixed air pollutants leads to health effects like birth defects, development delays in children, skin irritation or even cancer \cite{MarilenaKampa2007}. Apart from the health issues, there is a large effect in environment such as rise in sea-level, global warming that contributes to increase in overall temperature and melting of ice caps, acid rains which leads to land and crop destruction, ozone layer depletion, wildlife destruction and eutrophication which affects on aquatic life \cite{pollutioneffect}. Having discussed the effect of pollution the next section will brief about the history of air pollution and how pollution is measured. 
@@ -116,7 +116,7 @@ In passive sampling the pollutants are collected by physical process such as dif
         \hline
     
       $NOx$   & 10,4440         USD \\ 
-      $SO2$   & 35,000          USD \\ 
+      $SO_2$   & 35,000          USD \\ 
       $COx$   & 28,000          USD\\ 
       $Ox$   & 6,600            USD\\ 
       $PM$   & 37,700           USD\\ 
@@ -152,17 +152,24 @@ Achieving the above stated goal requires a suitable system framework that can he
 
 
 \section{Research Problem}
+
 This thesis focuses on design and development of an air pollution monitoring system using off-the-shelf
 hardware and build an open source software that focuses on three different types of users with the following objectives in mind:
 \begin{enumerate}
+  \item To demonstrate the quality of data obtained from the low cost system by comparing it with the expensive monitors fixed at a particular location.
+  
+  \item To encourage citizen to contribute in solving the issue of air pollution and to give more insight about the impact it causes to human health and environment.
    
   \item To give an idea on how to integrate the hardware components to a processor and also make an independent software, which can be accessed world-wide.
   
-  \item To influence the behaviour of people by including air quality health index which provides a measure of adverse affects on health by pollutants.
+  \item To provide user oriented data which gives a deeper understanding about the pollution.
+  
+  \item To provide information on the quality of air by including Air Quality Health Index (AQHI) which provides a measure of adverse affects on health by pollutants and Air Quality Index (AQI) that gives an idea about the level of pollution on the environment.
 
-  \item To encourage public citizen contribute to solve the issue of air pollution and give more understanding to the impact it causes to human health and environment.
-   
-  \item Improving the quality of data obtained from the system by integrating a calibration tool along with the software.
+  
+  \item Improving the quality of data obtained from the system by integrating a calibration tool.
+  
+
    
 
 \end{enumerate}
@@ -174,8 +181,10 @@ There are three major contribution from thesis:
 \begin{enumerate}
   
     \item Air pollution monitoring system: The system itself which measures the pollutants from the atmosphere. This include the sensors with the processor and the data trasferring module. We believe that this could be a way to show that low cost system could be used for data collection.
+    
     \item  Air pollution visualization software: Next major contribution is the the software that could be used for data visualization. The main idea is to make the collected data user sensitive and hence we came up with the idea of building the complete tool from the scratch as the already available tools in the market are paid service. 
-    \item Integration of Calibration tool :  Macro Analysis Tool (MAT) developed by Environmental Protection Agency (EPA) which was an excel based tool was modified into a web-based tool which provides an access for any user to understand the quality of data obtained.
+    
+    \item Integration of Calibration tool :  Macro Analysis Tool (MAT) developed by Environmental Protection Agency (EPA)\cite{airsensorguidebook} which is an excel based tool was modified into a web-based tool which provides an access for any user to understand the quality of data obtained.
   
 \end{enumerate}
 
