@@ -1,33 +1,41 @@
 
 \chapter{Design and Implementation of Air pollution Monitoring System}
 
-
-
-The progress in technology has made it easy for researchers to explore more in different areas. One such development was is in the area of sensor technology which completely changed the outlook of different application level problems. In this chapter, I share my hands-on experience in the development, design, integration, and operation of the air pollution system using commodity sensor. Earlier, the approach for understanding air pollution used complex and stationary equipment which collects data and used these data for analyzing, but things have changed after the low cost, easy to use, portable sensors came in markets \cite{Snyder2013}. 
-
+  %understanding air pollution used complex and stationary equipment which collects data and used these data for analyzing, but things have changed after the low cost, easy to use, portable sensors came in markets \cite{Snyder2013}.
+  
+  The use of complex, expensive and stationary monitors for collecting and analyzing the pollutant data began soon after the 1970 Clean Air Act came in action \cite{Daly2007}. Ever since then researchers and environmentalist were interested in studying the pollution data and its effects. This became even more popular after the development of the low cost, easy to use, portable sensors came in markets \cite{Snyder2013}. In our research work, we have attempted to fill the gap for understanding the quality of the data obtained from the sensors by comparing it with the orginal monitoring system. In this chapter, I share my hands-on experience in the design, development, integration, and operation of the air pollution system using the available air pollution sensor in the market. We have also build a visualization tool for effective data representation which is explained at the end of the chapter.
+ 
 \section{Design Goals}
 
-There are many factors which need to be considered for the development of a simple yet reliable system. In this section, we have mentioned the factors which should be considered for an effective air pollution monitoring system.
+The first step towards creating the system was to identify and recognize the components which could be used to make the system. There are many factors which need to be considered for the development of a simple yet reliable system. In this section, I will share the though process that we need to achieve in building our air pollution system. 
 
 \begin {enumerate}
 %\item{Pollution monitoring for EPA criteria pollutant}
+
 \item{Sensor Identification}
 
-The very first task is to figure out which all sensors need to be included for the completion of the system. There are sensors available in the market for the measurement of almost all types of gases in the atmosphere. It should be very clear that which all gases need to be measured and this definitely changes from region to region as in certain places the concentration of a particular gas is more. Having said that, there will be a certain set of gases which must be included for measurement regardless of the region.
+There are different kinds of sensors available in the market for measuring a particular kind of pollutant. Selecting the right kind for obtaining accurate data was one of the challenging task. The Air Sensor Guidebook by US Environmental Protection Agency (EPA)\cite{airsensorguidebook} provided a lot of guidelines which we followed before purchasing the sensor. One of the main factor that we looked in the sensor was accuracy and cost. Keeping in mind, we researched different available sensors in market and concluded with the ones which we felt would meet our demand. 
+
+%The very first task is to figure out which all sensors need to be included for understanding the air quality. There are sensors available in the market for the measurement of almost all types of gases in the atmosphere. It should be very clear that which all gases need to be measured and this depends from region to region as in certain places the concentration of a particular gas is more. 
+
+\item{processor Identification}
+
+In order to make the system functional there should be a processor. Choosing which processor to work on was the next task which we again delt by answering the questions like 'whether we wanted our system to be simple or complex?', 'whether it is an open-source in hardware and software?','the ease of programming','how easily can the processor be available?','how much is the cost?'. This gave us a clear idea for selecting the processor.
+
 
 \item{Communication Module}
 
-As the system is completely based on wireless sensors the selection of data transmission is another crucial factor. The communication between the server and the sensors should be taken into consideration.
-The collected data from the sensors should be transferred over a database or to the sever. For that the type of communication module can be either Wi-Fi or bluetooth module.
+Once the sensors and processor were identifed we need to find out a way how the raw data from the processor should to be transferred. We wanted the system to be wirelss and for that either bluetooth or Wi-Fi module can be used. We also wanted instantaneous data representation and Wi-Fi module served well for that purpose.
+%As the system is completely based on wireless sensors, the data transmission is another crucial factor. The communication between the server and the sensors should be taken into consideration. The collected data from the sensors should be transferred to a sever. For that, communication module can be either Wi-Fi or bluetooth module.
  
-\item {Reliability}
+%\item {Reliability}
 
-The success of the system depends upon how much accurate the data is. The value which we obtain from the sensor should make sense to the audience. There will be a lot of noise coming with the  collection of data, the sensor should have the ability to remove the noise data or it should allow the programmer to make changes or apply certain algorithm so that the data sets will be refined.
+%The success of the system depends upon how reliable the system is. The value which we obtain from the sensor should make sense to the audience. There will be a lot of noise coming with the  collection of data, the sensor should have the ability to remove the noise data or it should allow the programmer to make changes or apply certain algorithm so that the data sets will be refined.
 
 
 \item {Easy Integration}
 
-The integration of sensors with the processor is one important factor that needs to be kept in mind. Some sensors can be easily integrated with any processor but others needs driver codes to be written in order to work with the processor.
+The integration of sensors with the processor and communication module is the next important factor that needs to be addressed. Some sensors can be easily integrated with any processor but others needs driver codes to be written in order to work with the processor. Also, the presence of one sensor should not affect the sorrounding sensor, otherwise will result in error values.
 
 \item {Printed Circuit Board}
 
