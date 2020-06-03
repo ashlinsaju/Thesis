@@ -3,22 +3,24 @@
 
   %understanding air pollution used complex and stationary equipment which collects data and used these data for analyzing, but things have changed after the low cost, easy to use, portable sensors came in markets \cite{Snyder2013}.
   
-  The use of complex, expensive and stationary monitors for collecting and analyzing the pollutant data began soon after the 1970 Clean Air Act came in action \cite{Daly2007}. Ever since then researchers and environmentalist were interested in studying the pollution data and its effects. This became even more popular after the development of the low cost, easy to use, portable sensors came in markets \cite{Snyder2013}. In our research work, we have attempted to fill the gap for understanding the quality of the data obtained from the sensors by comparing it with the orginal monitoring system. In this chapter, I share my hands-on experience in the design, development, integration, and operation of the air pollution system using the available air pollution sensor in the market. We have also build a visualization tool for effective data representation which is explained at the end of the chapter.
+The use of complex, expensive and stationary monitors for collecting and analyzing the pollutant data began soon after the 1970 Clean Air Act came in action \cite{Daly2007}. Ever since then researchers and environmentalist were interested in studying the pollution data and its effects. This became even more popular after the development of the low cost, easy to use, portable sensors came in markets \cite{Snyder2013}. In our research work, we have attempted to fill the gap for understanding the quality of the data obtained from the sensors by comparing it with the orginal monitoring system. In this chapter, I share my hands-on experience in the design, development, integration, and operation of the air pollution system using the available air pollution sensor in the market. We have also build a visualization tool for effective data representation which is explained at the end of the chapter.
  
 \section{Design Goals}
 
-The first step towards creating the system was to identify and recognize the components which could be used to make the system. There are many factors which need to be considered for the development of a simple yet reliable system. In this section, I will share the though process that we need to achieve in building our air pollution system. 
+For the development of a reliable and simple pollution monitoring system, we have researched and came to conclusion about certain factors that need to met so as to make the system efficient. These design goals are very unique to our work and are listed as follows: 
+
+%The first step towards creating the system was to identify and recognize the components which could be used to make the system. There are many factors which need to be considered for the development of a simple yet reliable system. In this section, I will share the idea that we wanted to achieve in building our air pollution system. 
 
 \begin {enumerate}
 %\item{Pollution monitoring for EPA criteria pollutant}
 
-\item{Sensor Identification}
+\item{Sensor Selection}
 
-There are different kinds of sensors available in the market for measuring a particular kind of pollutant. Selecting the right kind for obtaining accurate data was one of the challenging task. The Air Sensor Guidebook by US Environmental Protection Agency (EPA)\cite{airsensorguidebook} provided a lot of guidelines which we followed before purchasing the sensor. One of the main factor that we looked in the sensor was accuracy and cost. Keeping in mind, we researched different available sensors in market and concluded with the ones which we felt would meet our demand. 
+There are different kinds of sensors available in the market for measuring a particular kind of pollutant. Selecting the right kind for obtaining accurate data was one of the challenging task. The Air Sensor Guidebook by US Environmental Protection Agency (EPA)\cite{airsensorguidebook} provided a lot of guidelines which we followed before purchasing the sensor. One of the main factor that we looked in the sensor was accuracy of collected data. Keeping in mind, we researched different available sensors in market and concluded with the ones which we felt that would meet our demand. 
 
 %The very first task is to figure out which all sensors need to be included for understanding the air quality. There are sensors available in the market for the measurement of almost all types of gases in the atmosphere. It should be very clear that which all gases need to be measured and this depends from region to region as in certain places the concentration of a particular gas is more. 
 
-\item{processor Identification}
+\item{processor Selection}
 
 In order to make the system functional there should be a processor. Choosing which processor to work on was the next task which we again delt by answering the questions like 'whether we wanted our system to be simple or complex?', 'whether it is an open-source in hardware and software?','the ease of programming','how easily can the processor be available?','how much is the cost?'. This gave us a clear idea for selecting the processor.
 
@@ -26,12 +28,12 @@ In order to make the system functional there should be a processor. Choosing whi
 \item{Communication Module}
 
 Once the sensors and processor were identifed we need to find out a way how the raw data from the processor should to be transferred. We wanted the system to be wirelss and for that either bluetooth or Wi-Fi module can be used. We also wanted instantaneous data representation and Wi-Fi module served well for that purpose.
+
 %As the system is completely based on wireless sensors, the data transmission is another crucial factor. The communication between the server and the sensors should be taken into consideration. The collected data from the sensors should be transferred to a sever. For that, communication module can be either Wi-Fi or bluetooth module.
  
 %\item {Reliability}
 
 %The success of the system depends upon how reliable the system is. The value which we obtain from the sensor should make sense to the audience. There will be a lot of noise coming with the  collection of data, the sensor should have the ability to remove the noise data or it should allow the programmer to make changes or apply certain algorithm so that the data sets will be refined.
-
 
 \item {Easy Integration}
 
@@ -44,30 +46,32 @@ The final system should be build on a printed circuit board as it is more depend
 
 \item {Maintenance}
 
-In case of any sensor damage it should be easily replaceable which means the complete system should be a plug and play type model. On building up such a  model like that will help in debugging the problems caused by sensors if any. It should also be considered that the sensors selected for the system should be easily available in market so that it can be replaced if needed.
+The next goal which we want to achieve was easy replication of hardware modules in case of any damage. For this we wanted the system to be a plug and play model so that in case of any hardware issue the debugging will not be challenging. We have also selected the hardware modules on the basis of their availability in the market so that replacement will be quick. The basic idea behind such a system is that the system could be used by anyone without even having dept knowledge.
 
-\item {Easy Replication}
-The idea behind creating such a system is that it can be replicated by anyone without even knowing the dept knowledge. The system should be designed in such a way that it should use the most available sensors and processors in the market. The programming part of the sensors to processor will be easy if the selection of processor is simple. This could definitely bring down a lot of work done at the hardware level.
-
+%In case of any damage in sensor it should be easily replaceable which means the complete system should be a plug and play type model. In building up such a model will help in debugging the problems caused by sensors if any. It should also be considered that the sensors selected for the system should be easily available in market so that it can be replaced in case of any damage. The idea behind creating such a system is that it can be replicated by anyone without even knowing the dept knowledge. The system should be designed in such a way that it should use the most available sensors and processors in the market.The programming part of the sensors to processor will be easy if the selection of processor is simple. This could definitely bring down a lot of work done at the hardware level.
 
 \item {Low Cost}
 
-Within the available sensors in the market one could find sensors ranging from a very low price to costliest of all. There was a budget set for the the complete system and finding the right sensors with the affordable cost is one crucial factor.
-
+The final and the most important factor was the cost. There is a price range for the hardware modules in the market extending till $\$800 $ per module. We wanted to create a low cost system which could be affordable and will be under $\$400$ for the entire pollution system.
+%Within the available sensors in the market one could find sensors ranging from a very low price to costliest of all. There was a budget set for the the complete system and finding the right sensors with the affordable cost is one crucial factor.
 \end{enumerate}
 
 
 \section{Targeted Pollutants}
 
-Our surrounding is filled with various gases, these gases will become harmful if the concentration of it increases to an undesired level. On the development of a air pollution system measurement of all the gases in the atmosphere is not necessary as the collected data from all the sensor will make no sense to the public. Our main idea here is to make the general people aware about the dominant gases and the extend of health hazard caused by these gases. This can be identified through different indexes know as Air Quality Health Index(AQHI) which is a scale from one to ten developed by health and environmental professionals \cite{faq} and Air Quality index (AQI)which gives the level of air quality status in an area \cite{Asha2017}.
+Our surrounding is filled with various gases and will become harmful if the concentration of it increases to an undesired level. We need to carefully identify which pollutant is dominant in a particular area and select the pollutant to be measured accordingly. The main idea here is to make the general people aware about the dominant gases and the extend of health hazard caused by these gases. This can be identified through different indexes know as Air Quality Health Index  (AQHI) which is a scale from one to ten developed by health and environmental professionals \cite{faq} and Air Quality Index (AQI) which gives the level of air quality status in an area \cite{Asha2017}.
 
+
+
+%On the development of a air pollution system measurement of all the gases in the atmosphere is not necessary as the collected data from all the sensor will make no sense to the public. 
 \par 
 
 The development of such indexes by the scientists will give the general public more idea of the pollution. The main gases to be included for the measurement for the indexes are  $PM_{2.5}$, $O_3$, $NO_2$, and $CO$ along with temperature and humidity sensor for awareness. These gases are mainly caused due to industrialization, urbanization and motorization \cite{Saha1952}. Industrial and vehicles release greenhouse emissions which are largely responsible for air pollution \cite{ internet}. The sensors thus can be limited to five which will also make the system compact.
 
 \section{System Architecture}
     
-     In this section we describe the design for air pollution monitoring system which can be categorized into system hardware architecture and system software architecture. The system is designed in such a way that it collects the data through the sensors, performs specific mathematical equation on the collected data and calculate the indexes which then transfers these data to the software where it is visualized. 
+
+     In this section we describe the design of the implemented air pollution monitoring system which can be categorized into system hardware architecture and system software architecture. The system is designed in such a way that it collects the data through the sensors, performs specific mathematical equation for calibration on the raw data and then transfers to the server. 
 
      \begin{figure}[h]
       \begin{center}
@@ -78,23 +82,22 @@ The development of such indexes by the scientists will give the general public m
   
     \end{figure}
 
-    The hardware section includes multiple sensors, processor and also on the wireless communication module for transmitting and receiving signals. Second, we will discuss the air pollution software which mainly focuses on the visualization part. The overview of the system is as shown in the figure \ref{overview} and each part along with the sensor specification, implementation, design will be discussed further in the section. 
+    The hardware section includes multiple sensors, processor and also on the wireless communication module for transmitting and receiving signals. Second, we will discuss the air pollution visualization tool which mainly focuses on representation of data. The overview of the system is as shown in the figure \ref{overview} and each part along with the sensor specification, implementation, design will be discussed further in the section. 
 
 
  \section{Hardware Architecture}
   
- \subsection{Sensor Control and Data Processing Unit}
-This unit is the core for the pollution monitoring as it is where all the other modules are connected including the communication middleware. This module does the following function:
-
+\subsection{Sensor Control and Data Processing Unit}
+This is the main component for pollution monitoring as it is where all the other sub-modules are connected including the communication middleware. The main function handled by this module are as follows:
 
 \begin{enumerate}
 
 \item Control the sensors in collecting data.
-\item It filters and processes the collected data and forward to the software.
+\item It filters and processes the collected data and forward to the server.
 \item Provide the necessary voltage for all the hardware connected to it.
 
 \end{enumerate}
-For simplicity and ease of programming we have selected one of the most popular processor in market, Arduino Ethernet board which has ATmega328 microcontroller as shown in Fig.\ref{Arduino}. 
+For simplicity and ease of programming we have selected one of the popular processor in market, Arduino Ethernet board which has ATmega328 microcontroller as shown in Fig.\ref{Arduino}. 
 
 \begin{figure}[h]
   \begin{center}
@@ -104,7 +107,7 @@ For simplicity and ease of programming we have selected one of the most popular 
   \label{Arduino}
 \end{figure}
 
-Arduino is an open source physical computing platform that is divided into two parts, one is the hardware which is the board itself in which the external components are added to and other is the software which is the development environment for the  processing language. It is very easy and simple to use the board with any external devices such as sensors or actuators and is widely used by researchers. There are different features which makes arduino popular and can be listed as \cite{Banzi2008}:
+Arduino is an open source physical computing platform that is divided into two parts, one is the hardware which is the board itself in which the external components are added to and other is the software which is the development environment for the  processing language. It is very simple to use the board with any external devices such as sensors or actuators and is widely used by researchers. There are different features which makes arduino popular and can be listed as \cite{Banzi2008}:
 
 
 \begin{enumerate}
@@ -156,19 +159,19 @@ Having all these specification gives the freedom for researchers to explore with
 
 \subsection{Sensor}
 
-Sensor networks are instruments useful to detect the conditions in remote places in the physical world in environmental monitoring applications such as pollution monitoring, transportation management, intrusion detection and many more \cite{Jung2011}. With constant development in electronics industry, it is possible to collect data remotely and collected data can be transferred to the required platform at a short period of time.
+Sensor networks are instruments useful to detect the conditions in remote places in the physical world in environmental monitoring applications such as pollution monitoring, transportation management, intrusion detection and many more \cite{Jung2011}. With constant development in electronics industry, it is possible to collect data remotely and this data can be transferred to a required platform within a short period of time.
 There are different sensors available in market which can measure the pollutants and display the value, but the idea here is to select the one which is of low cost and also gives the most accurate values.
 \par
-Having said that there is a variety of options available for sensors based on the way it measures the pollutants. One such category is Metal Oxide Semiconductor (MOS) gas sensor also known as semiconductor gas sensor, which is used to detect the concentration of any hazardous gases in the atmosphere by changing its resistance. The most popular series available in market for this category is MQ-XX sensors which is popular for its wide detecting scope, long life, stability, high sensitivity, fast response and also simple drive circuit \cite{Data2012}.The sensing material is made up either from Aluminum Oxide ($ Al_{2}O_{3}$) or Tungsten Trioxide ($WO_3$)based ceramic and has a coating of Tin Oxide $ SnO_{2} $ that acts as the sensing material for the desired gas. The sensing element is heated through Platinum wires which is connected to leads made up of Nickel-Chromium, well known conductive alloy. The gas to be detected has a specific temperature at which it gets ionized and the task of the sensor is to work at that temperature. Once the gas gets ionized it gets absorbed by the sensing material which changes the resistance and inturn changes the voltage across the sensor and can be read by the microcontroller \cite{gassensor}. The voltage value along with reference voltage and other resistor's resistance is used to find the resistance of sensor. Once the resistance of the sensor is known then by using the sensitivity curve the concentration could be found out. 
+Having said that there is a variety of options available for sensors based on the way it measures the pollutants. One such category is Metal Oxide Semiconductor (MOS) gas sensor also known as semiconductor gas sensor, which is used to detect the concentration of any hazardous gases in the atmosphere by changing its resistance. The most popular series available in market for this category is MQ-XX sensors which is popular for its wide detecting scope, long life, stability, high sensitivity, fast response and also simple drive circuit \cite{Data2012}.The sensing material is made up either from Aluminum Oxide ($ Al_{2}O_{3}$) or Tungsten Trioxide ($WO_3$) based ceramic and has a coating of Tin Oxide $ SnO_{2} $ that acts as the sensing material for the desired gas. The sensing element is heated through Platinum wires which is connected to leads made up of Nickel-Chromium, well known conductive alloy. The gas to be detected has a specific temperature at which it gets ionized and the task of the sensor is to work at that temperature. Once the gas gets ionized it gets absorbed by the sensing material which changes the resistance and inturn changes the voltage across the sensor and can be read by the microcontroller \cite{gassensor}. The voltage value along with reference voltage and other resistor's resistance is used to find the resistance of sensor. Once the resistance of the sensor is known then by using the sensitivity curve the concentration could be found out. 
 
 Another popularly used  MOS sensor which we explored was MICS which are MEMS based whose mode of operation is similar to the above said sensor as both of them are metal oxide. Here, oxidizing gas or the pollutant gas add to the insulative oxygen species causing the resistance to increase \cite{SGXSensortech}.
  Other than MOS sensors, we also took a look at optical sensor which are spectroscopic devices which uses light scattering principle to find the concentration of pollutants. These sensors are known for its detecting capability of particulate matter of different sizes and is one of the recent development in the field of air quality monitoring. Highly responsive, reliable and long life are the main highlights of this sensor.
  \subsubsection{Selected Sensor}
 
- After understanding the wide range of sensor options in the market the sensors were selected based on their performance, availability, ease of integration, and cost. The selected sensors were:
+ After understanding the wide range of sensor options in the market the sensors were selected based on their performance, availability, ease of integration, and cost and are listed below: 
  \begin{enumerate}
 
-  \item MQ-2 Sensor: This is a a semiconductor gas sensor which has an electrochemical sensor which detects multiple gases such as Carbon monoxide, LPG, methane, and other combustible steam. The sensor is connected in series with a variable resistor to form a voltage divider circuit and the variable resistor is used to change the sensitivity. The sensitivity curve for the sensor is shown for different types of gases.
+  \item MQ-2 Sensor: This is a a semiconductor gas sensor which has an electrochemical sensor which detects multiple gases such as Carbon monoxide, LPG, methane, and other combustible steam. The sensor is connected in series with a variable resistor to form a voltage divider circuit and the variable resistor is used to change the sensitivity. The sensitivity curve for MQ-2 is shown for different types of gases, where $R_{o}$ is the sensor resistance in clean air and $R_{s}$ is the sensor resistance when exposed to gas.
 \par
 \begin{figure}[h]
   \begin{center}
@@ -178,7 +181,7 @@ Another popularly used  MOS sensor which we explored was MICS which are MEMS bas
   \caption{Sensitivity characteristics curve \cite{Data2012}}
   
   \label{curve}
-where $R_{o}$ is the sensor resistance in clean air and $R_{s}$ is the sensor resistance when exposed to gas.
+
 \end{figure}
 From the curve in Fig.\ref{curve}, the voltage across the sensor is found out depending on which gas one wants to detect and there after using this voltage value the concentration of pollutant is calculated. The range of detection of gas is from 100ppm to 10,000 ppm and has a high sensitivity and fast response time. The sensor is small and portable and provides integration in famous MCU platforms like arduino, raspberry pi etc. 
 
@@ -194,9 +197,12 @@ From the curve in Fig.\ref{curve}, the voltage across the sensor is found out de
 
  \subsection{Communication Middleware}
  
- The collected data needs to be transferred to the software so that user can understand and interpret the data from the sensor. Choosing the communication middleware was a tough task as we need a stable system that will constantly send data over the network. In the beginning we used an ESP module for this purpose. The WiFi module, ESP8266, which is a highly integrated SOC that meets the requirement of user demand of efficient power usage, compact design and reliable performance\cite{Systems2018}. The ESP module can be connected to a processor or it can also be flashed on its own as the module itself is a MCU unit. Unlike the other sensor modules connected to the processor which needs a 5V power supply for its working, this module needs a 3.3V for its power up. The ESP module comes along with installed firmware from AI-thinker and it can be communicated with AT commands. On typing the AT command in the serial monitor the output would come as 'OK' if there is a successful connection. 
+ The collected data needs to be transferred to a server and from there to a visualization tool so that user can understand and interpret the data. Choosing the communication middleware was a tough task as we need a stable connection that will constantly send data over the network. At first we used an ESP module for data transfer. The WiFi module, ESP8266, which is a highly integrated SOC that meets the requirement of user demand of efficient power usage, compact design and reliable performance\cite{Systems2018}. The ESP module can be connected to a processor or it can also be flashed on its own as the module itself is a MCU unit. Unlike the other sensor modules connected to the processor which needs a 5V power supply for its working, this module needs a 3.3V for its power up. The ESP module comes along with installed firmware from AI-thinker and it can be communicated with AT commands. On typing the AT command in the serial monitor the output would come as 'OK' if there is a successful connection. 
 
- This firmware can be replaced with user's own code which gives the power of flexibility of connecting with any IOT platform. The arduino platform supports the programming of ESP module which makes the integration much easier. The code can be written in the Arduino IDE and can be flashed into the ESP board by connecting it separately.  However this module did not provide a reliable connection to the network and after few tests we had to replace it to another module. We choose a WEMOS[INSERT ABOUT WEMOS]
+ %This firmware can be replaced with user's own code which gives the power of flexibility of connecting with any IOT platform. The arduino platform supports the programming of ESP module which makes the integration much easier. The code can be written in the Arduino IDE and can be flashed into the ESP board by connecting it separately. 
+ However this module failed to provide a reliable connection to the network and also it faced issues with power-up when all the sensors were connected at once. This became a challenge for data transfer and this is when we chose a more efficent and reliable module called WEMOS D1 mini. WEMOS mini is a miniature microcontroller based on ESP8266 and can be easily integrated with Arduino and NODE MCU. The development board has eleven digital input/output pins and one analog pins. The programming for the device is done through Arduino IDE and flashed with the help of a USB Micro B connector. The programming for the system was very similar to the earlier ESP module and provided a stable connection.
+ 
+ % the having a stable network connection for data transfer.
  
  \iffalse
  The circuit for the ESP flashing is as shown in figure \ref{cir} which is a voltage divider circuit.
@@ -212,6 +218,8 @@ From the curve in Fig.\ref{curve}, the voltage across the sensor is found out de
 
  When the TX and RX pin of arduino is connected to TX and RX pin of the WiFi module it becomes in the programming mode and flashing occurs. 
  \fi
+
+
  \subsection{System Overview}
 
  This section will show about the integration of the above mentioned sensors with the processor. After selecting the sensors and processor for the air pollution data measurement the next task was to put together so as to make it as a working system. This step was done one at a time so that troubleshooting will be easy. The complete circuit diagram of how the components are integrated to the Microcontroller is as shown is the figure\ref{circuit}.
@@ -222,7 +230,7 @@ From the curve in Fig.\ref{curve}, the voltage across the sensor is found out de
   \caption{Circuit daigram of air pollution system}
   \label{circuit}
 \end{figure}
- Each of the sensors were carefully arranged so that it reduces the spatial interferences. As majority of the sensors are heat sensors and discharges heat it affects the working of the sensor placed near to each other. The figure \ref{prototype} shows the initial circuit implementation that was done in the breadboard with wires. Building the circuit in breadboard gave the flexibility of working with different arrangements.
+ Each of the sensors were carefully arranged so that it reduces the spatial interferences. As majority of the sensors are heat sensors and discharges heat it affects the working of the sensor placed near to each other. The figure \ref{prototype} shows the initial circuit implementation that was done in the breadboard with wires. Building the circuit in breadboard gave the flexibility of working with different arrangements. We have tried to expalin the hardware section in our paper \cite{Saju2018}.
 
  \begin{figure}[h]
   \begin{center}
@@ -236,7 +244,7 @@ After building the circuit in breadboard, it was migrated to a Printed Circuit B
 
 \begin{figure}[h]
   \begin{center}
-  \includegraphics[scale=0.60]{./images/figure10.png}
+  \includegraphics[scale=0.70]{./images/figure18.png}
   \end{center}
   \caption{Printed Circuit Board}
   \label{pcb}
@@ -260,23 +268,25 @@ The hardware is the one responsible for the data collection but making these dat
 
 \end{itemize}
 
+
+
 \subsection{Framework}
 
 "Seeing is believing because seeing is seduction"\cite{Hepworth}.
 
 The pollution monitoring stations collect huge amount of data of pollutants and there are various ways to make people aware about these data. There can be different groups of users who will have access to these data which can be categorized as common people, educationist or the researchers who will be analyzing on the data, and the policy or law makers who will take necessary actions.
 
-Accurately identifying all the stakeholders of air pollution is challenging. In \cite{English2000}, stakeholders in environmental risk decisions are identified into four categories of stakeholders as risk losers, risk gainers, risk perpetrators, risk managers. 
+Accurately identifying all the stakeholders of air pollution is challenging. In \cite{English2000}, a paper which categorizes stakeholders in environmental risk decisions into four categories of stakeholders as risk losers, risk gainers, risk perpetrators, risk managers. 
 Risk losers in \cite{English2000} are those who may be adversely affected by environmental risk decision, in terms of health or economic values and risk gainers are those who may be favorably affected by an environmental risk decision, typically through economic gains. The people who create the risk are the perpetrators and those who takes the action against the risk are the risk managers. In a similar way, here we have put forward an approach of visualization based on the different stakeholders, in which we have classified into three categories: risk losers, risk analyzers and risk managers. 
 
 Risk losers are those who are prone to pollution which include the common people or the society as a whole. Risk analyzers are those who identify the cause and increase in pollution and suggests pollution control methods. The next category is the one who implements laws and regulation by looking at the trends of pollution for a certain period of time, which are categorized as risk managers. 
-We believe this categorization applies to air pollution too, and therefore based on this categorization we offer our data visualization strategy.
+We believe this categorization for representing air pollutant data is very efficent as it helps in representing what each stakeholders wants to see.
 
-The visualization at first go should be very simple and be able to drive the user to which details they have to go through. It should not be representing all the data in a single screen which will be annoying to user and will end up loosing the interest of different stake holders. There should be options given to users so that the detailed data will be displayed. The user should be able to choose what data they need to view. If this approach is included in visualization, the data that different stakeholders are looking for will be passed onto them in a very efficient manner.
+The visualization should be very simple and be able to drive the user to which details they have to go through. It should not be representing all the data in a single screen which will be confusing to user and will end up loosing the interest of different stake holders. The user should be able to choose what data they need to view. If this approach is included in visualization, the data that different stakeholders are looking for will be passed onto them in a very efficient manner. We have summed up this visualization idea in the paper that we tried in 2018 \cite{Saju2018(1)}.
 
 \subsection{Implementation of CLV of Air Pollution Data}
 
-The complete software implementation of visualization was done with the combination of Node.js and python.The server used for storing the data from the system is Thingspeak \cite{thingspeak}. The collected data from the system is stored in the server of Thingspeak server \cite{thingspeak} which is a visualization paid service that was used for initial testing. 
+The complete software implementation for visualization was done with the combination of Node.js and python.
 According to the classification of stakeholders, each groups are looking for different kind of data. The data can be represented in the form of huge spreadsheets or documents. There are different methods for visualization like heat-maps, bubble plots, box plots, bar graphs or a plane graphs. The most common method of displaying the data is graphical method, which can show the data corresponding to a certain time or day. We believe that instead of visualizing the entire data through graphs or plots, it would be much easier for the public to interpret the data if it is a single instantaneous value. The  representation implemented for the first stakeholder which is the layman is as in figure \ref{view1}, which shows a single value of the pollutant which is all the data that as a citizen will be looking for.
 
 \begin{figure}[h]
@@ -313,13 +323,8 @@ This can be viewed through a pie-chart which shows the percentage of each pollut
 The idea of such a hierarchial level of visualization is that it changes according to the people who are focusing on these data. Albert Cairo, a renowned information designer claims that the fundamental goal of data visualization should be to make people better informed \cite{Hepworth} \cite{Cairo2014},  similarly we also believe that a well communicated data is important for visualization.
 
 
+\subsection{Data Storage - ThingSpeak}
 
+The previous section demonstrates how the data is visualized. The other main part to be noted that where does the data get stored? The pollutant data that we get from system needs to be stored so that we can retrieve the data whenever needed. For this we use an open source IoT platform called Thingspeak \cite{thingspeak}. This is basically a paid visualization service that allows the system to aggregate, analyze, visualize, and store the sensor data \cite{thingspeak}. Thinkspeak can allow many users to integrate their system with other systems for collective and cooperative analysis of sensor data and promote citizen science in solving important global problems. It also offer a ‘hub’ model for data repository and a set of APIs for accessing and using the sensor data for their analysis and interpretations. We have used data repository service of Thingspeak which is a free service and act as our server. The transferred data from WEMOS is stored into an API key provided by Thinkspeak and updated everytime when the data is available. The data can be downloaded from here in the form of csv file which makes it more easier for analyzation. Having considered all this reason we have used this platform for storing the data.
+%to display the results. As soon as the value is transferred to Thingspeak, it can immediately draw graph showing online visualization. We have used eight channels of Thingspeak for the graph representation of all the pollutants measured by the sensors and the AQI and AQHI metrics.
 
-\iffalse
-
-We use an open source IoT platform called Thingspeak \cite{thingspeak}. It is integrated with the system to aggregate, analyze, visualize, and store the sensor
-data that we collect \cite{thingspeak}. Thinkspeak can allow many users to integrate their system with other systems for collective and cooperative analysis of sensor data and promote citizen science in solving important global problems. It also offer a ‘hub’ model for data repository and a set of APIs for accessing and using the sensor data for their analysis and interpretations.
-Thinkspeak provides an intuitive user interface that is easy to understand. It also provides a mobile application called Thingview which can be installed on our phone and the same data from the system can be visualized simultaneously.
-For our purpose, we use Thinkspeak to display the results. As soon as the value is transferred to Thingspeak, it can immediately draw graph showing online visualization. We have used eight channels of Thingspeak for the graph representation of all the pollutants measured by the sensors and the AQI and AQHI metrics.
-
-\fi
