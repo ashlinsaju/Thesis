@@ -286,7 +286,18 @@ The visualization should be very simple and be able to drive the user to which d
 
 \subsection{Implementation of CLV of Air Pollution Data}
 
-The complete software implementation for visualization was done with the combination of Node.js and python.
+The complete software implementation for visualization was done with the combination of Node.js and python. The framework of the complete software is as shown in the figure \ref{frameworksoft}. In the figure \ref{frameworksoft} the back end and the front end of the software is clearly shown and how it is connected with each other.
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[scale=0.58]{./images/figure33.png}
+  \end{center}
+  \caption{Software Architecture}
+  \label{frameworksoft}
+\end{figure}
+
+
+
+
 According to the classification of stakeholders, each groups are looking for different kind of data. The data can be represented in the form of huge spreadsheets or documents. There are different methods for visualization like heat-maps, bubble plots, box plots, bar graphs or a plane graphs. The most common method of displaying the data is graphical method, which can show the data corresponding to a certain time or day. We believe that instead of visualizing the entire data through graphs or plots, it would be much easier for the public to interpret the data if it is a single instantaneous value. The  representation implemented for the first stakeholder which is the layman is as in figure \ref{view1}, which shows a single value of the pollutant which is all the data that as a citizen will be looking for.
 
 \begin{figure}[h]
@@ -327,4 +338,8 @@ The idea of such a hierarchial level of visualization is that it changes accordi
 
 The previous section demonstrates how the data is visualized. The other main part to be noted that where does the data get stored? The pollutant data that we get from system needs to be stored so that we can retrieve the data whenever needed. For this we use an open source IoT platform called Thingspeak \cite{thingspeak}. This is basically a paid visualization service that allows the system to aggregate, analyze, visualize, and store the sensor data \cite{thingspeak}. Thinkspeak can allow many users to integrate their system with other systems for collective and cooperative analysis of sensor data and promote citizen science in solving important global problems. It also offer a ‘hub’ model for data repository and a set of APIs for accessing and using the sensor data for their analysis and interpretations. We have used data repository service of Thingspeak which is a free service and act as our server. The transferred data from WEMOS is stored into an API key provided by Thinkspeak and updated everytime when the data is available. The data can be downloaded from here in the form of csv file which makes it more easier for analyzation. Having considered all this reason we have used this platform for storing the data.
 %to display the results. As soon as the value is transferred to Thingspeak, it can immediately draw graph showing online visualization. We have used eight channels of Thingspeak for the graph representation of all the pollutants measured by the sensors and the AQI and AQHI metrics.
+
+\section{Summary}
+
+The implementation of hardware and the software along with their architecture have been explored. We have talked about the sensors selected and how it is connected to the Arduino. The different stake holders and how the data is represented for each classification have been discussed thoroughly.
 

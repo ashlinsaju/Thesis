@@ -1,12 +1,16 @@
 \chapter{Calibration Of Low Cost Sensor}
 
-With the development of sensor technology for air pollution it has attracted a majority of researchers as well as common people to explore and understand more about the pollutants and its effects. This has given freedom for one to set up their own monitoring system at residences, office or even at schools. The problem with this is to identify how accurate the data collected from these commodity sensors to the reference monitoring system. The reference system are the pollution monitoring devices that are developed to a clearly defined standard for a specific criteria pollutant [s] and has completed a rigorous testing and analysis protocol \cite{Hall2014}. If the system is giving values which is way too different from the reference value then it brings down the advantages of this technology. This issue can be dealt through calibration which will reduce the uncertainty in data and makes the output more accurate. 
+With the development of sensor technology for air pollution it has attracted a majority of researchers as well as common people to explore and understand more about the pollutants and its effects. This has given freedom for one to set up their own monitoring system at residences, office or even at schools. The problem with this is to identify how accurate the data collected from these commodity sensors to the reference monitoring system. 
+
+The reference system are the pollution monitoring devices that are developed to a clearly defined standard for a specific criteria pollutant [s] and has completed a rigorous testing and analysis protocol \cite{Hall2014}. If the system is giving values which is way too different from the reference value then it brings down the advantages of this technology. This issue can be dealt through calibration which will reduce the uncertainty in data and makes the output more accurate. 
 \par 
 Calibration can be defined as the act of evaluating and adjusting the precision and accuracy of measurement equipment \cite{Kejuruteraan2018}. If the measured output from the sensor is not equals to the actual output then it shows that there is a need for calibration. Usually all the electronic instruments are calibrated according to a particular conditions in the laboratory and acquires a certification of calibration before its sold out in the markets. Even then the measured value does not reach accuracy as the condition or the environment where it was calibrated changes that leaves the user with some raw values that gives no information. This issue was taken up and explored by a few researchers in the US Environmental Protection Agency (EPA) and suggested with three 'Straw-Man Approach' to improve the usability of such data and presented in the Air sensor Workshop \cite{Williams2013}. 
 
 The first approach was by a signal-based calibration technique which requires the data from the remote stations, which is the reference station, to be broadcasted to the local station where the sensor is located and will receive this data and performs a single point calibration of the response. This approach would have been easy if the sensor was already equipped with the data collection and would process automatic calibration. 
 
+
 The next option for calibrating is called the direct sensor calibration that involves placing the sensor in a chamber in which a known concentration of pollutant is set and response is observed. As the concentration of the pollutant is already known the output curve can be compared with it and calibrated accordingly. This is the most common method used for calibration as is often called as laboratory evaluation. Another way of approaching direct calibration is by inspecting the pre-defined response given by the manufacturer and checking how accurate the sensor is to the given concentration. In either case the calibration requires equipment and skills to give accurate concentration value.
+
 
 The last option is by secondary data normalization in which the concentration values of the pollutant from the low cost sensor is normalized in accordance with the federal reference method (FRM) or federal equivalent method (FEM) analyzers. This approach is cost effective when compared to the other techniques and is less complex. This could be achieved by the use of a linear mathematical equation model that will convert the non-calibrated data into data of an acceptable form. The linear relationship equation $ y = mx + c $ where $ m $ is the slope and $ c $ is the intercept of the sensor raw data is compared with analyzer data and a relationship pattern is found out from this. The drawback of this is that the sensor data does not always give a linear response and thus not applicable for all the curves. 
 
@@ -29,7 +33,10 @@ The relationship between the response of an analytical instrument to the concent
 \end{enumerate} 
 
 \section{Macro Analysis Tool -MAT}
-The development of MAT tool gives a huge reliefs for the researchers in calibrating sensor data. This is an Excel based user-friendly macro tool that compares sensor data with reference data \cite{National2017} even if measurements weren’t recorded at precisely the same time, or were collected at different time intervals, such as 1-minute versus 5-minute intervals \cite{mattool}. The user needs to insert the data from the sensor into the sensor page of the tool and the values from the reference station is inserted into the reference page of the tool. After these values are inserted the details of pollutant, time interval, measurement units and data completeness (amount of usable data obtained) needs to be added in the set up page of the MAT. After all the required fields are filled the output page as shown in the figure \ref{MAT} shows the two sets of data being compared as per the control panel setting made in the tool \cite{National2017}.
+
+The development of MAT tool gives a huge reliefs for the researchers in calibrating sensor data. This is an Excel based user-friendly macro tool that compares sensor data with reference data \cite{National2017} even if measurements weren’t recorded at precisely the same time, or were collected at different time intervals, such as 1-minute versus 5-minute intervals \cite{mattool}. 
+
+The user needs to insert the data from the sensor into the sensor page of the tool and the values from the reference station is inserted into the reference page of the tool. After these values are inserted the details of pollutant, time interval, measurement units and data completeness (amount of usable data obtained) needs to be added in the set up page of the MAT. After all the required fields are filled the output page as shown in the figure \ref{MAT} shows the two sets of data being compared as per the control panel setting made in the tool \cite{National2017}.
 This output page basically gives the statistical comparison of two different data sets. From this page it could be seen that the date and time stamps are averaged to a single value for both the system. There is another column in the sheet which is the invalid data points that gives the total number of non validated data points during the observed time. This non validated data points occurs due to either the fault by instrument or it could be the fault in reading by MAT or it could be even due to unacceptable range specified by the user.
 
 \begin{figure}[h]
@@ -125,16 +132,20 @@ All these equation can be easily calculated with the help of Excel and thus all 
 
 \section{Framework}
 
-The developed MAT tool solved and provided an efficent method for calibration of low cost sensor. In our work we have implemented Linear Regression \cite{Burke} in an IoT platform.
-\iffalse
-\begin{enumerate}
- \item WRITE THE DISADVANTAGES
-\item STATE WHY DID I DEVELOP THE TOOL.
-\item POSITIVES OF MY TOOLDRAWBACKS
-\item SHOW OUTPUTS
-\end{enumerate}
-\fi
+The developed MAT tool solved and provided an efficent method for calibration of low cost sensor. In our work we have implemented Linear Regression \cite{Burke} in an IoT platform. The platform gives the user to input the value collected from the reference system as well as any low cost sensor system. 
 
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[scale=1.09]{./images/figure32.png} 
+  \end{center}
+  \caption{Framework of Calibration tool}
+  \label{frame}
+\end{figure}
 
+These data uploaded to the online platform should be .csv (excel) file format. The user will have four options to enter manually in which the reference data file, sensor data file along with the date and time will be entered. Once the required data is updated the regression analysis takes place and it generated the regression slope and y- intercept as the output. This output regression equation is used as the calibration equation. This tool can be accessed globally from anywhere in the world. This tool has followed the same calibration procedure as that of the MAT tool in which the data from both the system is compared and generates a calibration curve. The calibration equation which is the output is used in the system to obtain the calibrated value.
+
+\section{Summary}
+
+In this chapter we have discussed about how we are dealing with accuracy and precison of our low cost sensor. We have talk about the MAT tool used for calibrating the measured data from the system and implemented the IoT version of the tool. Further in the next chapter we will be talking about the design and development of the air pollution monitoring system and also the software aspect.
 
 
