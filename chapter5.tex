@@ -4,7 +4,7 @@ The main objective of the study was to compare how close the values from the low
 
 \section{Deployment}
 
-In order to understand the accuracy and precison of our system, we deployed the air pollution monitoring system for six days in University Heights, Prince George. The figure \ref{deployed} shows the experimental set up of the sensor system deployed at the location. The system was directly connected to a power code and was made to hung over a platform. The collected values were transferred to the ThingSpeak database through the WiFi module (Wemos) in an hourly averaged form and hence 24 data set points were collected for each day.
+In order to understand the accuracy and precison of our system, we deployed the air pollution monitoring system for eight days in University Heights, Prince George in which the first two days the system was put out for calibration and the rest six days for measurement. The figure \ref{deployed} shows the experimental set up of the sensor system deployed at the location. The system was directly connected to a power code and was made to hung over a platform. The collected values were transferred to the ThingSpeak database through the WiFi module (Wemos) in an hourly averaged form and hence 24 data set points were collected for each day.
 
 \begin{figure}[h]
     \begin{center}
@@ -17,7 +17,55 @@ In order to understand the accuracy and precison of our system, we deployed the 
 
 
   The main reason to conduct our deployment in this location was to have an easy access and to check on the system regularly in case of any sensor faults or signal distortions. The collected values in ThingSpeak database were compared to the reference values located in downtown Plaza 400 building except of carbon monoxide. The reference values for carbon monoxide were not found and hence were not analyzed. We have tried to analyze the daily variation of  Ozone, Particulate matter (both $PM_{2.5}$ and $PM_{10}$), Nitrogendioxide, temperature and humidity to their reference value.
+\section{Calibration}
 
+The sensors that we are using to measure the pollutants are low cost sensors and hence the sensitivity of these sensors are less compared to the monitoring station operated by local or state agencies. Inorder to boost the sensitivity of the low cost system and make it equivalent to the values from the monitoring stations we have tried to apply the calibration technique which is linear regression. By applying calibration technique the end result is a calibration curve which is obtained by fitting the most appropriate equation to the set of data \cite{Stone2001}. This calibration curve will be as close as to the true value or reference value in our case. We have attempted to calibrate our system by collecting the values for two days and then applying that calibration equation to the system. For each case we have shown the calibration curve as well as the regression fitting curve.
+
+In figure \ref{calozone} shows the graph in which we have plotted three line graphs which includes the reference value from the monitoring station, our sensor value and also the calibration curve. The calibration curve was obtained by applying linear regression and extracting the regression fitting curve. From the line graph it can be clearly seen that the values from our sensor system has low sensitivity and after applying the calibration equation the graph is alligned to that of the reference system.
+
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[scale=0.50]{images/figure36.png}
+  \end{center}
+  \caption{Calibration curve and the Regression fitting curve of Ozone}
+  \label{calozone}
+\end{figure}
+
+The obtained calibration equation will be in the form of $ y = mx + c $ which shows a linear relationship equation. For each of the sensor a calibration equation waws obtained and is shown in the table \ref{tableequation}.
+\begingroup
+\setlength{\tabcolsep}{10pt} % Default value: 6pt
+\renewcommand{\arraystretch}{1.5} % Default value: 1
+\begin{table}[h]
+  
+  
+  \begin{tabularx}{\columnwidth}{X|X}
+      \hline
+      Pollutant          & Regression equation    \\
+      \hline
+  
+   
+    
+    
+
+
+
+
+    
+    $O_{3}$   & $y = 1.45162 * x + (-0.358)$ \\ 
+    $NO_{2}$   & $y = 1.61757 * x + 0.03583$\\ 
+    $PM_{2.5}$   & $y = 1.32472 * x + 0.13856$ \\ 
+    $PM_{10}$   & $y = 1.62092 * x + (-0.39259)$\\ \hline
+  
+   
+      
+    
+\end{tabularx}
+ 
+  \caption{Regression equation for each sensor}
+  \label{tableequation}
+\end{table}
+\endgroup
   \section{Data Analysis}
   In this section we will be comparing the collected data for each sensors and will be looking at the accuracy of these values. We will be using multiple line graph plots to observe the data and will be investigating if there is any variations to these data.
   
@@ -165,13 +213,28 @@ Unlike $PM_{10}$  the values for $PM_{2.5}$ does not have a regular pattern in t
 
 The indexes are the numbers which makes the general public understand more about the air quality in the area they live in. In our analysis we have attempted to compare the AQI (Air Quality Index) and AQHI (Air Quality Health Index) indexes from the collected values of both the system.
 
-In Canada the most popular index for the public is AQHI is a number scale which defines how the air quality affects the human health \cite{AQHICAN}. The pollutants which are included for the calculation of the health index are $NO_{2}$, $PM_{2.5}$ and $O_{3}$. In our graph we have calculated the health index for each hour and then we took the average for the day and have compared it with the averaged health index data provided by the government. The figure \ref{AQHI} shows the bar graph which compares both the values. The first day both the average AQHI from the reference system and the sensor system gives almost equal value which are 3.12 and 3.11 respectievely.
-
-
+In Canada the most popular index for the public is AQHI is a number scale which defines how the air quality affects the human health \cite{AQHICAN}. The pollutants which are included for the calculation of the health index are $NO_{2}$, $PM_{2.5}$ and $O_{3}$. In our graph we have calculated the health index for each hour and then we took the average for the day and have compared it with the averaged health index data provided by the government. The value of AQHI ranges from 1 to 10+ (highest). The figure \ref{AQHIAV} shows the bar graph which compares both the values. 
 \begin{figure}[h]
   \begin{center}
   \includegraphics[scale=0.70]{images/figure34.png}
   \end{center}
-  \caption{Comparison between Average AQHI from Reference and Sensor System}
-\label{AQHI}
+  \caption{Comparison between average AQHI from both Reference and Sensor System}
+  \label{AQHIAV}
 \end{figure}
+
+ The first day both the average AQHI from the reference system and the sensor system gives almost equal value which are 3.12 and 3.11 respectievely. On the next three days our system showed a higher AQHI value than the reference system and on the last two days the averaged AQHI value is same as that to the average reference system. This change in value is because of the variation in readings of the measured pollutant discussed above. On all the measured days the risk factor associated with health is low as per the index chart provided by the government \cite{AQHICAN}.
+
+ The next index that we calculated is AQI in which we have used the same set of pollutant that we have used for the computations of AQHI. This index shows how polluted the vicinity is by giving the public a value between 0 to 400+ (highest). Here we have again used the average value for both the measuring system. The figure \ref{AQIAV} shows the graph of the averaged AQI values.
+
+ \begin{figure}[h]
+  \begin{center}
+  \includegraphics[scale=0.70]{images/figure35.png}
+  \end{center}
+  \caption{Comparison between average AQI from both Reference and Sensor System}
+  \label{AQIAV}
+\end{figure}
+
+It can be seen that on majority of the days our sensor system shows a higher AQI value when compared to the reference system except on the last day. This can again be related to the alteration in the observed value from the reference. These averaged values falls into the first category of the scale provided by the government which means the air quality during the measured days was 'Good'. For the calculation of AQI we have not included Carbon monoxide and $PM_{10}$ as well. 
+Having a look at both the graphs it shows how well the system could capture the values after calibration. 
+
+These are the observation which we have obtained after we have put our system out for six days. The system worked very close to the reference system after the calibration except for Particulate matter. Further in the next chapter, I will be proposing on few suggestions which could be done to the system.
