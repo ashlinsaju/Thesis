@@ -18,6 +18,7 @@
 \usepackage{pslatex}
 \usepackage{color}
 \usepackage{cite}
+\usepackage{multirow}
 \usepackage{longtable}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -42,6 +43,9 @@
 \usepackage{url}
 \usepackage{tabularx}
 \usepackage{comment}
+\usepackage[nameinlink,capitalise]{cleveref}
+\usepackage{textcomp}
+
 
 \newtheorem{theorem}{Theorem}
 \addtolength{\belowcaptionskip}{-0.5cm}
@@ -112,7 +116,7 @@
 \pagenumbering{roman}
 \thispagestyle{empty}          %%to skip numbering on page(s)
 \begin{document}
-\begin{comment}
+%\begin{comment}
 \begin{center}
 	\textbf{{\textsf{\\ SENSOR NETWORK AND VISUALIZATION FOR AIR POLLUTION MONITORING}}}
 	\\~
@@ -152,10 +156,10 @@
 	\\
 	\textsf{UNIVERSITY OF NORTHERN BRITISH COLUMBIA}
 	\\~
-	\textsf{September 2019}
+	%\textsf{September 2019}
 	\\~
 	\\~
-	\textcopyright \textsf{ Ashlin Saju, 2019}
+	\textcopyright \textsf{ Ashlin Saju, 2021}
 
 \end{center}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -167,7 +171,7 @@
 
 \newpage
 \addcontentsline{toc}{section}{Abstract}
-
+\begin{comment}
 \subsection*{Abstract}
 
 Among the risk factors with serious health issues, air pollution ranks the highest annually. Air pollution is considered as the main cause for the majority of deaths and suffering from chronic diseases. To address this issue, we believe, active participation from the public on collecting and interpreting data, educating to change the behavior of individuals and industries, and helping to control and manage pollution sources effectively is crucial. Fortunately, this goal appears to be achievable due to the recent revolution of electronic and computing technologies. It is possible that small, portable, and off-the-shelf pollution sensors along with low power processors and wireless communication modules can be bought at low-cost. Also, to make the data available to different users we need to build a system specific software which focuses on different level of users. The need for user-specific software for general purposes are consistently increasing. The two focused tasks are first is a  system framework on how to build a low-cost portable pollution monitoring system and next is building user specific software from scratch that will focuses on different user groups.
@@ -201,7 +205,7 @@ Contributing to achieving this task is the objective of this work. We propose a 
 
 
 {\large
-\emph{I would like to express my deep sense of gratitude to my worthy supervisor Dr. Alex Aravind for allowing me to carry out my work under his invaluable guidance. His interest in scientific problems and moral inspiration have made current work possible. I am extremely indebted to the Chairperson, Department of Computer Science, Northern University of British Columbia, Prince George, for providing all the necessary facilities to complete this work. Also, a special thanks is extended to Dr. Stephen Rader and Dr. George Jones for offering their valuable assistance as my committee members.}
+\emph{I would like to express my deep sense of gratitude to my worthy supervisor Dr.  for allowing me to carry out my work under his invaluable guidance. His interest in scientific problems and moral inspiration have made current work possible. I am extremely indebted to the Chairperson, Department of Computer Science, Northern University of British Columbia, Prince George, for providing all the necessary facilities to complete this work. Also, a special thanks is extended to Dr. Stephen Rader and Dr. George Jones for offering their valuable assistance as my committee members.}
 
 \emph{I am also indebted to my labmates Apratim, Ashlin, Conan, Brae, Davis, Suresh, Shanthini, Darshik, Rahim, Ketan, Arthi, Raja and Rodrigo for their support, discussion, encouragement, and pleasant company. Special thanks to the teaching and nonteaching staff members, UNBC, for their help in all possible ways.}
 \par
@@ -266,11 +270,11 @@ Contributing to achieving this task is the objective of this work. We propose a 
 
 \input{chapter1.tex}    %%%% Input file with Chapter1.tex
 \input{chapter2.tex}     %%%% Input file with Chapter2.tex
-\input{chapter4.tex}
 \input{chapter3.tex}
+\input{chapter4.tex}
 \input{chapter5.tex}
 \input{chapter6.tex}     %%%% Input file with Summary.tex
-%\input{Chapter7}
+%\input{Chapter7.tex}
 %\input{Chapter8}
 
 
@@ -291,37 +295,45 @@ Contributing to achieving this task is the objective of this work. We propose a 
 
 %%%%%%%%%%%%%%%%%%%%%%%% BIBLOGRAPHY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%% APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\clearpage
-%\fancyhead{} % clear all header fields
-%\fancyfoot{} % clear all footer fields
-%\pagestyle{fancy}
-%\fancyhfoffset[L]{0 cm}
-%\rhead{\text{\thepage }{}}
-%\lhead{\textbf{\appendixname\hspace{0.1cm} \thechapter{}}}
-%\appendix
-%\input{AppendixA}     %%%% Input file with AppendixA.tex
+\clearpage
+\fancyhead{} % clear all header fields
+\fancyfoot{} % clear all footer fields
+\pagestyle{fancy}
+\fancyhfoffset[L]{0 cm}
+\rhead{\text{\thepage }{}}
+\lhead{\textbf{\appendixname\hspace{0.1cm} \thechapter{}}}
+
+
+\addcontentsline{toc}{section}{Appendix}  % Add to the content
+\appendix
+\input{Appendix.tex}     %%%% Input file with AppendixA.tex
 %\input{AppendixB}
 %\input{AppendixC}
 %\input{AppendixD
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\fancyhf{} % clear all header and footer fields
-%\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter}{}}
-%\renewcommand{\sectionmark}[1]{\markright{\thesection\ }}
-%\fancyhf{}
-%\fancyhead[RO]{\thepage}
+\fancyhf{} % clear all header and footer fields
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ }}
+\fancyhf{}
+\fancyhead[RO]{\thepage}
 %\fancyhead[LO]{\slshape\foottmark}
 %\fancyhead[RE]{\slshape\leftmark}
 %\addtocontents{toc}{\protect\contentsline{chapter} {Appendix}{}}
-%\pagestyle{fancy} \fancyhfoffset[LE]{0 cm}
-%\clearpage{\pagestyle{empty}\clearpage} \pagestyle{fancy}
-%\renewcommand{\chaptermark}[1]{\markboth{\appendixname \ \thechapter}{}}
-%\renewcommand{\sectionmark}[2]{\markright{\thesection\ #1}}
-%\fancyhf{}
-%\fancyhead[LE,RO]{\thepage} \fancyhead[LO]{\slshape\rightmark}
-%\fancyhead[RE]{\slshape\leftmark}
+\pagestyle{fancy} \fancyhfoffset[LE]{0 cm}
+\clearpage{\pagestyle{empty}\clearpage} \pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\appendixname \ \thechapter}{}}
+\renewcommand{\sectionmark}[2]{\markright{\thesection\ #1}}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage} \fancyhead[LO]{\slshape\rightmark}
+\fancyhead[RE]{\slshape\leftmark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

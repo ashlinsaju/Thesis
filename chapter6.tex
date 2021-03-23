@@ -1,19 +1,36 @@
 \chapter{Conclusion and Future work}
 
-The advancement in sensor technologies have given a lot of opportunities for researchers to explore in different fields. These technical advancement have opened the door for solving major issues and one of them is environmental issues like air pollution. Air pollution have been a major concern ever since industrialization and modernisation has hit the world and from then onwards it went on increasing. There has been immense number of research works been done in this area.
+The advancement in sensor technologies have given a lot of opportunities for researchers to explore in different fields. These technical advancements have opened the door for solving major issues and one of them is environmental issues like air pollution. Air pollution have been a major concern ever since industrialization and modernisation has hit the world and from then onwards it went on increasing. There has been immense number of research works been done in this area. In our work, we have attempted to build a sensor system which measures the pollutants specific to the City of Prince George. The system which we built is simple, easily replicable and all the sensors used for the study are low-cost and readily available in the market. We have also implemented calibration to ensure the quality of measurement obtained from the system. The collected data was visualized in an IoT platform for three category of people. The system was deployed and from the graphs it can be seen that the measurements obtained from the system shows correlation with the reference data obtained from Dowtown Prince George.
 
-In this work, I have attempted to put my knowledge of electronics to build a sensor system which measures the pollutants specific to Prince George. The system which I have tried to build is very simple , easily replicable and all the sensors used are low cost and readily available. Then I have also put my hands on the visualization of the collected data and calibration. For visualization we have created an IoT platform in which the data was represented for three category of people.
-The system was deployed and the data was observed and it could be seen that the data after calibration are close to the reference system. From the graphs it can be seen that the values obtained from the system showes a better correlation with the reference data. One of the major drawback with these low cost system is that they are highly vulnerable to damage by external factors like rain. Another drawback is that the system needs constant recalibration in order to provide accurate data.
+
+One of the main drawback of the system was in the calibration procedure that we have applied. We have replicated the MAT which uses linear regression algorithm for obtaining the calibration curve. In our observation there are certain data points that is significantly different from the rest of the data points and are called as outliers. The outliers occur when there is something unusual occurs to the measured value or it could be a recording error from the sensor. In both the cases we could visually plot the data to see the outliers in the measurements. In our work, we have not focused on the outliers in the measured value and this could be a good addition to our work. Another focus in the calibration is the interval for recalibration. In our work we have only collected data for six days which makes it harder to determine this interval.
+
+We have placed our sensor system in College Heights, Prince George which is around 9 km far from the reference system. Pollutant like Particulate Matter is very location dependent and small activity could cause variation to the data. One solution for this issue could be possible field co-locations of the sensor to the reference system to understand on their performance \cite{austin2015laboratory}. This means that collecting the data from the same location to that of reference station will give more understanding. Another issue is that we have not evaluated on the performance of the sensors used in our work. As the sensor used for our work are low-cost sensors the problems may arise like drift in sensor's performance or faulty of sensor at deployment. Issues like this could be handled by routine calibration and regular checks on sensor's performance. Further we will be discussing how this work can be extended in the future.
+
+
+
+
 
 \section{Future Works}
 
 There are many ways this work could go forward and some of them I have listed below:
 \begin{enumerate}
-    \item The system could be elaborated with different set of pollutants. In the present system we have only used a certain set of pollutant but there is a possibility to expand the system by adding another pollutant like TRS (Total Reduced Sulphur) or $SO_{2}$
-    \item The visualization code can be extended and added different features to it. The software could be made more user friendly.
-    \item In this work the calibration equations are put into the system manually. This can be coded and automated so there will be less effort for the user to have it recalibrated.
+    \item The system could be elaborated with different set of pollutants. In the present system we have only used a certain set of pollutant but there is a possibility to expand the system by adding another pollutant like TRS (Total Reduced Sulphur) or $SO_{2}$.
+    
+    
+    \item The sensors we have used for our studies will not work during extreme winter weather. There are sensors available in market which can replace the sensors used in our studies. 
+     
+    \item We could make the system better by applying collecting more data points which will give us a better understanding on the calibration procedure and the reliability of the sensors.
+    
+    \item The calibration used here is linear regression which is an estimate of the 'best line' through the data. There will be some uncertainty associated to this and hence we can explore other calibration techniques.
+    
+    \item Location where the instrument is placed is another main factor for measurement. By keeping the system as close as to the reference system will give a better idea on the pollutant data.
+    
+    \item We could work on the outlier data to understand if they have significant effect on the measurement. This could be done by filtering the outliers to understand the effects. 
+    
 
 \end{enumerate}
 
+ 
 
 
