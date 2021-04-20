@@ -69,9 +69,9 @@ The calibration curve along with the reference data and sensor data is as shown 
 \begin{table}[h]
   
   
-  \begin{tabularx}{\columnwidth}{X|X|X}
+  \begin{tabularx}{\columnwidth}{X|X}
       \hline
-      Pollutant          & Regression equation  & Standard Deviation  \\
+      Pollutant          & Regression equation \\
       \hline
   
    
@@ -82,17 +82,17 @@ The calibration curve along with the reference data and sensor data is as shown 
 
 
     
-    $O_{3}$   & $y = 1.45 * x + (-0.35)$ & $1.80$ \\ 
-    $NO_{2}$   & $y = 1.61 * x + 0.035$ & $3.05$\\ 
-    $PM_{2.5}$   & $y = 1.32 * x + 0.13$ & $0.80$\\ 
-    $PM_{10}$   & $y = 1.62* x + (-0.39)$ & $2.62$\\ \hline
+    $O_{3}$   & $y = 1.42 * x + 0.04$  \\ 
+    $NO_{2}$   & $y = 1.49 * x + 1.36$ \\ 
+    $PM_{2.5}$   & $y = 1.31 * x + 0.27$\\ 
+    $PM_{10}$   & $y = 1.59* x + 0.47$ \\ \hline
   
    
       
     
 \end{tabularx}
  
-  \caption{Regression equation and standard deviation for each sensor}
+  \caption{Regression equation for each sensor}
   \label{tableequation}
   \hspace{1 cm}
 \end{table}
@@ -127,7 +127,7 @@ The calibration curve along with the reference data and sensor data is as shown 
 
 
  We calibrated all the sensors (except for carbon monoxide and temperature and humidity) with the same linear regression procedure using MAT. 
- The calibration equation for our system is as shown in Table \ref{tableequation} where {\lq x\rq} refers to the raw value and {\lq y\rq }  refers to the calibrated raw value. To understand how good the regression line is to the data we have calculated the standard deviation of the residiuals or the root mean square deviation which is also given in the Table \ref{tableequation}. The calibration equations in Table\ref{tableequation} were then supplied to the Arduino and then the system was used to measure the calibrated values.%In our case, Ozone shows a non-linear relationship above 200 ppb, in the future we could use polynomial regression or a better calibration method to make it more efficient. In the case of ${NO_2}$ there is a linear sensitivity curve so applying applying linear regression would give better results.  The $PM$ curve is linear till 50 ug/m3 and above that the response is attenuated \cite{wang2015laboratory}. %In the case of temperature and humidity sensor have not used the MAT tool since the DHT library did the calibration function.
+ The calibration equation for our system is as shown in Table \ref{tableequation} where {\lq x\rq} refers to the raw value and {\lq y\rq }  refers to the calibrated raw value. The calibration equations in Table\ref{tableequation} were then supplied to the Arduino and then the system was used to measure the calibrated values.%In our case, Ozone shows a non-linear relationship above 200 ppb, in the future we could use polynomial regression or a better calibration method to make it more efficient. %To understand how good the regression line is to the data we have calculated the standard deviation of the residiuals or the root mean square deviation which is also given in the Table \ref{tableequation}. In the case of ${NO_2}$ there is a linear sensitivity curve so applying applying linear regression would give better results.  The $PM$ curve is linear till 50 ug/m3 and above that the response is attenuated \cite{wang2015laboratory}. %In the case of temperature and humidity sensor have not used the MAT tool since the DHT library did the calibration function.
 
 
 
@@ -156,17 +156,16 @@ Figures \ref{Ozone} and \ref{Ozone1} shows the Ozone readings obtained each day 
   \item "A combination of all the three factors" 
 \end{enumerate} 
  In our case,  the most likely factors are (1) and (3) or a combination of both. 
-
- The possible reason for low concentration of Ozone during night hours is due to Ozone scavenging which occurs in the absence of sunlight \cite{EnvironmentalQualitySectionMoE2012}. Ozone scavenging is a chemical reaction between the Nitric Oxide with Ozone that is present in the atmosphere to form Nitrogen Dioxide (${NO_2}$) \cite{airqualityontario}. Even though the pollutants like Nitrogen Dioxide and volatile hydrocarbons in the presence of sunlight contribute to the production of Ozone, Nitric Oxide can destroy it \cite{airqualityontario} \cite{EnvironmentalQualitySectionMoE2012}.
+The possible reason for low concentration of Ozone during night hours is due to Ozone scavenging which occurs in the absence of sunlight \cite{EnvironmentalQualitySectionMoE2012}. Ozone scavenging is a chemical reaction between the Nitric Oxide with Ozone that is present in the atmosphere to form Nitrogen Dioxide (${NO_2}$) \cite{airqualityontario}. Even though the pollutants like Nitrogen Dioxide and volatile hydrocarbons in the presence of sunlight contribute to the production of Ozone, Nitric Oxide can destroy it \cite{airqualityontario} \cite{EnvironmentalQualitySectionMoE2012}.
 
  
-Temperature is also considered to be a direct or indirect influence for an increase or decrease in the air pollution levels \cite{EnvironmentalQualitySectionMoE2012}. In the case of Ozone, higher temperature speeds up the reaction rate and increases the production of Ozone in the atmosphere \cite{coates2016influence}. For the measured days, the maximum temperature observed for the first three days (30th May to 1st June) is around 27 degrees Celsius and for the last three days (2nd June to 4th June) did not 
+Temperature is also considered to be a direct or indirect influence for an increase or decrease in the air pollution levels \cite{EnvironmentalQualitySectionMoE2012}. In the case of Ozone, higher temperature speeds up the reaction rate and increases the production of Ozone in the atmosphere \cite{coates2016influence}. For the measured days, the maximum temperature observed for the first three days (30th May to 1st June) is around 27 degrees Celsius and for the last three days (2nd June to 4th June) did not exceed 20 degrees Celsius. This might explain the observed higher concentrations of Ozone shown in Figure \ref{Ozone} when compared to the Figure in \ref{Ozone1}. The temperatures measured for each day by our calibrated system along with the comparison is included in the Appendix 
 
 
 
   \begin{figure}[h]
     \begin{center}
-    \includegraphics[scale=0.46]{images/figure83oz.png}
+    \includegraphics[scale=0.46]{images/figure104.png}
     \end{center}
     \caption{Comparison between Ozone values from sensor system and reference system from 30/05/2019 to 01/06/2019}
     \label{Ozone}
@@ -204,7 +203,7 @@ The maximum concentrations of Ozone are normally expected from May to August as 
 
 \begin{figure}[h]
   \begin{center}
-  \includegraphics[scale=0.46]{images/figure84oz.png}
+  \includegraphics[scale=0.46]{images/figure105.png}
   \end{center}
   \caption{Comparison between Ozone values from sensor system and reference system from 02/06/2019 to 04/06/2019}
   \label{Ozone1}
@@ -212,8 +211,7 @@ The maximum concentrations of Ozone are normally expected from May to August as 
 \end{figure}
 \clearpage
 
-exceed 20 degrees Celsius. This might explain the observed higher concentrations of Ozone shown in Figure \ref{Ozone} when compared to the Figure in \ref{Ozone1}. The temperatures measured for each day by our calibrated system along with the comparison is included in the Appendix section for reference. It can also be seen that the first three days it was sunny when compared to the last three days where it varied from partly sunny to rainy. 
-
+section for reference. It can also be seen that the first three days it was sunny when compared to the last three days where it varied from partly sunny to rainy. 
 
 On all the measured days it can be seen that Ozone level have met the provincial objective standard which is less than or equal to 63 ppb \cite{Environment2016}. Over the observed period the calibrated sensor system was able to capture the changes in the concentration of Ozone  reliably. One outstanding issue is to determine when the system needs to do a recalibration procedure. As we have used a low-cost sensor system it is likely that there will be changes to the sensor performance over time. We have to characterize these sensor changes and the subsequent interval needs to be determined for recalibration procedures (eg: daily, weekly, quarterly). In general, we can say that the interval for recalibration for the sensor system needs to be looked in more detail. Nevertheless, it can also be seen that on the last two days the calibrated system showed differences in concentration when compared to the reference system. The environmental factors like temperature, relative humidity or concentration of confounding pollutants can result in change in sensor's sensitivity and reliability \cite{clements2017low}. This can be a possible reason for the sensor response differences seen for the last two days. 
 
@@ -262,11 +260,11 @@ Nitrogen Dioxide (${NO_2}$) is one of the main pollutants in urban areas that pe
 
 From Figures \ref{Nitrogen} and \ref{Nitrogen1}, the observed trend in the concentration of Nitrogen Dioxide is that it is higher in the morning and evening, and has lower levels in the afternoon. The higher levels in the Nitrogen Dioxide in the morning and late evenings could be the result of the oxidation reaction between Nitric Oxide ($NO$) and Ozone ($O_3$) in the absence of sunlight. One hypothesis for the observed changes in concentration of Nitrogen Dioxide could be related to variation in solar radiation, since in the absence of the sunlight there will be more oxidation reaction between Nitric Oxide ($NO$) and Ozone ($O_3$) \cite{Environment2010}. This process produces Nitrogen Dioxide as a night time reservoir and leads to increasing Ozone levels in the morning when photolysis resumes. This is the most likely reason for having a lower concentration of Nitrogen Dioxide during daytime \cite{rozbicka2014spatiotemporal}. Thus we could say that Ozone and Nitrogen Dioxide concentrations are often inversely related.  
     
-On all the measured days there were long hours of sunlight and short nights with the first three days having a clear sky and last three days with partly sunny and light rain. It can be seen from the Figure \ref{Nitrogen} and \ref{Nitrogen1} that the concentration levels for Nitrogen Dioxide increases after 8:00 pm in the evening and decreases around 6:00 am in the morning and the reason for this could be related to the oxidation chemical reaction. The concentration of Nitrogen Dioxide for the last three days in Figure \ref{Nitrogen1} is lower than the first three days in Figure  \ref{Nitrogen}. This can be related to the temperature and humidity as the temperature on the last three days did not exceed more than 20 degree Celsius and there were rain showers on 3rd June which can be the reason for a very low concentration of Nitrogen Dioxide during the daytime. During the first three days the temperature was around 27 degree Celsius and at that time the concentration of Nitrogen Dioxide was around 25 ppb during its peak hours except for June 1st where the concentration of Nitrogen Dioxide was around 12 ppb during its peak hours. This shows a positive correlation between temperature and concentration of 
+On all the measured days there were long hours of sunlight and short nights with the first three days having a clear sky and last three days with partly sunny and light rain. It can be seen from the Figure \ref{Nitrogen} and \ref{Nitrogen1} that the concentration levels for Nitrogen Dioxide increases after 8:00 pm in the evening and decreases around 6:00 am in the morning and the reason for this could be related to the oxidation chemical reaction. The concentration of Nitrogen Dioxide for the last three days in Figure \ref{Nitrogen1} is lower than the first three days in Figure  \ref{Nitrogen}. This can be related to the temperature and humidity as the temperature on the last three days did not exceed more than 20 degree Celsius and there were rain showers on 3rd June which can be the reason for a very low concentration of Nitrogen Dioxide during the daytime. During the first three days the temperature was around 27 degree Celsius and at that time the concentration of Nitrogen Dioxide was around 25 ppb during its peak hours except for June 1st where the concentration of Nitrogen Dioxide was around 12 ppb during its peak hours. This shows a positive correlation between temperature and concentration of    Nitrogen Dioxide. The concentration of Nitrogen Dioxide did not exceed the provincial air quality objective of 32 ppb on any of the measured days but we do see that concentration  was ranging from 10-20 ppb on most days.
 
 \begin{figure}[h]
   \begin{center}
-  \includegraphics[scale=0.45]{images/figure81no.png}
+  \includegraphics[scale=0.45]{images/figure106.png}
   \end{center}
   \caption{Comparison between Nitrogen Dioxide values from sensor system and reference system from 30/05/2019 to 01/06/2019}
 \label{Nitrogen}
@@ -276,7 +274,7 @@ On all the measured days there were long hours of sunlight and short nights with
 
 \begin{figure}[h]
   \begin{center}
-  \includegraphics[scale=0.45]{images/figure82no.png}
+  \includegraphics[scale=0.45]{images/figure107.png}
   \end{center}
   \caption{Comparison between Nitrogen Dioxide values from sensor system and reference system from 02/06/2019 to 04/06/2019}
   \label{Nitrogen1}
@@ -304,8 +302,7 @@ On all the measured days there were long hours of sunlight and short nights with
     
     
     %This change in concentration of Nitrogen dioxide can understood by the variation in solar radiation during a typical day \cite{Environment2010}. A lesser amount of radiation from sun slows down the breakdown of ${NO_2}$ to ${NO}$ which accumulates ${NO_2}$ in the stratosphere \cite{EnvironmentalQualitySectionMoE2012} \cite{Environment2010}. This can be seen in the graphs in both the reference value as well as in our sensor value. Another possible reason for high values can be related to heavy traffic as the graph shows the concentration hits it's peak concentration around 8.00 am which is considered to be office time for most people in the city. 
-    Nitrogen Dioxide. The concentration of 
-    Nitrogen Dioxide did not exceed the provincial air quality objective of 32 ppb on any of the measured days but we do see that concentration  was ranging from 10-20 ppb on most days.
+ 
 
 
     The results from our observations show that our ${NO_2}$ sensor had a strong correlation with the reference station for the first two days and later there was a fluctuation in the measurements. In absolute terms the differences are similar in all of the days and later days had less variability. There can be several possible reason for the variation in values. This can be either related to the drifting of sensor performance or the impact of environmental factors on the sensor. Another factor for less correlation can be the cross-sensitivity effect as all the sensors are placed together there will be the effect of other pollutant values which will cause a change in measurements \cite{clements2017low}.
@@ -326,7 +323,8 @@ Both $PM_{2.5}$ and $PM_{10}$ are location-dependent pollutants and can drastica
 In the case of $PM_{2.5}$,  from the data in Figures \ref{PM2.5} and \ref{PM2.5.1} we can see similar trends from the sensor system data as the reference system except for some variations which happened for a short interval of time and these might be associated with local activities near the reference system or the sensor system. The first two days in Figure \ref{PM2.5} showed a higher value for both sensor system and reference compared to the rest of the measured days. This can again be related to calm wind condition on for those two days when compared to the rest of the days. 
 
 
-In the \Crefrange{PM10}{PM2.5.1}, it can be seen that for most of the days our sensor system measured higher values for both $PM2.5$ and $PM10$. This could be because the reference system is placed in a high roof top elevation and our sensor system is at a low roof top elevation. This could be one of the reason why our system shows higher value than the reference system. During the year 1996 a short-term experiment was conducted by Ministry 
+In the \Crefrange{PM10}{PM2.5.1}, it can be seen that for most of the days our sensor system measured higher values for both $PM2.5$ and $PM10$. This could be because the reference system is placed in a high roof top elevation and our sensor system is at a low roof top elevation. This could be one of the reason why our system shows higher value than the reference system. During the year 1996 a short-term experiment was conducted by Ministry of Environment to understand if there is any difference in the street-level pollution and was compared to the Plaza site (elevated building). The values collected from street levels shows that the particulate matter values were 30$\%$ higher than the Plaza value \cite{Environment2010}.
+
 
 \begin{figure}[h]
   
@@ -384,7 +382,6 @@ In the \Crefrange{PM10}{PM2.5.1}, it can be seen that for most of the days our s
 
 
 %The factors which contributed to $PM_{10}$ are similar to that for $PM_{2.5}$ like combustion, road dust, industries etc. The particle size of $PM_{2.5}$ are more finer than $PM_{10}$ and has more health effects. On inhaling these particles can causes cardivascular diseases and other breathing problem. From the Figure \ref{PM2.5} it can be seen very clearly that on all the measured day the values are low and have not exceeded 40 $ug/m^3$. The reason for such low values can be also related to meterological factor, wind direction or the location where it is measured. The graphs for $PM_{2.5}$ shows a good similarity to the reference system values.
-of Environment to understand if there is any difference in the street-level pollution and was compared to the Plaza site (elevated building). The values collected from street levels shows that the particulate matter values were 30$\%$ higher than the Plaza value \cite{Environment2010}.
 
 
 From this, we can say that as our sensor station is at a low roof top elevation could be a reason for showing higher concentration. Another possible factor for the difference in values in reference and sensor system can be the location where our sensor is placed and the wind direction. As our sensor was in a residential area on a roof top of a house (in College Heights, Prince George) the activities happening in the residential area could affect the concentration of Particulate Matter. The activities taking place in the downtown area are different to that of the residential area and the system could measure different values.
@@ -401,7 +398,7 @@ In the Figure \ref{PM10.1} and \ref{PM2.5.1} we could see several peaks for both
 
 
 
-\newpage
+
 
 
 \subsection{Air Quality Indexes}
@@ -413,7 +410,7 @@ In Canada, the most commonly used index for the public is AQHI, which is a numbe
 
 \begin{figure}[h]
   \begin{center}
-  \includegraphics[scale=0.53]{images/figure94.png}
+  \includegraphics[scale=0.53]{images/figure108.png}
   \end{center}
   \caption{Comparison between average AQHI from both Reference and Sensor System}
   \label{AQHIAV}
