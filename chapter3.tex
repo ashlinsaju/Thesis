@@ -92,7 +92,7 @@ The final factor is cost. The price range for the hardware modules in the market
       \includegraphics[scale=0.65]{images/figure2.png}
       \end{center}
       
-      \caption{System overview}
+      \caption{The complete overview including the hardware and the software of the developed system.}
       \label{overview}
   
     \end{figure}
@@ -100,7 +100,7 @@ The final factor is cost. The price range for the hardware modules in the market
   \hspace{1 cm}
 
 
-    The system hardware section includes multiple sensors, the processor, and also the wireless communication module for transmitting and receiving signals. We will also discuss the air pollution visualization tool which mainly focuses on the representation of the data. The overview of the system is as shown in figure \ref{overview} and each part along with the sensor specification, implementation, and design will be discussed further in the section. 
+    The system hardware section includes multiple sensors, the processor, and also the wireless communication module for transmitting and receiving signals. We will also discuss the air pollution visualization tool that mainly focuses on the representation of the data. The overview of the system is as shown in figure \ref{overview}. The sensor block contains various sensors that collects data from the environment. This sensor block is connected to to the data processing block which is a programmable electronic unit that helps in processing of data and sending to a communication module. Next block is the communication middleware which transmits the data into a data repository. This communication middleware could be Bluetooth or Wi-Fi. The data stored from the repository is then visualized using a software tool which uses animation and analytics so as to display it efficiently.  The complete architecture and each part along with the sensor specification, implementation, and design will be discussed further in the section
     
     In this research project, we are measuring the pollutants in the city of Prince George. The main pollutants of interests are  $PM_{2.5}$, $PM_{10}$, $O_3$, $NO_2$, and $CO$. We have also measured the environmental variables like temperature and humidity along with the pollutants. 
 
@@ -124,7 +124,7 @@ For simplicity and ease of programming, we have selected a popular processor pla
   \begin{center}
   \includegraphics[scale=0.70]{./images/figure3.png}
   \end{center}
-  \caption{Arduino Ethernet Board}
+  \caption{Arduino ethernet board}
   \label{Arduino}
 \end{figure}
 
@@ -149,13 +149,14 @@ Arduino is an open-source physical computing platform that is divided into two p
   
 \end{enumerate}
 
-
+\floatsetup[table]{capposition=top}
 \begin{table}[h]
   
-  
+ 
+
   \begin{tabularx}{\columnwidth}{X|X}
       \hline
-      Description                 & specification    \\
+      Description                 & Specification    \\
       \hline
       Microcontroller & ATmega328P \\
       Operating Voltage & 5V\\
@@ -171,7 +172,7 @@ Arduino is an open-source physical computing platform that is divided into two p
       \hline
     
   \end{tabularx}
-  \caption{Technical specification}
+  \caption{Technical specification of Arduino ethernet board}
   \label{table:Technical specification}
 \end{table}
  
@@ -221,7 +222,7 @@ The reference system in downtown uses an API model 400 ozone monitor for the cit
   \begin{center}
   \includegraphics[scale=0.70]{images/figure30.png}
   \end{center}
-  \caption{Ozone sensors used for measurement}
+  \caption{Ozone sensors used for measurement \cite{Environment2010}}
   \label{Ozonesensor}
 \end{figure}
 \hspace{1 cm}
@@ -231,9 +232,9 @@ The reference system in downtown uses an API model 400 ozone monitor for the cit
   
   \begin{figure}[h]
    \begin{center}
-   \includegraphics[scale=0.70]{images/figure31.png}
+   \includegraphics[scale=0.60]{images/figure31.png}
    \end{center}
-   \caption{Nitrogen Sensor used for measurement}
+   \caption{Nitrogen sensor used for measurement \cite{Environment2010}}
  \label{Nitrogensensor}
 \end{figure}
   
@@ -243,9 +244,9 @@ The reference system in downtown uses an API model 400 ozone monitor for the cit
 
 \begin{figure}[h]
   \begin{center}
-  \includegraphics[scale=0.70]{images/figure29.png}
+  \includegraphics[scale=0.75]{images/figure29.png}
   \end{center}
-  \caption{Particulate matter sensor used for measurement}
+  \caption{Particulate matter sensor used for measurement \cite{EnvironmentalQualitySectionMoE2012}}
 \label{PM}
 \end{figure}
 
@@ -269,7 +270,7 @@ The reference system in downtown uses an API model 400 ozone monitor for the cit
   \begin{center}
   \includegraphics[scale=0.95]{./images/figure11.png}
   \end{center}
-  \caption{System Overview}
+  \caption{System overview}
   \label{cir}
 \end{figure}
 
@@ -284,9 +285,9 @@ The reference system in downtown uses an API model 400 ozone monitor for the cit
  
  \begin{figure}[h!]
   \begin{center}
-  \includegraphics[scale=0.55]{./images/figure5.png}
+  \includegraphics[scale=0.60]{./images/figure5.png}
   \end{center}
-  \caption{Circuit diagram of air pollution system}
+  \caption{The circuit diagram of the developed sensor system (Hardware section)}
   \label{circuit}
 \end{figure}
 
@@ -337,50 +338,60 @@ The hardware is responsible for the data collection but making the data availabl
 
 \subsection{Framework}
 
-The pollution monitoring stations collect huge amounts of data for pollutants and there are various ways to make people aware about this data. There can be different groups of users who will have access to the data which can be categorized as layman, data scientists (educators or researchers) who will be analyzing on the data, and the policy or lawmakers who will take necessary actions. Accurately identifying the stakeholders with an interest or stake in air pollution data is challenging. The paper on health, safety, and environment  \cite{English2000} categorizes stakeholders in environmental risk decisions into four categories of stakeholders as risk losers, risk gainers, risk perpetrators, and risk managers. 
+The pollution monitoring stations collect huge amounts of data for pollutants and there are various ways to make people aware about this data. There can be different groups of users who will have access to the data which can be categorized as laymen, data scientists (educators or researchers) who will be analyzing on the data, and the policy or lawmakers who will take necessary actions. Accurately identifying the stakeholders with an interest or stake in air pollution data is challenging. The paper on health, safety, and environment  \cite{English2000} categorizes stakeholders in environmental risk decisions into four categories of stakeholders as risk losers, risk gainers, risk perpetrators, and risk managers. 
 
 
 %Risk losers \cite{English2000} are those who may be adversely affected by environmental risk decision, in terms of health or economic values and risk gainers are those who may be favorably affected by an environmental risk decision, typically through economic gains. The people who create the risk are the perpetrators and those who takes the action against the risk are the risk managers. In a similar way, here we have put forward an approach of visualization based on the different stakeholders, in which we have classified into three categories: risk losers, risk analyzers and risk managers. 
 
 \lq{Risk losers}\rq are those who are susceptable to pollution which includes the general public or the society as a whole and \lq{risk gainers}\rq are those who gain  favorable outcomes from environmental risk  decision mainly through economic gain. \lq{Risk prepetrators}\rq are those who create risk and \lq{risk managers}\rq are those who implement laws and regulations by looking at the trends of pollution for a certain period. 
-In a similar way, we have also categorized our stakeholders into three main categories as layman, data scientist, and policymakers. We believe this categorization for representing air pollutant data is very efficient as it helps in representing what each stakeholder wants to view in the data.
+In a similar way, we have also categorized our stakeholders into three main categories as laymen, data scientist, and policymakers. We believe this categorization for representing air pollutant data is very efficient as it helps in representing what each stakeholder wants to view in the data.
 
 The visualization should be simple for users and be able to drive the user to details of interest. It should not necessarily represent all the data in a single screen, which could be confusing to users and will lose the interest of different stakeholders. The user should be able to choose what data they need to view. If this approach is included in visualization design, the data that different stakeholders are looking for will be passed to them in an efficient manner. %We have summed up this visualization idea in the paper that we tried in 2018 \cite{Saju2018(1)}.
 
 \subsection{Implementation of CLV of Air Pollution Data}
 
 The complete software implementation for the visualization software was created using a combination of Node.js and Python. The framework for the software is shown in Figure \ref{frameworksoft}. In Figure \ref{frameworksoft} the back-end and the front-end of the software is clearly shown and how it is connected with each other. The front-end is the representation layer with which the user interacts to get an output, for example, the webpage which represents information demanded by the user. The back-end of software can be described as what makes the front end work and it deals with the server-side. The back-end mainly  focuses on database, scripting, and architecture.
+
+
 \begin{figure}[h]
   \begin{center}
   \includegraphics[scale=0.58]{./images/figure33.png}
   \end{center}
-  \caption{Software Architecture}
+  \caption{The flow diagram of the developed software section showing the front end and the back end.}
   \label{frameworksoft}
 \end{figure}
 
 \hspace{1 cm}
 
 
-According to the classification of stakeholders, each user group is looking for different views of the data. For example, the data could be represented in the form of huge spreadsheets or documents. There are different methods for visualization for large data sets, such as heat-maps, bubble plots, box plots, bar graphs or a plane graphs. The most common method for displaying complex data is a graphical method, which can show the data corresponding to a certain time or day. We believe that instead of visualizing the entire data set through graphs or plots, it would be easier for the layman to interpret the data if it is a single instantaneous value. The  representation implemented for the lay man stakeholder is as in Figure \ref{view1}, which shows a single value for the pollutant. The implemented representation of the data is easy to understand and it shows the concentration that each pollutant adds to atmosphere. The idea of this kind of visualization is that the user who falls into layman category simply needs to read the data from the display.
 
+
+According to the classification of stakeholders, each user group is looking for different views of the data. For example, the data could be represented in the form of huge spreadsheets or documents. There are different methods for visualization for large data sets, such as heat-maps, bubble plots, box plots, bar graphs or a plane graphs. The most common method for displaying complex data is a graphical method, which can show the data corresponding to a certain time or day. We believe that instead of visualizing the entire data set through graphs or plots, it would be easier for the laymen to interpret the data if it is a single instantaneous value. The  representation implemented for the lay man stakeholder is as in Figure \ref{view1}, which shows a single value for the pollutant. The implemented representation of the data is easy to understand and it shows the concentration that each pollutant adds to atmosphere. The idea of this kind of visualization is that the user who falls into laymen category simply needs to read the data from the display.
+
+
+
+The next data visualization implementation is done for the  data scientist or researcher and is as shown in Figure \ref{view2}. The ideal way to represent this more detailed view of information is through line graphs to show the values obtained over a range of time. The measured value of pollutants could be seen when the pointer hovers over the graph. These graphs are updated every time the source data is updated by the system, as researchers need to know real-time data to understand the scenario. 
+
+
+\hspace{1 cm}
 \begin{figure}[h]
   \begin{center}
-  \includegraphics[scale=0.45]{./images/figure14.png}
+  \includegraphics[scale=0.50]{./images/figure14.png}
   \end{center}
-  \caption{Dashboard for Layman category}
+  \caption{The developed Dashboard for Laymen category}
   \label{view1}
 \end{figure}
 
 \hspace{1 cm}
 
-The next data visualization implementation is done for the  data scientist or researcher and is as shown in Figure \ref{view2}. The ideal way to represent this more detailed view of information is through line graphs to show the values obtained over a range of time. The measured value of pollutants could be seen when the pointer hovers over the graph. These graphs are updated every time the source data is updated by the system, as researchers need to know real-time data to understand the scenario. 
 
 
+\hspace{1 cm}
 \begin{figure}[h]
   \begin{center}
-  \includegraphics[scale=0.40]{./images/figure15.png}
+  \includegraphics[scale=0.43]{./images/figure15.png}
   \end{center}
-  \caption{Dashboard for Data Scientist or researcher}
+  \caption{The developed Dashboard for Data scientist or researcher}
   \label{view2}
 \end{figure}
 
@@ -391,9 +402,9 @@ The last categorization of users are the policymakers who implement actions base
 
 \begin{figure}[h!]
   \begin{center}
-  \includegraphics[scale=0.45]{./images/figure16.png}
+  \includegraphics[scale=0.50]{./images/figure16.png}
   \end{center}
-  \caption{Dashboard for policymakers}
+  \caption{The developed Dashboard for Policymakers}
   \label{view3}
 \end{figure}
 

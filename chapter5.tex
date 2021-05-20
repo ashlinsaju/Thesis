@@ -13,9 +13,9 @@ These are the observations that we have obtained after we have put our system ou
 \begin{figure}[h]
   \begin{center}
   %\includegraphics[scale=0.26]{images/figure68.png}
-  \includegraphics[width=15.50cm,height=18.80cm]{images/figure68.png}
+  \includegraphics[width=15.50cm,height=18.20cm]{images/figure68.png}
   \end{center}
-  \caption{Flow diagram of Sensor system}
+  \caption{The complete flow diagram showing the hardware and the software of the developed sensor system}
   \label{flow}
   \hspace{1 cm}
 \end{figure}
@@ -39,13 +39,13 @@ In the case of a Digital sensor (Particulate matter), the output is \lq{amount o
 
 \section{Deployment}
 
-To understand the performance of our system, we deployed the air pollution monitoring system for eight days in University Heights, Prince George in which the first two days the raw data from the system was used for calibration and the following six days for measurement. Figure \ref{deployed} shows the experimental set up of the sensor system deployed at the location. The system was directly connected to a power cable and was hung over a platform. The collected values were transferred to the ThingSpeak database through the WiFi module in an hourly averaged form and hence 24 data points were collected for each day.
+To understand the performance of our system, we deployed the air pollution monitoring system for eight days in College Heights, Prince George in which the first two days the raw data from the system was used for calibration and the following six days for measurement. Figure \ref{deployed} shows the experimental set up of the sensor system deployed at the location. The system was directly connected to a power cable and was hung over a platform. The collected values were transferred to the ThingSpeak database through the WiFi module in an hourly averaged form and hence 24 data points were collected for each day.
 
 \begin{figure}[h]
     \begin{center}
     \includegraphics[scale=0.30]{images/figure20.jpg}
     \end{center}
-    \caption{Deployed System at University Heights, Prince George}
+    \caption{Deployed system at College Heights, Prince George}
     \label{deployed}
 
   \end{figure} 
@@ -150,13 +150,13 @@ As we have discussed in Chapter 1, Section 1.2,  the Ground-Level Ozone ($O_3$) 
 
 Figures \ref{Ozone} and \ref{Ozone1} shows the Ozone readings obtained each day from May 30 to June 4, 2019. From Figures \ref{Ozone} and \ref{Ozone1} it can be seen that the calibrated sensor system shows a strong correlation with the reference system except for the last two days. The length of daylight on all the observed days was roughly around 16 hours and 30 minutes starting from 4.30 am in the morning to 9.30 pm in the evening \cite{daylight}. In all the measured days it can be seen that the concentration of Ozone is high during the daytime when compared to the late evening and night hours. The several reasons for having a high Ozone level can be due to:\cite{EnvironmentalQualitySectionMoE2012} 
 \begin{enumerate}
-  \item " An increase in Ozone precursors (other pollutants like Carbon Monoxide, Methane, Nitrogen Oxide in the presence of sunlight helps in the production of Ozone) in the upper atmosphere" 
+  \item "An increase in Ozone precursors (other pollutants like Carbon Monoxide, Methane, Nitrogen Oxide in the presence of sunlight helps in the production of Ozone) in the upper atmosphere" 
   \item "More snow cover at higher elevation causing higher reflection of solar radiation back to the atmosphere" 
   \item "High level of ozone in the stratosphere being transported to the troposphere" 
   \item "A combination of all the three factors" 
 \end{enumerate} 
  In our case,  the most likely factors are (1) and (3) or a combination of both. 
-The possible reason for low concentration of Ozone during night hours is due to Ozone scavenging which occurs in the absence of sunlight \cite{EnvironmentalQualitySectionMoE2012}. Ozone scavenging is a chemical reaction between the Nitric Oxide with Ozone that is present in the atmosphere to form Nitrogen Dioxide (${NO_2}$) \cite{airqualityontario}. Even though the pollutants like Nitrogen Dioxide and volatile hydrocarbons in the presence of sunlight contribute to the production of Ozone, Nitric Oxide can destroy it \cite{airqualityontario} \cite{EnvironmentalQualitySectionMoE2012}.
+The possible reason for low concentration of Ozone during night hours is due to Ozone scavenging which occurs in the absence of sunlight \cite{EnvironmentalQualitySectionMoE2012}. Ozone scavenging is a chemical reaction between the ${NO}$ with ${O_3}$ that is present in the atmosphere to form ${NO_2}$ \cite{airqualityontario}. Even though the pollutants like ${NO_2}$ and volatile hydrocarbons in the presence of sunlight contribute to the production of ${O_3}$, ${NO}$ can destroy it \cite{airqualityontario} \cite{EnvironmentalQualitySectionMoE2012}.
 
  
 Temperature is also considered to be a direct or indirect influence for an increase or decrease in the air pollution levels \cite{EnvironmentalQualitySectionMoE2012}. In the case of Ozone, higher temperature speeds up the reaction rate and increases the production of Ozone in the atmosphere \cite{coates2016influence}. For the measured days, the maximum temperature observed for the first three days (30th May to 1st June) is around 27 degrees Celsius and for the last three days (2nd June to 4th June) did not exceed 20 degrees Celsius. This might explain the observed higher concentrations of Ozone shown in Figure \ref{Ozone} when compared to the Figure in \ref{Ozone1}. The temperatures measured for each day by our calibrated system along with the comparison is included in the Appendix 
@@ -256,11 +256,11 @@ On all the measured days it can be seen that Ozone level have met the provincial
 
 %Nitrogen is the most abundant element in earth's atmosphere and is approximately 78\% by volume \cite{EnvironmentalQualitySectionMoE2012}. There are five forms of gaseous Nitrogen: Nitrogen (${N_2}$), Nitrogen Dioxide ($NO_2$), ammonia ($NH_3$), Nitrous Oxide ($N_2O$), and Nitric Oxide ($NO$). The combustion of motor vehicle exhaust, industrial process, fuel combustion for heating produces $NO$ which is easily oxidized to $NO_2$ or Nitrogen Dioxide \cite{EnvironmentalQualitySectionMoE2012}.
 
-Nitrogen Dioxide (${NO_2}$) is one of the main pollutants in urban areas that penetrates deep into the lungs and can cause pulmonary diseases. It is mainly produced from high-temperature combustion of fossil fuels, power plants and industrial activities \cite{EnvironmentalQualitySectionMoE2012}. The main sources of ${NO_2}$ in Prince George include combustion of fossil fuels in vehicles, power plants, other industrial processes \cite{Environment2016}. The provincial air quality objective for Nitrogen Dioxide is for concentrations to be  less than to 32 ppb \cite{Environment2016}. We have already discussed Nitrogen Dioxide in Chapter 1, section 1.2 about how high concentration of Nitrogen Dioxide can affect the human health. Using our system we have collected the data and have compared these to the data from the reference system. The collected sensor data in comparison with the reference system is shown in Figure \ref{Nitrogen} and \ref{Nitrogen1} that covers the data collection from May 30 through June 4, 2019. 
+Nitrogen Dioxide is one of the main pollutants in urban areas that penetrates deep into the lungs and can cause pulmonary diseases. It is mainly produced from high-temperature combustion of fossil fuels, power plants and industrial activities \cite{EnvironmentalQualitySectionMoE2012}. The main sources of ${NO_2}$ in Prince George include combustion of fossil fuels in vehicles, power plants, other industrial processes \cite{Environment2016}. The provincial air quality objective for ${NO_2}$ is for concentrations to be  less than to 32 ppb \cite{Environment2016}. We have already discussed ${NO_2}$ in Chapter 1, section 1.2 about how high concentration of ${NO_2}$ can affect the human health. Using our system we have collected the data and have compared these to the data from the reference system. The collected sensor data in comparison with the reference system is shown in Figure \ref{Nitrogen} and \ref{Nitrogen1} that covers the data collection from May 30 through June 4, 2019. 
 
-From Figures \ref{Nitrogen} and \ref{Nitrogen1}, the observed trend in the concentration of Nitrogen Dioxide is that it is higher in the morning and evening, and has lower levels in the afternoon. The higher levels in the Nitrogen Dioxide in the morning and late evenings could be the result of the oxidation reaction between Nitric Oxide ($NO$) and Ozone ($O_3$) in the absence of sunlight. One hypothesis for the observed changes in concentration of Nitrogen Dioxide could be related to variation in solar radiation, since in the absence of the sunlight there will be more oxidation reaction between Nitric Oxide ($NO$) and Ozone ($O_3$) \cite{Environment2010}. This process produces Nitrogen Dioxide as a night time reservoir and leads to increasing Ozone levels in the morning when photolysis resumes. This is the most likely reason for having a lower concentration of Nitrogen Dioxide during daytime \cite{rozbicka2014spatiotemporal}. Thus we could say that Ozone and Nitrogen Dioxide concentrations are often inversely related.  
+From Figures \ref{Nitrogen} and \ref{Nitrogen1}, the observed trend in the concentration of ${NO_2}$ is that it is higher in the morning and evening, and has lower levels in the afternoon. The higher levels in the ${NO_2}$ in the morning and late evenings could be the result of the oxidation reaction between $NO$ and $O_3$ in the absence of sunlight. One hypothesis for the observed changes in concentration of ${NO_2}$ could be related to variation in solar radiation, since in the absence of the sunlight there will be more oxidation reaction between $NO$ and $O_3$ \cite{Environment2010}. This process produces ${NO_2}$ as a night time reservoir and leads to increasing Ozone levels in the morning when photolysis resumes. This is the most likely reason for having a lower concentration of ${NO_2}$ during daytime \cite{rozbicka2014spatiotemporal}. Thus we could say that Ozone and ${NO_2}$ concentrations are often inversely related.  
     
-On all the measured days there were long hours of sunlight and short nights with the first three days having a clear sky and last three days with partly sunny and light rain. It can be seen from the Figure \ref{Nitrogen} and \ref{Nitrogen1} that the concentration levels for Nitrogen Dioxide increases after 8:00 pm in the evening and decreases around 6:00 am in the morning and the reason for this could be related to the oxidation chemical reaction. The concentration of Nitrogen Dioxide for the last three days in Figure \ref{Nitrogen1} is lower than the first three days in Figure  \ref{Nitrogen}. This can be related to the temperature and humidity as the temperature on the last three days did not exceed more than 20 degree Celsius and there were rain showers on 3rd June which can be the reason for a very low concentration of Nitrogen Dioxide during the daytime. During the first three days the temperature was around 27 degree Celsius and at that time the concentration of Nitrogen Dioxide was around 25 ppb during its peak hours except for June 1st where the concentration of Nitrogen Dioxide was around 12 ppb during its peak hours. This shows a positive correlation between temperature and concentration of    Nitrogen Dioxide. The concentration of Nitrogen Dioxide did not exceed the provincial air quality objective of 32 ppb on any of the measured days but we do see that concentration  was ranging from 10-20 ppb on most days.
+On all the measured days there were long hours of sunlight and short nights with the first three days having a clear sky and last three days with partly sunny and light rain. It can be seen from the Figure \ref{Nitrogen} and \ref{Nitrogen1} that the concentration levels for ${NO_2}$ increases after 8:00 pm in the evening and decreases around 6:00 am in the morning and the reason for this could be related to the oxidation chemical reaction. The concentration of ${NO_2}$ for the last three days in Figure \ref{Nitrogen1} is lower than the first three days in Figure  \ref{Nitrogen}. This can be related to the temperature and humidity as the temperature on the last three days did not exceed more than 20 degree Celsius and there were rain showers on 3rd June which can be the reason for a very low concentration of ${NO_2}$ during the daytime. During the first three days the temperature was around 27 degree Celsius and at that time the concentration of ${NO_2}$ was around 25 ppb during its peak hours except for June 1st where the concentration of ${NO_2}$ was around 12 ppb during its peak hours. This shows a positive correlation between temperature and concentration of ${NO_2}$. The concentration of ${NO_2}$ did not exceed the provincial air quality objective of 32 ppb on any of the measured days but we do see that concentration  was ranging from 10-20 ppb on most days.
 
 \begin{figure}[h]
   \begin{center}
@@ -323,7 +323,7 @@ Both $PM_{2.5}$ and $PM_{10}$ are location-dependent pollutants and can drastica
 In the case of $PM_{2.5}$,  from the data in Figures \ref{PM2.5} and \ref{PM2.5.1} we can see similar trends from the sensor system data as the reference system except for some variations which happened for a short interval of time and these might be associated with local activities near the reference system or the sensor system. The first two days in Figure \ref{PM2.5} showed a higher value for both sensor system and reference compared to the rest of the measured days. This can again be related to calm wind condition on for those two days when compared to the rest of the days. 
 
 
-In the \Crefrange{PM10}{PM2.5.1}, it can be seen that for most of the days our sensor system measured higher values for both $PM2.5$ and $PM10$. This could be because the reference system is placed in a high roof top elevation and our sensor system is at a low roof top elevation. This could be one of the reason why our system shows higher value than the reference system. During the year 1996 a short-term experiment was conducted by Ministry of Environment to understand if there is any difference in the street-level pollution and was compared to the Plaza site (elevated building). The values collected from street levels shows that the particulate matter values were 30$\%$ higher than the Plaza value \cite{Environment2010}.
+In the \Crefrange{PM10}{PM2.5.1}, it can be seen that for most of the days our sensor system measured higher values for both $PM-{2.5}$ and $PM_{10}$. This could be because the reference system is placed in a high roof top elevation and our sensor system is at a low roof top elevation. This could be one of the reason why our system shows higher value than the reference system. During the year 1996 a short-term experiment was conducted by Ministry of Environment to understand if there is any difference in the street-level pollution and was compared to the Plaza site (elevated building). The values collected from street levels shows that the particulate matter values were 30$\%$ higher than the Plaza value \cite{Environment2010}.
 
 
 \begin{figure}[h]
@@ -410,9 +410,9 @@ In Canada, the most commonly used index for the public is AQHI, which is a numbe
 
 \begin{figure}[h]
   \begin{center}
-  \includegraphics[scale=0.53]{images/figure108.png}
+  \includegraphics[scale=0.52]{images/figure108.png}
   \end{center}
-  \caption{Comparison between average AQHI from both Reference and Sensor System}
+  \caption{Comparison between average AQHI from both reference and sensor system}
   \label{AQHIAV}
   \hspace{1 cm}
 \end{figure}
@@ -422,11 +422,11 @@ The overall AQHI for the observed days falls under the first category, which is 
 
  The next index that we calculated is the AQI in which we have used the measured pollutants from the sensor system and the reference system. The pollutants used of measurement for the AQI are $NO2$, $PM2.5$ and $O3$ and we have not used $CO$ as the reference system in Prince George did not provide the value. AQI communicates the air quality of an area based on the single worst pollutant. The Figure \ref{AQIAV} shows the graph of the daily averaged AQI values.
 
- \begin{figure}[h]
+ \begin{figure}[h!]
   \begin{center}
-  \includegraphics[scale=0.60]{images/figure92.png}
+  \includegraphics[scale=0.53]{images/figure92.png}
   \end{center}
-  \caption{Comparison between average AQI from both Reference and Sensor System}
+  \caption{Comparison between average AQI from both reference and sensor system}
   \label{AQIAV}
   \hspace{1 cm}
 \end{figure}

@@ -19,6 +19,7 @@
 \usepackage{color}
 \usepackage{cite}
 \usepackage{multirow}
+\usepackage{floatrow}
 \usepackage{longtable}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -40,11 +41,11 @@
 \usepackage{lipsum}
 \usepackage[english]{babel}
 \usepackage[autostyle]{csquotes}
-\usepackage{url}
 \usepackage{tabularx}
 \usepackage{comment}
 \usepackage[nameinlink,capitalise]{cleveref}
 \usepackage{textcomp}
+\usepackage{url}
 
 
 \newtheorem{theorem}{Theorem}
@@ -119,7 +120,9 @@
 %\begin{comment}
 \begin{center}
 	
-	\textbf{{\textsf{\\ SENSOR NETWORK AND VISUALIZATION FOR AIR POLLUTION MONITORING}}}
+	\begin{large} 
+		\textbf{SENSOR NETWORK AND VISUALIZATION FOR AIR-POLLUTION MONITORING IN PRINCE GEORGE}
+	\end{large}
 	\\~
 	\\~
 	\textsf{by}
@@ -127,7 +130,7 @@
 	\\~
 	\textbf{\textsf{Ashlin Saju}}
 	\\~
-	%\textsf{B.Tech, Mahatma Gandhi University, Kerala, India, 2016}
+	\textsf{B.Tech, Mahatma Gandhi University, Kerala, India, 2016}
 	\\~
 	\\~
 	\\~
@@ -139,11 +142,11 @@
 	\\~
 	\\~
 	\\~
-	\textsf{THESIS DRAFT} %SUBMITTED IN PARTIAL FULFILLMENT OF}\\
-	%\textsf{THE REQUIREMENTS OF THE DEGREE OF}\\
-	%\textsf{MASTER OF SCIENCE}\\
-	%\textsf{IN}\\
-	%\textsf{COMPUTER SCIENCE}
+	\textsf{PROJECT SUBMITTED IN PARTIAL FULFILLMENT OF}\\
+	\textsf{THE REQUIREMENTS OF THE DEGREE OF}\\
+	\textsf{MASTER OF SCIENCE}\\
+	\textsf{IN}\\
+	\textsf{COMPUTER SCIENCE}
 	\\~
 	\\~
 	\\~
@@ -157,19 +160,19 @@
 	\\
 	\textsf{UNIVERSITY OF NORTHERN BRITISH COLUMBIA}
 	\\~
-	\textsf{April 5, 2021}%{September 2019}
+	\textsf{April 2021}%{September 2019}
 	\\~
 	\\~
 	\textcopyright \textsf{ Ashlin Saju, 2021}
 
 \end{center}
 
-
+%\end{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract  %%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{comment}
+
 \doublespacing
 \normalsize
 
@@ -178,13 +181,12 @@
 
 \subsection*{Abstract}
 
-Among the risk factors with serious health issues, air pollution ranks the highest annually. Air pollution is considered as the main cause for the majority of deaths and suffering from chronic diseases. To address this issue, we believe, active participation from the public on collecting and interpreting data, educating to change the behavior of individuals and industries, and helping to control and manage pollution sources effectively is crucial. Fortunately, this goal appears to be achievable due to the recent revolution of electronic and computing technologies. It is possible that small, portable, and off-the-shelf pollution sensors along with low power processors and wireless communication modules can be bought at low-cost. Also, to make the data available to different users we need to build a system specific software which focuses on different level of users. The need for user-specific software for general purposes are consistently increasing. The two focused tasks are first is a  system framework on how to build a low-cost portable pollution monitoring system and next is building user specific software from scratch that will focuses on different user groups.
-Contributing to achieving this task is the objective of this work. We propose a portable pollution monitoring system framework using low cost off the shelf pollution sensors and demonstrate its feasibility with the software that we built in our lab.
+
+Among the risk factors for serious health issues, air pollution ranks the highest annually, accounting for many deaths and contributing to chronic diseases. The City of Prince George has reported poor air quality over the years due to forest fires, road dust, geographical location, and other factors. The conventional method for monitoring air quality uses stationary monitoring systems installed by government agencies. These may not be effective as they are usually few in number. To achieve the goal of public awareness and engagement, pollution monitoring must become accessible for everyone. This goal appears to be achievable due to the advances in electronics, low-cost computing, and networking. In our thesis project, we have created an air pollution monitoring system using low-cost sensors and open-source software to visualize the data. This project can serve as a template for end-users or communities interested in understanding the air quality in their local area.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Table of Content %%%%%%%%%%%%%%%%%%%%%%%
 
-\end{comment}
 
 
 
@@ -214,19 +216,17 @@ Contributing to achieving this task is the objective of this work. We propose a 
 
 
 {\large
-\emph{I would like to express my deep sense of gratitude to my worthy supervisor Dr.  for allowing me to carry out my work under his invaluable guidance. His interest in scientific problems and moral inspiration have made current work possible. I am extremely indebted to the Chairperson, Department of Computer Science, Northern University of British Columbia, Prince George, for providing all the necessary facilities to complete this work. Also, a special thanks is extended to Dr. Stephen Rader and Dr. George Jones for offering their valuable assistance as my committee members.}
+\emph{It has been a long journey and today I would like to express my deep sense of gratitude to my supervisor Dr.Erik Jensen for giving me all the support and motivation to finish the work which I had started. This work would not have been complete if I had not got his constant support.}
 
-\emph{I am also indebted to my labmates Apratim, Ashlin, Conan, Brae, Davis, Suresh, Shanthini, Darshik, Rahim, Ketan, Arthi, Raja and Rodrigo for their support, discussion, encouragement, and pleasant company. Special thanks to the teaching and nonteaching staff members, UNBC, for their help in all possible ways.}
-\par
-\emph{It is a pleasure to acknowledge the good company of fellow researchers and my friends Hardev, Gurjeet, Ashish, Ramneesh, Johny, Priyanka, Amit, Navjot, Bashet, Dorob and many others.}
-
+\emph{ A word of thank you to my dear Friend, Kevin who stood by me while I needed him.}
+\emph{Two important people Joe and Keerthana who again I have no words}
 \emph{Finally, I want to express my deepest gratitude to my family for their love, support and encouragement, without which this work would not have taken this shape.}
 
 \vspace{1.0cm}
 %\begin{tabular}{p{4.5in}r}
 \emph{Prince George, BC}
 
-\emph{September~~~~, 2019\hfill\textbf(Ashlin Saju)}
+\emph{September~~~~, 2021\hfill\textbf(Ashlin Saju)}
 
 %\end{tabular}
 
@@ -240,12 +240,12 @@ Contributing to achieving this task is the objective of this work. We propose a 
 \begin{tabular}{p{4in}cr}
 	 &  &                                                                          \\&&\\&&\\&&\\&&\\&&\\&&\\&&\\&&\\&&\\&&\\&&\\&&\\&&\\
 	\emph{\textbf{\large{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Dedicated}}}  \\&&\\ \emph{\textbf{\large{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~to}}}\\&&\\
-	\emph{\textbf{\large{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~My Parents}}} \\
+	\emph{\textbf{\large{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Pappa and Mamma}}} \\
 \end{tabular}
-
+\end{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\end{comment}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

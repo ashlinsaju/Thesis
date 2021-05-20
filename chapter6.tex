@@ -1,53 +1,52 @@
 \chapter{Conclusion and Future work}
 
-The advancement in sensor technologies has given a lot of opportunities for researchers to explore different fields. These technical advancements have opened the door for solving major issues and one of them is environmental issues like air pollution. Air pollution has been a major concern ever since industrialization and modernization has hit the world and from then onwards it went on increasing. There are several works done under this category of research. In this chapter we will be summarizing the work done and also how this research project can be extended in future.
+The advancement in sensor technologies has given a lot of opportunities for researchers to explore different fields. These technical advancements have opened the door for addressing major issues and one of them is environmental issues like air pollution. Air pollution has been an increasing concern ever since industrialization and modernization has hit the world. In this chapter we will be summarizing the work reported in this project and also how this research project can be extended in future.
     
 \section{Summary}
 
- In our work, we have attempted to build a low-cost sensor system that measures the pollutants specific to the City of Prince George. The system which we built is simple, easily replicable and all the sensors used for the study are low-cost and readily available in the market. We have implemented calibration procedure to ensure the quality of measurement obtained from the system. This calibration procedure was a replication of MAT tool developed by Environmental Protection Agency (EPA). The calibrated data was visualized in an IoT platform for three categories of users which are layman, data scientists, and policymakers. The system was deployed for six days for collecting the measurements and from the graphs, the measurements obtained from the system show correlation with the reference data obtained from Downtown Prince George.
+ In our work, we have attempted to build a low-cost sensor system that measures the pollutants specific to the City of Prince George. The system which we built is simple, easily replicable and all the sensors used for the study are low-cost and readily available in the market. We have implemented a calibration procedure to enhance the quality of measurements obtained from the system. This calibration procedure was a replication of the MAT tool developed by the Environmental Protection Agency (EPA). The calibrated data was visualized using an IoT platform for three categories of users which are laymen, data scientists, and policymakers. The system was deployed for six days for collecting the measurements and from the data, the measurements obtained from the system show good correlation with the reference data obtained from Downtown Prince George.
 
 \section{Challenges and Directions Identified}
 
+In Chapter 1, section 1.4 we have discussed that the idea in developing the pollution monitoring system was to increase public engagement in understanding the pollution around them. This cannot be achieved with the conventional system as these are centrally located and would not give local data. This was the main motivation for developing a portable, inexpensive system that could collect data according to user's interest. We were able to achieve this goal and were successfull in collecting data from the system. Even though the system which we built showed a good correlation when compared to the reference system, there are a few challenges for such a system. One of the main challenges for the system was the calibration procedure developed. As discussed in chapter 4, we have replicated the MAT \cite{airsensortoolbox} that uses linear regression algorithm for obtaining the calibration curve. From our observations, it can be seen that a small number of data points are significantly different from the rest of the data points and these are called outliers. These outliers happen when there is a variablility in the measured value or possibly a recording error from the sensor. In either case we could visually plot the data to see the outliers in the measurements and identify these points. We could work on the outliers by implementing an algorithm to understand why such a data point occurred and what can be done to correct or remove these points. %In our work, we have not focused on the outliers in the measured value and this could be a good addition to our work. Another focus in the calibration is the interval for recalibration. In our work we have only collected data for six days which makes it harder to determine this interval.
 
-Even though the system which we build showed a good response when compared to the reference system there are few downsides for the created system. 
-One of the main drawbacks of the system was in the calibration procedure that we have applied. As discussed in chapter 4, we have replicated the MAT that uses linear regression algorithm for obtaining the calibration curve. From our observations, it can be seen that there are certain data points that are significantly different from the rest of the data points and these are called outliers. These outliers happen when there a variablility in the measured value or it could be a recording error from the sensor. In either cases we could visually plot the data to see the outliers in the measurements and understand from these points. %In our work, we have not focused on the outliers in the measured value and this could be a good addition to our work. Another focus in the calibration is the interval for recalibration. In our work we have only collected data for six days which makes it harder to determine this interval.
-
-Next point of discussion is regarding the location of the sensor system for measurement. We have placed our sensor system in College Heights, Prince George that is around 9 km far from the reference system. Pollutant like Particulate Matter is very location-dependent and small activity could cause variation to the data. One solution for this issue could be possible field co-locations of the sensor to the reference system to understand on their performance \cite{austin2015laboratory}. This means that collecting the data from the same location to that of reference station will give more understanding. 
-
-Another matter of concern is regarding the unknown duration that the applied calibration is valid or to find out the recalibration interval so that the sensor's performance would not affect. As the sensor used for our work are low-cost sensors the problems may arise like drift in sensor's performance or faulty of sensor at deployment. To avoid these issues there should be routine checks on sensor's performance and also should determine the recalibration interval for the sensor. These interval could be different for different sensors and should be updated periodically as per the procedures in Chapter 4, section 4.2.
-
-
-One of the main goal of our work was to build an efficient system with the help of low-cost sensors. The problem with the low-cost system is that there are variety of manufactures who produce these sensors. In our case we referred the Air Sensor Guidebook discussed in Chapter 3, section 3.1 for the selection of sensors. Even then the data sheet given by the manufactures lacks in detail, accuracy and reproducibility is unknown for most of the sensors. Another difficulty with low-cost sensor is regarding their sensitivity to changing environmental conditions mainly temperature, humidity, interference from other sensors, and signal drift. We also have not much knowledge of their long term stability and performance of the sensors as we only have measurements for six days. 
-
-
-Moving on to the data handling and data presentation section there are certain areas that we have not covered. The collected data is stored in ThingSpeak server which is not accessible on the world-wide data network.
-
-
-In our case we are representing the real time data through the developed software. 
+The next challenge is regarding the location of the sensor system for collecting measurements. We have placed our sensor system in College Heights, Prince George, 9 km from the reference system. Pollutants like Particulate Matter are very location-dependent and localized activity could cause variations in the data. These differences in data between the reference and the sensor system creates a problem for calibration procedure. The possible solution for this issue could be field co-locations of the sensor and the reference system to understand their performance \cite{austin2015laboratory}. Collecting data from the same location to that of reference station will give a better understanding of the PM sensors, particularly for calibration. 
 
 
 
 
+One of the main goals of our work was to build an efficient system using very low-cost sensors. An issue for such a low-cost system is that there are a variety of manufactures who produce these sensors. In our case we referred to the Air Sensor Guidebook discussed in Chapter 3, section 3.1 for the selection of sensors. Even then, the data sheets provided by the manufactures lack detail, and the accuracy and the reproducibility is unknown for most of these sensors. Another difficulty with low-cost sensors is their potential sensitivity to changing environmental conditions - mainly temperature, humidity, and interference from other sensors. We also do not have much knowledge of their long term stability and performance, as our study period was limited to measurements for six days. Another challenge is the unknown duration that the applied calibration is valid for. The recalibration interval required so that the sensor's performance is not changed is not known. As the sensors used for our work are low-cost, problems may arise such as drift in sensor performance, sensor degradation or failure. To avoid these issues there should be routine checks on sensor performance and also a determination of recalibration interval for the sensor. These intervals could be different for different sensors and should be updated periodically as per the procedures in Chapter 4, section 4.2. 
 
-\section{Future Works}
 
-There are many ways this work could go forward and some of them I have listed below:
+The data handling and data presentation are areas that require further work and attention. In our system, the collected data is stored in a ThingSpeak server which is not accessible to a wider network of users. This could be addressed by storing the data in repositories which are accessible by the public such as Google, Amazon, and Environment Canada repositories. In most of the work discussed in Chapter 2, Google servers or local municipality servers were used so that the data could be accessed by the wider public. This feature could be added to our webtool so that anyone who is using the tool can retrieve the collected data. 
+
+Our system was designed to give a real-time representation of the data obtained from the sensors to three categories of stakeholders. This was an idea discussed in a paper on health, safety and environment  \cite{English2000} and we came up with three categories: laymen, scientists, and policymakers. We could better understand the usability of the software by testing  with different stakeholders and incorporating user feedback. 
+
+In summary we have listed few ways in which the work from this research project could be expanded: 
+
+
 \begin{enumerate}
-    \item The system could be elaborated with different set of pollutants. In the present system we have only used a certain set of pollutant but there is a possibility to expand the system by adding another pollutant like TRS (Total Reduced Sulphur) or $SO_{2}$.
+
+    \item The system could be extended to measure a different set of pollutants. In the present system we used a set of available pollutant sensors but there is the potential to expand the system by adding other pollutant sensors of local interest such as Total Reduced Sulphur (TRS) or Sulphur Dioxide ($SO_{2}$).
+      
+    \item The system could be improved by collecting more data which will give a better understanding of the calibration procedure and the reliability of the sensors and their calibration.
+
     
+    \item The calibration used here is linear regression which is an estimate of the 'best line' through the data. This assumes a linear response from the sensor. Other calibration techniques can be explored to have a better understanding of the sensor behaviour and whether a non-linear response could improve the quality of data collected by the sensor.
+   
+    \item The outlier data should be investigated to understand their impact on the measurements. This could be done by implementing an algorithm that can identify and deal with outlier data points.
     
-    \item The sensors we have used for our studies will not work during extreme winter weather. There are sensors available in market which can replace the sensors used in our studies. 
-     
-    \item We could make the system better by applying collecting more data points which will give us a better understanding on the calibration procedure and the reliability of the sensors.
+    \item  Making the data collected from the system widely accessible by using public repositories and storing the collected data in an easily accessible format.
     
-    \item The calibration used here is linear regression which is an estimate of the 'best line' through the data. There will be some uncertainty associated to this and hence we can explore other calibration techniques.
+    \item Testing the data presentation software to understand the usability for different stakeholders to improve the data presentation for each user group based on their feedback.
     
-    \item Location where the instrument is placed is another main factor for measurement. By keeping the system as close as to the reference system will give a better idea on the pollutant data.
-    
-    \item We could work on the outlier data to understand if they have significant effect on the measurement. This could be done by filtering the outliers to understand the effects. 
-    
+
+
 
 \end{enumerate}
+
+Advances in the low-cost sensor system are enabling many studies to understand the seriousness of pollution. The research work we did was a small step to show how to build a low-cost sensor system that is easily replicable in order to better understand the air we breathe specific to the city of Prince George. Society is still often unaware of the impact that occurs when exposed to a polluted environment. With the help of technology, there is a chance to improve awareness by implementing sensor systems that could identify specific pollutants. For example, there are ongoing projects that could use cell-phones to understand the air quality using sensor systems initiated by Apple \cite{iphone}. There are also projects like Airsense \cite{Fang2016} which uses sensors to understand the indoor air quality. Studies like these are possible due to the development of inexpensive sensors that give wider ability to understand air quality. These emerging technologies will give people better awareness about their surrounding environment and take precautions if needed. The emerging sensor technology can play a great role in protecting people's health and tackling the air pollution crisis \cite{future}. 
+ 
 
 
 
